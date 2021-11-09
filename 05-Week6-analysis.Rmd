@@ -1,0 +1,94 @@
+---
+output:
+  html_document: default
+  pdf_document: default
+---
+
+
+```{r eval=FALSE, include=FALSE}
+library(tidyverse)
+load("tidy_data.RData")
+
+# set up the data for Task 2
+data %>% 
+  rowwise() %>% 
+  mutate(screen_time_actual = mean(c(screen_time_actual_android_h,
+                                     screen_time_actual_iphone_h),
+                                   na.rm = TRUE)) %>% 
+  filter(screen_time_actual > 0) %>% 
+  select(phone_type, screen_time_actual, screen_time_estimate = screen_time_estimate_h) %>% 
+  write_csv("data_phone.csv")
+
+# set up the data for Task 3
+data %>% 
+  select(home_location, uk_salary) %>% 
+  write_csv("data_salary.csv")
+
+
+```
+
+
+# Week 7: Visualising data and binomial tests
+
+> Written by Tom Beesley & John Towse
+
+They say a picture paints a thousand words, so in this week's lab we will be learning some fundamental skills in **data visualisation** with the `ggplot()` commands.  We will also be looking at how we can run **binomial tests in R** and we will use these to explore .... Please ensure you do the pre-lab work before coming to class.
+
+## Pre-lab work: online tutorial
+
+To access the pre-lab tutorial click here: https://ma-rconnect.lancs.ac.uk/Week6_LabPrep/ (on campus, or VPN required)
+
+### Conceptual prep work
+
+Revision of binomial test concepts...
+
+## LAB TASK 1: Visualising phone use
+
+Now that you have completed the online tutorials on `ggplot()`, it's time to put those skills into practice with a new data set, provided in "data_phone.csv". These data are just the phone time variables (estimated and actual) with the phone type nominal variable.
+
+Follow these steps to visualise these data: 
+
+1. Open the script "Week_7_Task_2.R" (see prep work)
+
+2. Run the first two lines of code `library(tidyverse)` and `data <- read_csv("data_phone.csv")`
+
+3. View the data with `view(data)`
+
+4. Inside the `aes()` command, map the variable *screen_time_estimate* to the x axis, and the variable *screen_time_actual* to the y axis. In general, does it look like people's estimates were accurate?
+
+5. Add a setting for *colour* outside of the `aes()`, to make all the points red.
+
+6. Map the *colour* to the variable *phone_type* (within `aes()`). Can you see any differences between people who have different phones?
+
+7. Change the axis titles and add a title for the graph using the `labs()` command.
+
+8. Change the theme of the graph.
+
+
+## LAB TASK 2: Conducting a one-sample t-test.
+
+In this task we will run some one-sample t-tests in R to examine people's estimates of UK salaries.
+
+1. Open the "Week_7_Task_3.R" script (see prep work)
+
+2. Run the first two lines of code `library(tidyverse)` and `data <- read_csv("data_salary.csv")`
+
+3. Run the third command. This runs a t-test on the salary estimates. The two settings (parameters) in the t-test function are *x*, which is the column of data we are interested in testing, and *mu*, which is the value we want to compare against. 
+
+4. Look at the output of the t-test. What does the *t* value indicate? Check the value against the criterion value in the t-test below (our N = 205, so use value for infinity). The *p* value tells you precisely how likely the data are, if the null hypothesis was true. Would we say this is statistically significant?
+
+5. Use the 4th command to filter the data to just those participants whose home location is the UK. Run the t-test on these data (you can copy the command, but note you will need to change the name of the data)
+
+6. In the same way as for Q6, check the salary ratings for those people whose home location is "Asia" and "Europe (not UK)". Note in each case what the t-test is telling you.
+
+## The t-test table (criterion values of t)
+![]("ttable.png")
+
+
+
+
+
+
+
+
+
