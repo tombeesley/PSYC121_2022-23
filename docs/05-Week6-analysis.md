@@ -5,27 +5,7 @@ output:
 ---
 
 
-```{r eval=FALSE, include=FALSE}
-library(tidyverse)
-load("tidy_data.RData")
 
-# set up the data for Task 2
-data %>% 
-  rowwise() %>% 
-  mutate(screen_time_actual = mean(c(screen_time_actual_android_h,
-                                     screen_time_actual_iphone_h),
-                                   na.rm = TRUE)) %>% 
-  filter(screen_time_actual > 0) %>% 
-  select(phone_type, screen_time_actual, screen_time_estimate = screen_time_estimate_h) %>% 
-  write_csv("data_phone.csv")
-
-# set up the data for Task 3
-data %>% 
-  select(home_location, uk_salary) %>% 
-  write_csv("data_salary.csv")
-
-
-```
 
 # Week 6: [NOT FOR CLASS TEST!] Visualising data and binomial tests
 
