@@ -15,7 +15,7 @@ They say a picture paints a thousand words, so in this week's lab we will be lea
 
 ## Pre-lab work: online tutorial
 
-To access the pre-lab tutorial click here: <https://ma-rconnect.lancs.ac.uk/Week6_LabPrep/> (on campus, or VPN required)
+To access the pre-lab tutorial click here: <https://ma-rconnect.lancs.ac.uk/Week_6_LabPrep/> (on campus, or VPN required)
 
 ## RStudio Task 1: Creating a new folder and project
 
@@ -31,7 +31,7 @@ We are going to set up a new foler for this week and an RStudio *Project*. This 
 
 ![](files/Week_6/working_dir.png)
 
-4. Let's add the files we need for this week. Download the [Week_6_files.zip](files/Week_6/Week_6_files.zip) and upload it into RStudio Server. If you need them, [here are the key instructions](#uploading_zip) from Week 2.
+4. Let's add the files we need for this week. Download the [Week_6.zip](files/Week_6/Week_6.zip) and upload it into RStudio Server. If you need them, [here are the key instructions](#uploading_zip) from Week 2.
 
 5. Now let's finish this process by making this a *Project*. Click on the small blue icon in the top right of RStudio, and clicking "New Project":
 
