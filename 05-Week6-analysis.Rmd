@@ -27,7 +27,7 @@ data %>%
 
 ```
 
-# Week 6: [NOT FOR CLASS TEST!] Visualising data and binomial tests
+# Week 6: Visualising data and binomial tests
 
 > Written by Tom Beesley & John Towse
 
@@ -92,7 +92,7 @@ It's time to put the skills you learnt in the online tutorial into practice with
 
 7. Try changing your `geom_point()` command to `geom_jitter()` (keeping the mappings the same). Suddenly this reveals many more points! Why is this? Check the help to find out more about this geom: `?geom_jitter`.
 
-## Task 3: Conducting a binomial test
+## RStudio Task 3: Conducting a binomial test
 
 Let's now look at whether these differences we see are meaningful. Do people estimate their daily screen time to be more than it actually is? There are two blocks of code to run here. You don't have to edit these, but it's important to look at what they are doing:
 

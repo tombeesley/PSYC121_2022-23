@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>5 Week 4: Z-score calculations and DVs/IVs again | Statistics for Psychologists</title>
+  <title>6 Week 6: Visualising data and binomial tests | Statistics for Psychologists</title>
   <meta name="description" content="Course content for PSYC121 and PSYC122 at Lancaster University" />
   <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="5 Week 4: Z-score calculations and DVs/IVs again | Statistics for Psychologists" />
+  <meta property="og:title" content="6 Week 6: Visualising data and binomial tests | Statistics for Psychologists" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="tombeesley/LU_PSYC121_122" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="5 Week 4: Z-score calculations and DVs/IVs again | Statistics for Psychologists" />
+  <meta name="twitter:title" content="6 Week 6: Visualising data and binomial tests | Statistics for Psychologists" />
   
   <meta name="twitter:description" content="Course content for PSYC121 and PSYC122 at Lancaster University" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="week-3-dvs-and-ivs-in-r-studio.html"/>
-<link rel="next" href="week-6-visualising-data-and-binomial-tests.html"/>
+<link rel="prev" href="week-4-z-score-calculations-and-dvsivs-again.html"/>
+
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -230,87 +230,95 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="week-4-z-score-calculations-and-dvsivs-again" class="section level1" number="5">
-<h1><span class="header-section-number">5</span> Week 4: Z-score calculations and DVs/IVs again</h1>
+<div id="week-6-visualising-data-and-binomial-tests" class="section level1" number="6">
+<h1><span class="header-section-number">6</span> Week 6: Visualising data and binomial tests</h1>
 <blockquote>
-<p>Written by John Towse &amp; Tom Beesley</p>
+<p>Written by Tom Beesley &amp; John Towse</p>
 </blockquote>
-<div id="pre-lab-work-2" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Pre-lab work</h2>
-<p>This week - again, there’s a learnr tutorial to follow and help prep for what we are covering: <a href="https://ma-rconnect.lancs.ac.uk/W4_LabPrep/" class="uri">https://ma-rconnect.lancs.ac.uk/W4_LabPrep/</a></p>
+<p>They say a picture paints a thousand words, so in this week’s lab we will be learning some fundamental skills in <strong>data visualisation</strong> with the <code>ggplot()</code> commands. We will then conduct our first statisitical test to tell whether there is a <em>real difference</em> in our data. You must ensure you have watched the lecture and done the pre-lab work before coming to class.</p>
+<div id="pre-lab-work-online-tutorial" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Pre-lab work: online tutorial</h2>
+<p>To access the <a href="https://ma-rconnect.lancs.ac.uk/Week_6_LabPrep" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
 </div>
-<div id="r-studio-tasks-2" class="section level2" number="5.2">
-<h2><span class="header-section-number">5.2</span> R Studio tasks</h2>
-<p>Last week we introduced two different ways to get a variable / column of scores investigated as a function of a separate column of data. In others words, describe the DV a function of an IV</p>
-<p>Those two approaches involved</p>
-<p><code>aggregate(x = DV, by = list(IV), FUN = mean)</code></p>
-<p>and</p>
-<p><code>data.frame %&gt;% group_by(IV) %&gt;% summarise(mean_estimate = mean(DV))</code></p>
-<p>Use the <a href="https://ma-rconnect.lancs.ac.uk/W3_LabPrep/">week 3 learnr tutorial</a> from last week to get more hints and practice with this, if you need to, alongside the week 4 tutorial.</p>
-<div id="task-1---climate-change-data" class="section level3" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Task 1 - Climate change data</h3>
+<div id="rstudio-task-1-creating-a-new-folder-and-project" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> RStudio Task 1: Creating a new folder and project</h2>
+<p>We are going to set up a new foler for this week and an RStudio <em>Project</em>. This is a good practice for organising your scripts and data.</p>
 <ol style="list-style-type: decimal">
-<li>Download the <a href="files/Week_4/Week_4.zip">week4.zip</a> file and upload it into R Studio server. If you need them, <a href="week-2-descriptive-statistics-in-r-studio.html#uploading_zip">here are the key instructions</a> from Week 2. This week the data is called “climate”. Launch the week_4 R script as before.</li>
+<li>When you are logged on to the <a href="http://psy-rstudio.lancaster.ac.uk" target="_blank"><strong>RStudio Server</strong></a>, navigate to your home directory by clicking on the small house icon:</li>
 </ol>
-<p>Step 2. Once again, we’re gong to be using commands from the tidyverse library (the pipe operator is one example) so we need to ensure that it’s active. Run the command:</p>
-<p><code>library(tidyverse)</code></p>
-<p>(Nb. This command is the accompanying R script. You can access it from there.)</p>
-<p>In the climate data frame, there are the following variables:</p>
-<p><em>human_CC</em> - A response to the question: How much do you think human activity contributes to climate change, as a percentage of overall climate change? Please enter a value between 0 (humans do not contribute to climate change at all) and 100 (human contribute entirely to climate change).</p>
-<p><em>UK_region</em> - where in the UK you used to live</p>
-<p><em>country_visits</em> - the number of countries you have visited</p>
-<p><em>visit_category</em> - a number between 1-3</p>
+<p><img src="files/Week_6/home_button.png" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Click the “New Folder” button just above the home button. Name the folder something sensible (e.g., Week_6) and click OK.</p></li>
+<li><p>Click on this folder and then click “More” and “Set As Working Directory”. This tells RStudio that you are now working in this directory. When you read in data using <code>read.csv</code> it will know where to look for the file name that you provide.</p></li>
+</ol>
+<p><img src="files/Week_6/working_dir.png" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Let’s add the files we need for this week. Download the <a href="files/Week_6/Week_6.zip">Week_6.zip</a> and upload it into RStudio Server. If you need them, <a href="week-2-descriptive-statistics-in-r-studio.html#uploading_zip">here are the key instructions</a> from Week 2.</p></li>
+<li><p>Now let’s finish this process by making this a <em>Project</em>. Click on the small blue icon in the top right of RStudio, and clicking “New Project”:</p></li>
+</ol>
+<p><img src="files/Week_6/new_project.png" /></p>
+<ol start="6" style="list-style-type: decimal">
+<li><p>You may be asked to save the workspace or data - you should do this. Then select “Existing Directory” and make sure that the new directory you have created is selected as the “Project Working Directory” - it should be, if you set the working directory correctly above. If not, navigate to the correct directory here.</p></li>
+<li><p>And you’re done! This should now appear as a project in your front page on RStudio. You can get back to that front page by clicking the red power button in the top right corner. Using projects has many benefits. It will keep all the content for the week in one place, and save the commands you’ve used in the console. You can also use the <em>Project Menu</em> to navigate quickly between different projects.</p></li>
+</ol>
+</div>
+<div id="rstudio-task-2-visualising-phone-use" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> RStudio Task 2: Visualising phone use</h2>
+<p>It’s time to put the skills you learnt in the online tutorial into practice with a new data set. In the survey, people estimated their daily phone use, and then looked up the actual time their phones were on. This data is provided in the zip file.</p>
+<ol style="list-style-type: decimal">
+<li><p>Open the script “Week_6_script.R”. This is the script file you will use for this task and the next one (3).</p></li>
+<li><p>Run the first two lines of code <code>library(tidyverse)</code> and <code>data &lt;- read_csv("data_phone.csv")</code></p></li>
+<li><p>You should now have an object in environment called <code>data</code>. You can view this (the “spreadsheet view”) by clicking on the object.</p></li>
+<li><p>Try running the ggplot command. You will see that this generates an error in red. Oh no!! Don’t panic. Look at what it’s telling you is wrong. Let’s look at the ggplot command and edit it to make it display something. As a reminder from the online tutorial:</p></li>
+</ol>
+<blockquote>
+<p>The main graphing command is <code>ggplot()</code> which tells R we want to draw some kind of plot. If you want to, you can just run <code>data %&gt;% ggplot()</code>, and you’ll see that R produces just a blank plot window. The plot is blank because we haven’t told it a) what type of plot we want, and b) what data to plot.</p>
+</blockquote>
+<blockquote>
+<p>Note that the next line is <strong>added</strong> to <code>ggplot()</code> (i.e., <code>ggplot() + geom_point()</code>). Plotting with <code>ggplot()</code> involves adding elements (geoms) together. Think of it as adding layers on top of each other: the ggplot() is your pizza base, and the geoms and other features are the toppings!</p>
+</blockquote>
+<blockquote>
+<p>Within the <code>geom_point()</code> command we have the very important command of <code>aes()</code>. This stands for <strong>aesthetics</strong>. <code>aes()</code> tells ggplot how the data should be represented on the features of the plot.</p>
+</blockquote>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Add y and x components inside the <code>aes()</code> command. These are used to map variables in your data to the features of the graph. If you are stuck on this, it’s time to go back and look at the</p></li>
+<li><p>Inside the <code>aes()</code> command, map the variable <em>screen_time_estimate</em> to the x axis, and the variable <em>screen_time_actual</em> to the y axis. In general, does it look like people’s estimates were accurate?</p></li>
+<li><p>Add a setting for <em>colour</em> outside of the <code>aes()</code>, to make all the points red. Why outside of <code>aes()</code>? Well remember from the online tutorial:</p></li>
+</ol>
+<blockquote>
+<p>Careful observation of the code here will show you that these new commands are written <strong>outside</strong> of the <code>aes()</code> command. This is really important to note. We write these outside of <code>aes()</code> because these features of the plot <strong>are not related to the data</strong>. We are NOT <em>mapping</em> any of our data to these features. Instead, we are simply specifying one particular value for each of these “settings” in the plot</p>
+</blockquote>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Now map the <em>colour</em> to the variable <em>phone_type</em> (within <code>aes()</code>). Can you see any differences between people who have different phones?</p></li>
+<li><p>Try changing your <code>geom_point()</code> command to <code>geom_jitter()</code> (keeping the mappings the same). Suddenly this reveals many more points! Why is this? Check the help to find out more about this geom: <code>?geom_jitter</code>.</p></li>
+</ol>
+</div>
+<div id="rstudio-task-3-conducting-a-binomial-test" class="section level2" number="6.4">
+<h2><span class="header-section-number">6.4</span> RStudio Task 3: Conducting a binomial test</h2>
+<p>Let’s now look at whether these differences we see are meaningful. Do people estimate their daily screen time to be more than it actually is? There are two blocks of code to run here. You don’t have to edit these, but it’s important to look at what they are doing:</p>
+<ol style="list-style-type: decimal">
+<li><p>Run the first block of code. This adds a new column to the data, <em>est_diff</em>, which means the “estimate difference”: actual screen time minus estimated screen time. You can take a look at this code by clicking on the new object in the environment, <em>data_phone_diff</em>. What do the positive and negative values reflect?</p></li>
+<li><p>Run the second block of code. This filters out (!= means “not equal to”) the zero values in the est_diff column. Why is this important for the sign test?</p></li>
+<li><p>The result of the final line of code (<code>count()</code>) will be output in the console. This tells us how many values were above 0 (TRUE) and how many below zero (FALSE). This is all the information we need to conduct our statistical test:</p></li>
+</ol>
 <ul>
-<li><p>1 means you have visited 1-4 countries</p></li>
-<li><p>2 means you have visited 5-9 countries</p></li>
-<li><p>3 means you have visited more than 9 countries</p></li>
+<li>How many positive values were there (above 0)?.</li>
+<li>How many observations were there in total?</li>
+<li>Add these two values to the two “MISSING” values in code for the binomial test</li>
+<li>Run the test and read the output - and take note of the “p-value”</li>
+<li>This tells us how likely such a result would be if the null hypothesis was true.</li>
+<li>Does this mean there is a significant over or underestimate in people’s estimates of phone time usage?</li>
 </ul>
-<p>Step 3. Maybe belief in human activity as a contributor to climate change varies across the UK? Find out which region of the UK has the highest and the lowest belief in the relative role of human activity in climate change. Change the following command based on what was learnt last week and the current data described above</p>
-<p><code>Data_frame_name %&gt;% group_by(IV) %&gt;% summarise(mean_estimate = mean(DV))</code></p>
-<p>Step 4. Maybe views about climate change are affected by how well travelled you are? Because you see the global impacts of clmate change, or because travel (often producing carbon emissions) is a sign of not being worried. So use the climate_change_category to look at whether there are differences in rating of human contribution to climate change.</p>
 </div>
-<div id="extra-activity." class="section level3" number="5.2.2">
-<h3><span class="header-section-number">5.2.2</span> Extra activity.</h3>
-<p>Come back to this afterwards for some extra practice if you want: Use the learnr activities to think about visualisation of the climate data. What graph(s) would be useful? How can you customise them?</p>
-</div>
-</div>
-<div id="z-scores" class="section level2" number="5.3">
-<h2><span class="header-section-number">5.3</span> Z-scores</h2>
-<blockquote>
-<p>Hint / Reminder: Sketch a normal (z score) distribution and mark the mean/mode, and mark off the relevant parts of the question so you know what you are trying to achieve and how to interpret any calculations you make.</p>
-</blockquote>
-<blockquote>
-<p>Hint/ Reminder 2. For questions 6 &amp; 7, remember that from the week 4 lecture material, typically in psychology we use the 5% level as a cutoff to decide, in broadly described terms, whether something is extreme or unlikely vs. at least somewhat plausible or likely.</p>
-</blockquote>
-<div id="z-scores-1-distributions" class="section level3" number="5.3.1">
-<h3><span class="header-section-number">5.3.1</span> z-scores 1: distributions</h3>
-<p>Q1. What is the relationship between the sign of a z-score and its position in a distribution?</p>
-<p>Q2. If a distribution has a mean of 100 and a standard deviation of 10, what is the raw score equivalent to a z-score of 1.96?</p>
-<p>Q3. If a distribution has a mean of 157 and a standard deviation of 19, what is the raw score equivalent to a z-score of 1?</p>
-</div>
-<div id="z-scores-2-using-z-score-tables" class="section level3" number="5.3.2">
-<h3><span class="header-section-number">5.3.2</span> z-scores 2: Using z-score tables</h3>
-<p>Q4. What proportion of scores lie between the mean and a z-score of 0.5?</p>
-<p>Q5. What is the combined proportion of scores lying between z=-1.2 and z=.85?</p>
-</div>
-<div id="z-scores-3-applying-z-scores-to-inferential-problems" class="section level3" number="5.3.3">
-<h3><span class="header-section-number">5.3.3</span> z-scores 3: Applying z-scores to inferential problems</h3>
-<p>Q6. A Neuropsychologist has presented a test of face recognition to 200 neurotypical participants and finds that the scores are normally distributed with a mean of 85 and the standard deviation of 12. Two brain-damaged patients are also given the test. The one with right hemisphere brain damage scored 58 and the one with left hemisphere damage scored 67.</p>
+<div id="extra-content-2" class="section level2" number="6.5">
+<h2><span class="header-section-number">6.5</span> Extra content!</h2>
+<p>Visualising data is all about communication: how can I communicate my results so that it makes the data very easy to interpret. Try these additional steps:</p>
 <ol style="list-style-type: decimal">
-<li><p>What is the z score of the right hemisphere patient when compared to the neurotypical group?</p></li>
-<li><p>What proportion of neurotypical participants score lower that this patient?</p></li>
-<li><p>Is this patient likely to belong to the population of neurotypical participants? (justify your answer)</p></li>
-<li><p>What is the z score of the left hemisphere patient when compared to the neurotypical group?</p></li>
-<li><p>What proportion of neurotypical participants score lower than this patient?</p></li>
-<li><p>Is this patient likely to belong to the population of neurotypical participants? (justify your answer)</p></li>
+<li><p>Add a <code>labs()</code> layer to modify text on the graph. If you’re not sure how to do this, then feel free to go back to the online tutorial, or take a look at the help wiht <code>?labs</code>. Try changing the axis titles and add a title for the graph.</p></li>
+<li><p>Change the theme of the graph. Try <code>?theme_classic</code> for help.</p></li>
+<li><p>Graphs can be saved by clicking <em>Export</em>, then <em>Save as image</em>. Set the dimensions to how you like it to look, give it a suitable filename, and click save.</p></li>
 </ol>
-</div>
-<div id="extra-activity" class="section level3" number="5.3.4">
-<h3><span class="header-section-number">5.3.4</span> Extra activity</h3>
-<p>Come back to this afterwards for some extra practice if you want:</p>
-<p>Q7. Tim Bizzley has measured the foot size of men and women and found each to be normally distributed. The men have a mean size of 55 with a standard deviation of 5 and the women a mean of 33 and a standard deviation of 5. Joanna Toes has foolishly measured two individuals but forgotten to note their gender. These have foot sizes of 37 and 47. To which gender is each more likely to belong? What evidence is there for this?</p>
 
-</div>
 </div>
 </div>
             </section>
@@ -318,8 +326,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="week-3-dvs-and-ivs-in-r-studio.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-6-visualising-data-and-binomial-tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-4-z-score-calculations-and-dvsivs-again.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

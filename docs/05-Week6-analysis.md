@@ -7,7 +7,7 @@ output:
 
 
 
-# Week 6: [NOT FOR CLASS TEST!] Visualising data and binomial tests
+# Week 6: Visualising data and binomial tests
 
 > Written by Tom Beesley & John Towse
 
@@ -15,13 +15,13 @@ They say a picture paints a thousand words, so in this week's lab we will be lea
 
 ## Pre-lab work: online tutorial
 
-To access the pre-lab tutorial click here: <https://ma-rconnect.lancs.ac.uk/Week_6_LabPrep/> (on campus, or VPN required)
+To access the [**pre-lab tutorial click here**](https://ma-rconnect.lancs.ac.uk/Week_6_LabPrep){target="_blank"} (on campus, or VPN required)
 
 ## RStudio Task 1: Creating a new folder and project
 
 We are going to set up a new foler for this week and an RStudio *Project*. This is a good practice for organising your scripts and data. 
 
-1. When you are logged on to the [RStudio Server](http://psy-rstudio.lancaster.ac.uk), navigate to your home directory by clicking on the small house icon:
+1. When you are logged on to the [**RStudio Server**](http://psy-rstudio.lancaster.ac.uk){target="_blank"}, navigate to your home directory by clicking on the small house icon:
 
 ![](files/Week_6/home_button.png)
 
@@ -44,9 +44,9 @@ We are going to set up a new foler for this week and an RStudio *Project*. This 
 
 ## RStudio Task 2: Visualising phone use
 
-Now that you have completed the online tutorials on `ggplot()`, it's time to put those skills into practice with a new data set, provided in "data_phone.csv". In the survey, people estimated their daily phone use, and then looked up the actual time their phones were on. 
+It's time to put the skills you learnt in the online tutorial into practice with a new data set. In the survey, people estimated their daily phone use, and then looked up the actual time their phones were on. This data is provided in the zip file. 
 
-1. Open the script "Week_6_script.R". This is the script file you will use for tasks 1 and 2
+1. Open the script "Week_6_script.R". This is the script file you will use for this task and the next one (3).
 
 2. Run the first two lines of code `library(tidyverse)` and `data <- read_csv("data_phone.csv")`
 
@@ -72,7 +72,7 @@ Now that you have completed the online tutorials on `ggplot()`, it's time to put
 
 7. Try changing your `geom_point()` command to `geom_jitter()` (keeping the mappings the same). Suddenly this reveals many more points! Why is this? Check the help to find out more about this geom: `?geom_jitter`.
 
-## Task 3: conducting a sign test
+## RStudio Task 3: Conducting a binomial test
 
 Let's now look at whether these differences we see are meaningful. Do people estimate their daily screen time to be more than it actually is? There are two blocks of code to run here. You don't have to edit these, but it's important to look at what they are doing:
 
@@ -80,15 +80,16 @@ Let's now look at whether these differences we see are meaningful. Do people est
 
 2. Run the second block of code. This filters out (!= means "not equal to") the zero values in the est_diff column. Why is this important for the sign test?
 
-3. The result of the final line of code (`count()`) will be output in the console. This tells us how many values were above 0 (TRUE) and how many below zero (FALSE). This is all the information we need to conduct the sign test:
+3. The result of the final line of code (`count()`) will be output in the console. This tells us how many values were above 0 (TRUE) and how many below zero (FALSE). This is all the information we need to conduct our statistical test:
 
+  + How many positive values were there (above 0)?. 
   + How many observations were there in total? 
-  + Use the sign test table below to determine how many values *against the majority* we would expect, according to the null hypothesis. 
-  + Is the value in our data more or less than this? 
+  + Add these two values to the two "MISSING" values in code for the binomial test
+  + Run the test and read the output - and take note of the "p-value"
+  + This tells us how likely such a result would be if the null hypothesis was true.
   + Does this mean there is a significant over or underestimate in people's estimates of phone time usage?
 
 
-![](files/Week_6/sign_test_table.png)
 ## Extra content!
 
 Visualising data is all about communication: how can I communicate my results so that it makes the data very easy to interpret. Try these additional steps:
