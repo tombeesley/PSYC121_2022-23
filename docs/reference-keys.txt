@@ -45,4 +45,4 @@ week-6-not-for-class-test-visualising-data-and-binomial-tests
 pre-lab-work-online-tutorial
 rstudio-task-1-creating-a-new-folder-and-project
 rstudio-task-2-visualising-phone-use
-lab-task-3
+task-3-conducting-a-sign-test

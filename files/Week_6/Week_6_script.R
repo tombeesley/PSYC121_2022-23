@@ -1,21 +1,21 @@
 library(tidyverse) # load the tidyverse functions
 
-# Week_6_Task_1
+# Week_6_Task_2
 
-data_phone <- read_csv("data_phone.csv") # read in the data
+data <- read_csv("data_phone.csv") # read in the data
 
 # draw a graph
-data_phone %>%
-  ggplot(aes()) + # you will need to edit this code
-  geom_point()
+data %>%
+  ggplot() + # you will need to edit this code
+  geom_point(aes(x = screen_time_actual, y = screen_time_estimate))
 
 
 
-# Week_6_Task_2 - Do people underestimate or overestimate their phone time use?
+# Week_6_Task_3 - Do people underestimate or overestimate their phone time use?
 
 # create a new column (mutate) to reflect the difference
 data_phone_diff <-
-  data_phone %>%
+  data %>%
   mutate(est_diff = screen_time_actual - screen_time_estimate)
 
 # remove the 0s and count how many positives and negatives
