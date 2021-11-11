@@ -1,10 +1,13 @@
 ---
-title: "PSYC121: Week 7 Lab"
-output: 
+title: 'PSYC121: Week 6 online tutorial'
+output:
   learnr::tutorial:
-    progressive: true
-    allow_skip: true
+    progressive: yes
+    allow_skip: yes
 runtime: shiny_prerendered
+resource_files:
+- Week_6_learnr.Rmd
+- tidy_data.RData
 ---
 
 ```{r setup, include=FALSE, exercise.startover = TRUE}
