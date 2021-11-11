@@ -23,4 +23,6 @@ data_phone_diff %>%
   filter(est_diff != 0) %>% # remove the 0s
   count(est_diff > 0) # count how many positive and negatives
 
-# now use the sign test table to decide whether people underestimated or overestimated
+# conduct a binomial test to see whether people underestimated or overestimated phone usage
+
+binom.test("MISSING","MISSING")
