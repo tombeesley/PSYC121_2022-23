@@ -1,21 +1,24 @@
 library(tidyverse) # load the tidyverse functions
 
 # Week_6_Task_2
+# this is a command to read in the data - 
+# note that this is (pretty much) the same as using the "Import Dataset" button
+data_w6 <- read_csv("data_phone.csv") # read in the data
 
-data <- read_csv("data_phone.csv") # read in the data
+# Note here that a line of code can be split across multiple lines
+# It's good practice to break the lines in logical places (e.g., after a pipe)
 
 # draw a graph
-data %>%
-  ggplot() + # you will need to edit this code
-  geom_point(aes(x = screen_time_actual, y = screen_time_estimate))
-
+data_w6 %>%
+  ggplot() + 
+  geom_point(aes()) # this is the line of code you eventually need to edit
 
 
 # Week_6_Task_3 - Do people underestimate or overestimate their phone time use?
 
 # create a new column (mutate) to reflect the difference
-data_phone_diff <-
-  data %>%
+data_phone_diff <- # note: assigning the output to a new object (data_phone_diff)
+  data_w6 %>%
   mutate(est_diff = screen_time_actual - screen_time_estimate)
 
 # remove the 0s and count how many positives and negatives

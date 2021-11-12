@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Week 6: Visualising data and binomial tests | Statistics for Psychologists</title>
   <meta name="description" content="Course content for PSYC121 and PSYC122 at Lancaster University" />
-  <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Week 6: Visualising data and binomial tests | Statistics for Psychologists" />
   <meta property="og:type" content="book" />
@@ -24,7 +24,7 @@
 <meta name="author" content="John Towse, Tom Beesley, Margriet Groen, Rob Davies" />
 
 
-<meta name="date" content="2021-11-11" />
+<meta name="date" content="2021-11-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,8 +33,8 @@
   
 <link rel="prev" href="week-4-z-score-calculations-and-dvsivs-again.html"/>
 
-<script src="libs/header-attrs-2.10/header-attrs.js"></script>
-<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="libs/header-attrs-2.6/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -242,7 +242,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="rstudio-task-1-creating-a-new-folder-and-project" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> RStudio Task 1: Creating a new folder and project</h2>
-<p>We are going to set up a new foler for this week and an RStudio <em>Project</em>. This is a good practice for organising your scripts and data.</p>
+<p>We are going to set up a new folder for this week and an RStudio <em>Project</em>. This is a good practice for organising your scripts and data.</p>
 <ol style="list-style-type: decimal">
 <li>When you are logged on to the <a href="http://psy-rstudio.lancaster.ac.uk" target="_blank"><strong>RStudio Server</strong></a>, navigate to your home directory by clicking on the small house icon:</li>
 </ol>
@@ -267,12 +267,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>It’s time to put the skills you learnt in the online tutorial into practice with a new data set. In the survey, people estimated their daily phone use, and then looked up the actual time their phones were on. This data is provided in the zip file.</p>
 <ol style="list-style-type: decimal">
 <li><p>Open the script “Week_6_script.R”. This is the script file you will use for this task and the next one (3).</p></li>
-<li><p>Run the first two lines of code <code>library(tidyverse)</code> and <code>data &lt;- read_csv("data_phone.csv")</code></p></li>
-<li><p>You should now have an object in environment called <code>data</code>. You can view this (the “spreadsheet view”) by clicking on the object.</p></li>
+<li><p>Run the first two lines of code <code>library(tidyverse)</code> and <code>data_w6 &lt;- read_csv("data_phone.csv")</code>. Note that the <code>read_csv()</code> function is another way to import data. A shortcut version of using the “Import Dataset” action.</p></li>
+<li><p>You should now have an object in environment called <code>data_w6</code>. You can view this (the “spreadsheet view”) by clicking on the object.</p></li>
 <li><p>Try running the ggplot command. You will see that this generates an error in red. Oh no!! Don’t panic. Look at what it’s telling you is wrong. Let’s look at the ggplot command and edit it to make it display something. As a reminder from the online tutorial:</p></li>
 </ol>
 <blockquote>
-<p>The main graphing command is <code>ggplot()</code> which tells R we want to draw some kind of plot. If you want to, you can just run <code>data %&gt;% ggplot()</code>, and you’ll see that R produces just a blank plot window. The plot is blank because we haven’t told it a) what type of plot we want, and b) what data to plot.</p>
+<p>The main graphing command is <code>ggplot()</code> which tells R we want to draw some kind of plot. If you want to, you can just run <code>data_w6 %&gt;% ggplot()</code>, and you’ll see that R produces just a blank plot window. The plot is blank because we haven’t told it a) what type of plot we want, and b) what data to plot.</p>
 </blockquote>
 <blockquote>
 <p>Note that the next line is <strong>added</strong> to <code>ggplot()</code> (i.e., <code>ggplot() + geom_point()</code>). Plotting with <code>ggplot()</code> involves adding elements (geoms) together. Think of it as adding layers on top of each other: the ggplot() is your pizza base, and the geoms and other features are the toppings!</p>
@@ -371,10 +371,6 @@ gitbook.start({
 "text": null
 },
 "download": ["bookdown-start.pdf", "bookdown-start.epub"],
-"search": {
-"engine": "lunr",
-"options": null
-},
 "toc": {
 "collapse": "subsection"
 }

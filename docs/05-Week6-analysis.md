@@ -19,7 +19,7 @@ To access the [**pre-lab tutorial click here**](https://ma-rconnect.lancs.ac.uk/
 
 ## RStudio Task 1: Creating a new folder and project
 
-We are going to set up a new foler for this week and an RStudio *Project*. This is a good practice for organising your scripts and data. 
+We are going to set up a new folder for this week and an RStudio *Project*. This is a good practice for organising your scripts and data. 
 
 1. When you are logged on to the [**RStudio Server**](http://psy-rstudio.lancaster.ac.uk){target="_blank"}, navigate to your home directory by clicking on the small house icon:
 
@@ -48,13 +48,13 @@ It's time to put the skills you learnt in the online tutorial into practice with
 
 1. Open the script "Week_6_script.R". This is the script file you will use for this task and the next one (3).
 
-2. Run the first two lines of code `library(tidyverse)` and `data <- read_csv("data_phone.csv")`
+2. Run the first two lines of code `library(tidyverse)` and `data_w6 <- read_csv("data_phone.csv")`. Note that the `read_csv()` function is another way to import data. A shortcut version of using the "Import Dataset" action.
 
-3. You should now have an object in environment called `data`. You can view this (the "spreadsheet view") by clicking on the object.
+3. You should now have an object in environment called `data_w6`. You can view this (the "spreadsheet view") by clicking on the object.
 
 4. Try running the ggplot command. You will see that this generates an error in red. Oh no!! Don't panic. Look at what it's telling you is wrong. Let's look at the ggplot command and edit it to make it display something. As a reminder from the online tutorial:
 
-> The main graphing command is `ggplot()` which tells R we want to draw some kind of plot. If you want to, you can just run `data %>% ggplot()`, and you'll see that R produces just a blank plot window. The plot is blank because we haven't told it a) what type of plot we want, and b) what data to plot.
+> The main graphing command is `ggplot()` which tells R we want to draw some kind of plot. If you want to, you can just run `data_w6 %>% ggplot()`, and you'll see that R produces just a blank plot window. The plot is blank because we haven't told it a) what type of plot we want, and b) what data to plot.
 
 >Note that the next line is **added** to `ggplot()` (i.e., `ggplot() + geom_point()`). Plotting with `ggplot()` involves adding elements (geoms) together. Think of it as adding layers on top of each other: the ggplot() is your pizza base, and the geoms and other features are the toppings! 
 
