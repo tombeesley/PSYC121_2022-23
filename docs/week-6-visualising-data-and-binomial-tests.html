@@ -24,7 +24,7 @@
 <meta name="author" content="John Towse, Tom Beesley, Margriet Groen, Rob Davies" />
 
 
-<meta name="date" content="2021-11-12" />
+<meta name="date" content="2021-11-15" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -288,7 +288,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <blockquote>
 <p>Careful observation of the code here will show you that these new commands are written <strong>outside</strong> of the <code>aes()</code> command. This is really important to note. We write these outside of <code>aes()</code> because these features of the plot <strong>are not related to the data</strong>. We are NOT <em>mapping</em> any of our data to these features. Instead, we are simply specifying one particular value for each of these “settings” in the plot</p>
 </blockquote>
-<ol start="6" style="list-style-type: decimal">
+<ol start="8" style="list-style-type: decimal">
 <li><p>Now map the <em>colour</em> to the variable <em>phone_type</em> (within <code>aes()</code>). Can you see any differences between people who have different phones?</p></li>
 <li><p>Try changing your <code>geom_point()</code> command to <code>geom_jitter()</code> (keeping the mappings the same). Suddenly this reveals many more points! Why is this? Check the help to find out more about this geom: <code>?geom_jitter</code>.</p></li>
 </ol>
