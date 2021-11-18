@@ -8,11 +8,25 @@ data_w6 <- read_csv("data_phone.csv") # read in the data
 # Note here that a line of code can be split across multiple lines
 # It's good practice to break the lines in logical places (e.g., after a pipe)
 
-# draw a graph
+# draw a graph Q1-7
 data_w6 %>%
   ggplot() + 
-  geom_point(aes()) # this is the line of code you eventually need to edit
+  geom_point(aes(y = screen_time_actual, x = screen_time_estimate), colour = "red") # this is the line of code you eventually need to edit
 
+
+# draw a graph Q8
+data_w6 %>%
+  ggplot() + 
+  geom_point(aes(y = screen_time_actual, 
+                 x = screen_time_estimate, 
+                 colour = phone_type)) # answer to Q8
+
+# draw a graph Q9
+data_w6 %>%
+  ggplot() + 
+  geom_jitter(aes(y = screen_time_actual, 
+                 x = screen_time_estimate, 
+                 colour = phone_type)) # answer to Q8
 
 # Week_6_Task_3 - Do people underestimate or overestimate their phone time use?
 
@@ -28,4 +42,4 @@ data_phone_diff %>%
 
 # conduct a binomial test to see whether people underestimated or overestimated phone usage
 
-binom.test("MISSING","MISSING")
+binom.test(61,99) # they can also use (38, 99) to get the same result (probabilities are symmetrical)
