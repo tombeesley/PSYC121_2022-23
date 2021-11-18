@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="week-6-visualising-data-and-binomial-tests.html"/>
-<link rel="next" href="week-7-plotting-means-and-ses.html"/>
+
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -213,16 +213,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="7" data-path="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html"><a href="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html"><i class="fa fa-check"></i><b>7</b> Week 7: [DRAFT - do not complete yet] One-sample t-test on salary estimates</a>
 <ul>
 <li class="chapter" data-level="7.1" data-path="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html"><a href="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html#pre-lab-work-online-tutorial-1"><i class="fa fa-check"></i><b>7.1</b> Pre-lab work: online tutorial</a></li>
-<li class="chapter" data-level="7.2" data-path="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html"><a href="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html#rstudio-task-1-plotting-and-filtering"><i class="fa fa-check"></i><b>7.2</b> RStudio Task 1: Plotting and filtering</a>
-<ul>
-<li class="chapter" data-level="7.2.1" data-path="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html"><a href="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html#testing-if-the-effect-is-significant"><i class="fa fa-check"></i><b>7.2.1</b> Testing if the effect is significant</a></li>
-<li class="chapter" data-level="7.2.2" data-path="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html"><a href="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html#plotting-salary-estimates-by-home-location"><i class="fa fa-check"></i><b>7.2.2</b> Plotting salary estimates by home location</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="8" data-path="week-7-plotting-means-and-ses.html"><a href="week-7-plotting-means-and-ses.html"><i class="fa fa-check"></i><b>8</b> Week 7: Plotting means and SEs</a>
-<ul>
-<li class="chapter" data-level="8.1" data-path="week-7-plotting-means-and-ses.html"><a href="week-7-plotting-means-and-ses.html#pre-lab-work-online-tutorial-2"><i class="fa fa-check"></i><b>8.1</b> Pre-lab work: online tutorial</a></li>
-<li class="chapter" data-level="8.2" data-path="week-7-plotting-means-and-ses.html"><a href="week-7-plotting-means-and-ses.html#rstudio-task-1"><i class="fa fa-check"></i><b>8.2</b> RStudio Task 1:</a></li>
+<li class="chapter" data-level="7.2" data-path="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html"><a href="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html#rstudio-task-1-plotting-and-filtering"><i class="fa fa-check"></i><b>7.2</b> RStudio Task 1: Plotting and filtering</a></li>
+<li class="chapter" data-level="7.3" data-path="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html"><a href="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html#rstudio-task-2-one-sample-t-test"><i class="fa fa-check"></i><b>7.3</b> RStudio Task 2: One-sample t-test</a></li>
+<li class="chapter" data-level="7.4" data-path="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html"><a href="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html#rstudio-task-3-density-plots-salary-estimates-by-home-location"><i class="fa fa-check"></i><b>7.4</b> RStudio Task 3: Density plots: salary estimates by home location</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -270,8 +263,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Now your filter has done its job, let’s plot the data again. Edit the <code>aes()</code> command to draw the histogram.</p></li>
 <li><p>And as you know, we can also look at the distribution as a boxplot. Edit the <code>geom_boxplot()</code> code to do this.</p></li>
 </ol>
-<div id="testing-if-the-effect-is-significant" class="section level3" number="7.2.1">
-<h3><span class="header-section-number">7.2.1</span> Testing if the effect is significant</h3>
+</div>
+<div id="rstudio-task-2-one-sample-t-test" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> RStudio Task 2: One-sample t-test</h2>
 <p>We now want to know if the salary estimates are different to the actual average salary in the UK (which is approx. £30,000).</p>
 <ol start="7" style="list-style-type: decimal">
 <li><p>First, let’s calculate the <code>mean()</code> of our salary estimates.</p></li>
@@ -279,8 +273,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ol>
 <p><img src="files/Week_7/ttable.png" /></p>
 </div>
-<div id="plotting-salary-estimates-by-home-location" class="section level3" number="7.2.2">
-<h3><span class="header-section-number">7.2.2</span> Plotting salary estimates by home location</h3>
+<div id="rstudio-task-3-density-plots-salary-estimates-by-home-location" class="section level2" number="7.4">
+<h2><span class="header-section-number">7.4</span> RStudio Task 3: Density plots: salary estimates by home location</h2>
 <ol start="9" style="list-style-type: decimal">
 <li><p>Draw density plot</p></li>
 <li><p>Map the fill aesthetic to the variable <em>home_location</em></p></li>
@@ -290,14 +284,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </div>
 </div>
-</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="week-6-visualising-data-and-binomial-tests.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-7-plotting-means-and-ses.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-6-visualising-data-and-binomial-tests.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

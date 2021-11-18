@@ -49,7 +49,7 @@ Today we will look in a bit more detail at people's estimates of the average UK 
 
 6. And as you know, we can also look at the distribution as a boxplot. Edit the `geom_boxplot()` code to do this.
 
-### Testing if the effect is significant
+## RStudio Task 2: One-sample t-test
 
 We now want to know if the salary estimates are different to the actual average salary in the UK (which is approx. £30,000). 
 
@@ -60,7 +60,7 @@ We now want to know if the salary estimates are different to the actual average 
 
 ![](files/Week_7/ttable.png)
 
-### Plotting salary estimates by home location
+## RStudio Task 3: Density plots: salary estimates by home location
 
 9. Draw density plot
 
