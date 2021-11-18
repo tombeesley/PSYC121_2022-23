@@ -5,17 +5,7 @@ output:
 ---
 
 
-```{r eval=FALSE, include=FALSE}
-library(tidyverse)
-load("tidy_data.RData")
 
-# set up the data for Task 3
-data %>% 
-  select(home_location, uk_salary) %>% 
-  write_csv("data_salary.csv")
-
-
-```
 
 # Week 7: [DRAFT - do not complete yet] One-sample t-test on salary estimates
 

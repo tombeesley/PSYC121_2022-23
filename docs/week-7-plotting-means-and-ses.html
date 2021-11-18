@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>6 Week 6: Visualising data and binomial tests | Statistics for Psychologists</title>
+  <title>8 Week 7: Plotting means and SEs | Statistics for Psychologists</title>
   <meta name="description" content="Course content for PSYC121 and PSYC122 at Lancaster University" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="6 Week 6: Visualising data and binomial tests | Statistics for Psychologists" />
+  <meta property="og:title" content="8 Week 7: Plotting means and SEs | Statistics for Psychologists" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="tombeesley/LU_PSYC121_122" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="6 Week 6: Visualising data and binomial tests | Statistics for Psychologists" />
+  <meta name="twitter:title" content="8 Week 7: Plotting means and SEs | Statistics for Psychologists" />
   
   <meta name="twitter:description" content="Course content for PSYC121 and PSYC122 at Lancaster University" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="week-4-z-score-calculations-and-dvsivs-again.html"/>
-<link rel="next" href="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html"/>
+<link rel="prev" href="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html"/>
+
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -244,93 +244,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="week-6-visualising-data-and-binomial-tests" class="section level1" number="6">
-<h1><span class="header-section-number">6</span> Week 6: Visualising data and binomial tests</h1>
+<div id="week-7-plotting-means-and-ses" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Week 7: Plotting means and SEs</h1>
 <blockquote>
 <p>Written by Tom Beesley &amp; John Towse</p>
 </blockquote>
-<p>They say a picture paints a thousand words, so in this week’s lab we will be learning some fundamental skills in <strong>data visualisation</strong> with the <code>ggplot()</code> commands. We will then conduct our first statisitical test to tell whether there is a <em>real difference</em> in our data. You must ensure you have watched the lecture and done the pre-lab work before coming to class.</p>
-<div id="pre-lab-work-online-tutorial" class="section level2" number="6.1">
-<h2><span class="header-section-number">6.1</span> Pre-lab work: online tutorial</h2>
-<p>To access the <a href="https://ma-rconnect.lancs.ac.uk/Week_6_LabPrep" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
-</div>
-<div id="rstudio-task-1-creating-a-new-folder-and-project" class="section level2" number="6.2">
-<h2><span class="header-section-number">6.2</span> RStudio Task 1: Creating a new folder and project</h2>
-<p>We are going to set up a new folder for this week and an RStudio <em>Project</em>. This is a good practice for organising your scripts and data.</p>
+<p>Today we will continue to develop our skills in <strong>data visualisation</strong> with the <code>ggplot()</code> commands. We will look at plotting means and standard errors, and at how geoms can share aesthetic mappings. We will explore our data on the famous “Stroop Task” and calculate</p>
+<div id="pre-lab-work-online-tutorial-2" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Pre-lab work: online tutorial</h2>
+<p><strong>Online tutorial</strong>: To access the <a href="https://ma-rconnect.lancs.ac.uk/Week_7_LabPrep" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
+<p><strong>Getting ready for the lab class</strong></p>
 <ol style="list-style-type: decimal">
-<li>When you are logged on to the <a href="http://psy-rstudio.lancaster.ac.uk" target="_blank"><strong>RStudio Server</strong></a>, navigate to your home directory by clicking on the small house icon:</li>
-</ol>
-<p><img src="files/Week_6/home_button.png" /></p>
-<ol start="2" style="list-style-type: decimal">
-<li><p>Click the “New Folder” button just above the home button. Name the folder something sensible (e.g., Week_6) and click OK.</p></li>
-<li><p>Click on this folder and then click “More” and “Set As Working Directory”. This tells RStudio that you are now working in this directory. When you read in data using <code>read.csv</code> it will know where to look for the file name that you provide.</p></li>
-</ol>
-<p><img src="files/Week_6/working_dir.png" /></p>
-<ol start="4" style="list-style-type: decimal">
-<li><p>Let’s add the files we need for this week. Download the <a href="files/Week_6/Week_6.zip">Week_6.zip</a> and upload it into RStudio Server. If you need them, <a href="week-2-descriptive-statistics-in-r-studio.html#uploading_zip">here are the key instructions</a> from Week 2.</p></li>
-<li><p>Now let’s finish this process by making this a <em>Project</em>. Click on the small blue icon in the top right of RStudio, and clicking “New Project”:</p></li>
-</ol>
-<p><img src="files/Week_6/new_project.png" /></p>
-<ol start="6" style="list-style-type: decimal">
-<li><p>You may be asked to save the workspace or data - you should do this. Then select “Existing Directory” and make sure that the new directory you have created is selected as the “Project Working Directory” - it should be, if you set the working directory correctly above. If not, navigate to the correct directory here.</p></li>
-<li><p>And you’re done! This should now appear as a project in your front page on RStudio. You can get back to that front page by clicking the red power button in the top right corner. Using projects has many benefits. It will keep all the content for the week in one place, and save the commands you’ve used in the console. You can also use the <em>Project Menu</em> to navigate quickly between different projects.</p></li>
+<li><p>Create a folder and a Project for Week 7. <a href="#creating_project">Click here for the instructions</a> from last week if you are unsure.</p></li>
+<li><p>Download the <a href="files/Week_7/Week_7.zip">Week_7.zip</a> and upload it into this new folder in RStudio Server. If you need them, <a href="week-2-descriptive-statistics-in-r-studio.html#uploading_zip">here are the instructions</a> from Week 2.</p></li>
 </ol>
 </div>
-<div id="rstudio-task-2-visualising-phone-use" class="section level2" number="6.3">
-<h2><span class="header-section-number">6.3</span> RStudio Task 2: Visualising phone use</h2>
-<p>It’s time to put the skills you learnt in the online tutorial into practice with a new data set. In the survey, people estimated their daily phone use, and then looked up the actual time their phones were on. This data is provided in the zip file.</p>
+<div id="rstudio-task-1" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> RStudio Task 1:</h2>
+<p>The “Stroop Effect” is a classic demonstration of automaticity of behaviour. Participants have to say the colour a word is printed in, which is an easy task for a “compatible” stimulus like , and a much more difficult task for an “incompatible” stimulus like . We can’t help but read the text - it has seemingly become an automatic process.</p>
+<p><img src="files/Week_7/stroop.png" /></p>
+<p>In this task we will calculate the means and standard errors of the means. We will then plot them using ggplot().</p>
 <ol style="list-style-type: decimal">
-<li><p>Open the script “Week_6_script.R”. This is the script file you will use for this task and the next one (3).</p></li>
-<li><p>Run the first two lines of code <code>library(tidyverse)</code> and <code>data_w6 &lt;- read_csv("data_phone.csv")</code>. Note that the <code>read_csv()</code> function is another way to import data. A shortcut version of using the “Import Dataset” action.</p></li>
-<li><p>You should now have an object in environment called <code>data_w6</code>. You can view this (the “spreadsheet view”) by clicking on the object.</p></li>
-<li><p>Try running the ggplot command. You will see that this generates an error in red. Oh no!! Don’t panic. Look at what it’s telling you is wrong. Let’s look at the ggplot command and edit it to make it display something. As a reminder from the online tutorial:</p></li>
-</ol>
-<blockquote>
-<p>The main graphing command is <code>ggplot()</code> which tells R we want to draw some kind of plot. If you want to, you can just run <code>data_w6 %&gt;% ggplot()</code>, and you’ll see that R produces just a blank plot window. The plot is blank because we haven’t told it a) what type of plot we want, and b) what data to plot.</p>
-</blockquote>
-<blockquote>
-<p>Note that the next line is <strong>added</strong> to <code>ggplot()</code> (i.e., <code>ggplot() + geom_point()</code>). Plotting with <code>ggplot()</code> involves adding elements (geoms) together. Think of it as adding layers on top of each other: the ggplot() is your pizza base, and the geoms and other features are the toppings!</p>
-</blockquote>
-<blockquote>
-<p>Within the <code>geom_point()</code> command we have the very important command of <code>aes()</code>. This stands for <strong>aesthetics</strong>. <code>aes()</code> tells ggplot how the data should be represented on the features of the plot.</p>
-</blockquote>
-<ol start="5" style="list-style-type: decimal">
-<li><p>Add y and x components inside the <code>aes()</code> command. These are used to map variables in your data to the features of the graph. If you are stuck on this, it’s time to go back and look at the</p></li>
-<li><p>Inside the <code>aes()</code> command, map the variable <em>screen_time_estimate</em> to the x axis, and the variable <em>screen_time_actual</em> to the y axis. In general, does it look like people’s estimates were accurate?</p></li>
-<li><p>Add a setting for <em>colour</em> outside of the <code>aes()</code>, to make all the points red. Why outside of <code>aes()</code>? Well remember from the online tutorial:</p></li>
-</ol>
-<blockquote>
-<p>Careful observation of the code here will show you that these new commands are written <strong>outside</strong> of the <code>aes()</code> command. This is really important to note. We write these outside of <code>aes()</code> because these features of the plot <strong>are not related to the data</strong>. We are NOT <em>mapping</em> any of our data to these features. Instead, we are simply specifying one particular value for each of these “settings” in the plot</p>
-</blockquote>
-<ol start="8" style="list-style-type: decimal">
-<li><p>Now map the <em>colour</em> to the variable <em>phone_type</em> (within <code>aes()</code>). Can you see any differences between people who have different phones?</p></li>
-<li><p>Try changing your <code>geom_point()</code> command to <code>geom_jitter()</code> (keeping the mappings the same). Suddenly this reveals many more points! Why is this? Check the help to find out more about this geom: <code>?geom_jitter</code>.</p></li>
-</ol>
-</div>
-<div id="rstudio-task-3-conducting-a-binomial-test" class="section level2" number="6.4">
-<h2><span class="header-section-number">6.4</span> RStudio Task 3: Conducting a binomial test</h2>
-<p>Let’s now look at whether these differences we see are meaningful. Do people estimate their daily screen time to be more than it actually is? There are two blocks of code to run here. You don’t have to edit these, but it’s important to look at what they are doing:</p>
-<ol style="list-style-type: decimal">
-<li><p>Run the first block of code. This adds a new column to the data, <em>est_diff</em>, which means the “estimate difference”: actual screen time minus estimated screen time. You can take a look at this code by clicking on the new object in the environment, <em>data_phone_diff</em>. What do the positive and negative values reflect?</p></li>
-<li><p>Run the second block of code. This filters out (!= means “not equal to”) the zero values in the est_diff column. Why is this important for the sign test?</p></li>
-<li><p>The result of the final line of code (<code>count()</code>) will be output in the console. This tells us how many values were above 0 (TRUE) and how many below zero (FALSE). This is all the information we need to conduct our statistical test:</p></li>
-</ol>
-<ul>
-<li>How many positive values were there (above 0)?.</li>
-<li>How many observations were there in total?</li>
-<li>Add these two values to the two “MISSING” values in code for the binomial test</li>
-<li>Run the test and read the output - and take note of the “p-value”</li>
-<li>This tells us how likely such a result would be if the null hypothesis was true.</li>
-<li>Does this mean there is a significant over or underestimate in people’s estimates of phone time usage?</li>
-</ul>
-</div>
-<div id="extra-content-2" class="section level2" number="6.5">
-<h2><span class="header-section-number">6.5</span> Extra content!</h2>
-<p>Visualising data is all about communication: how can I communicate my results so that it makes the data very easy to interpret. Try these additional steps:</p>
-<ol style="list-style-type: decimal">
-<li><p>Add a <code>labs()</code> layer to modify text on the graph. If you’re not sure how to do this, then feel free to go back to the online tutorial, or take a look at the help wiht <code>?labs</code>. Try changing the axis titles and add a title for the graph.</p></li>
-<li><p>Change the theme of the graph. Try <code>?theme_classic</code> for help.</p></li>
-<li><p>Graphs can be saved by clicking <em>Export</em>, then <em>Save as image</em>. Set the dimensions to how you like it to look, give it a suitable filename, and click save.</p></li>
+<li><p>Open the script “Week_7_Tasks.R” (if you’ve missed them, see the pre-lab steps above). <strong>Important!</strong> Use this script to complete the task. You should edit this as you go through the tasks, add comments to the code (#) and save this as a record of your completed lab work</p></li>
+<li><p>Run the first two lines of code <code>library(tidyverse)</code> and <code>data &lt;- read_csv("data_stroop.csv")</code></p></li>
+<li><p>View the data with <code>view(data)</code>. You will see that the data are a little different from the data we have worked with previously. We have an ID variable, which gives a unique number for each person. Each person has 3 rows. This is because the different conditions of the stroop task is a <em>within-subjects</em> variable. For data like this it is often useful to have them arranged in what is referred to as “long format”, with multiple rows for each response the participant provided. For the current data that means we have a variable called <em>stroop_condition</em>, which is our IV, and one called <em>stroop_time</em> which is our DV.</p></li>
+<li><p>Return to the Week_8_Tasks.R script. You will see we have provided you with the “scaffold” of a complete analysis process for the Stroop data. The raw data will be grouped and then summarised as means and SEs, and then plotted with columns and error bars. This is very similar to the commands used at the end of the learnr tutorial, and you can refer to that analysis if you get stuck here. <strong>Your job is to carefully work through the code and fill in the parts that are marked MISSING</strong>. By the end, you should have a graph with 3 columns, with the standard error of the means plotted on top.</p></li>
+<li><p>Add a <code>labs()</code> layer to the plot to change the axis titles, and the title of the plot.</p></li>
+<li><p>Change the theme of the plot</p></li>
+<li><p>Map the fill aesthetic to the variable <em>stroop_condition</em></p></li>
+<li><p>Manually change the colours of the columns with (e.g.) <code>scale_fill_manual(values = c("darkgreen", "darkblue", "darkred"))</code>. Open the RColor.pdf in the Week 8 files for more colours than you’ll probably ever want!</p></li>
+<li><p>Click Export-&gt;Save as Image. Then show it off to the world (i.e., the Teams channel)</p></li>
 </ol>
 
 </div>
@@ -340,8 +283,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="week-4-z-score-calculations-and-dvsivs-again.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-7-draft-do-not-complete-yet-one-sample-t-test-on-salary-estimates.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

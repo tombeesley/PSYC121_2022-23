@@ -1,212 +1,256 @@
 ---
-title: 'PSYC121: Week 8 Lab'
+title: 'PSYC121: Week 7 Lab'
 output:
   learnr::tutorial:
     progressive: yes
     allow_skip: yes
 runtime: shiny_prerendered
 resource_files:
+- Week_7_learnr.Rmd
 - tidy_data.RData
 - Week_7_learnr.Rmd
+- tidy_data.RData
+- Week_7_learnr.Rmd
+- tidy_data.RData
 ---
 
 ```{r setup, include=FALSE, exercise.startover = TRUE}
 library(tidyverse)
 library(learnr)
-
 load("tidy_data.RData")
 
-data <- data %>%
-  select(home_location, maths_skills, countries_visited) %>%
-  mutate(maths_skills = case_when(str_detect(maths_skills, "Well above") ~ "above",
-                                  str_detect(maths_skills, "little above") ~ "above",
-                                  maths_skills == "Average" ~ "average",
-                                  str_detect(maths_skills, "little below") ~ "below",
-                                  str_detect(maths_skills, "Well below") ~ "below")) %>% 
-  filter(countries_visited > 0) %>% 
-  filter(home_location %in% c("UK", "Asia", "Europe (not UK)"))
+data <- 
+  data %>%
+  select(starts_with("GAD"),
+         maths_qual = maths_qualification, maths_skills) %>%
+  mutate(across(GAD_q1:GAD_q6,
+                ~as.numeric(recode(.,
+                        "Not at all" = "0", 
+                        "Several days" = "1", 
+                        "More than half the days" = "2", 
+                        "Nearly every day" = "3",
+                        "Prefer not to say" = "NA")))) %>% 
+  drop_na()
+
+data_GAD <- 
+  data %>% 
+  select(starts_with("GAD"))
+
+data_maths <- # the result of this process will overwrite the object data_GAD
+  data %>% 
+  mutate(GAD_total = rowSums(across(GAD_q1:GAD_q6)), .after = GAD_q6,
+         maths_qual = recode(maths_qual,
+                             "A-Level Grade A* / A" = "ALevel_A",
+                             "A-Level Grade B / C" = "ALevel_BC",
+                             "A-Level Grade D / E" = "ALevel_DE",
+                             "AS-Level" = "AS-Level",
+                             "GCSE grade A-C" = "GSCE",
+                             "Other (not listed)" = "Other"),
+         maths_skills = recode(maths_skills,
+                               "Well above average" = "well_above",
+                               "A little above the average" = "above",
+                               "Average" = "average",
+                               "A little below average" = "below",
+                               "Well below average" = "well_below"))
+
 
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ## Exploring the data
 
-For this week's online tutorial we have loaded in a new selection of the data (which we've stored as `data`) from the PSYC121 questionnaire. Let's take a look at the data we have using the `summary()` function. 
+For this week's online tutorial we have data on the self-administred *Generalised Anxiety Disorder (GAD)* Questionnaire.  There were 6 items (questions) in our version of the GAD:
 
-```{r summary_example, exercise=TRUE}
+- Feeling nervous, anxious or on edge?	(q1)
+- Not being able to stop or control worrying?	(q2)
+- Worrying too much about different things?	(q3)
+- Trouble relaxing?	(q4)
+- Being so restless that it is hard to sit still?	(q5)
+- Becoming easily annoyed or irritable? (q6)
 
-summary(data)
+For each item, you had to consider: Over the last 2 weeks, how often have you been bothered
+by any of the following problems? You had a choice of these 5 responses:
 
-```
+- "Not at all" (0)
+- "Several days" (1)
+- "More than half the days" (2)
+- "Nearly every day" (3)
+- "Prefer not to say" (removed)
 
-###
+We have removed "Prefer not to say" responses, and we have scored the other responses numerically according to the numbers in brackets. More anxiety relates to higher values. 
 
-You can see that we have 3 variables (columns) in our data. The first 2 are "character" variables, which reflect nominal (or "categorical") data. The 3rd is numerical, and here we see interesting summary statistics. 
+Let's take a look at a sample of the scores:
 
-Use the count function to see the different levels of the home_location and maths_skills variables:
+```{r head_example, exercise=TRUE}
 
-```{r count_example, exercise=TRUE}
-
-```
-
-```{r count_example-hint}
-
-count(data,)
-
-
-```
-
-Note that we have removed participants from outside these 3 *home_location* regions, as there were too few people in those regions to compute certain statistics.
-
-## Visualise the data
-
-Last week you learnt about the ggplot() commands. The code in the next box will create a dotplot of the *countries_visited* variable on the y-axis, separating the data by the *maths_skills* variable on the x-axis. You'll see there are lots of additional parameters, and each one has a comment (use # to add comments to your code!) next to it to explain the purpose.
-
-```{r dotplot, exercise=TRUE}
-
-data %>% 
-  ggplot(aes(y = countries_visited, x = maths_skills)) +
-  geom_dotplot(binaxis = "y", # dots grouped according to variable mapped to y
-               binwidth = 1, # how many values do we want grouped (binned) together
-               stackdir = "center", # centre alignment of the dots
-               dotsize = .5, # sizing parameter
-               fill = "blue") # fill colour
+head(data_GAD) # head gives the top 6 rows by default
 
 ```
 
-### Global aes()
+Change `head()` to `summary()` to see the descriptive stats for these columns. Which items recieved the highest and lowest ratings, on average?
 
-If you read the code above carefully, then you will have seen that it's a little different to the format we used last week. Here the `aes()` command - which maps the variables in the data to the features of the plot - has been placed within the main `ggplot()` command. 
+If you're feeling confident, try plotting two of the GAD items (e.g., q1 vs q2) against each other using `geom_jitter` (`jitter()` is a good choice here, because we've got lots of overlapping scores). Do the ratings on these items "correlate"? That is, do people with higher ratings on one item tend to have higher ratings on another?
 
-Why might we do this? Well for this figure it works either way - you can place the `aes()` command in `geom_dotplot()` or `ggplot()` and get the same result. Feel free to try this for yourself if you like. But using the `aes()` within the main `ggplot()` ensures that those mappings will be applied across all of the geoms in the plot. Let's try this ourselves by running the code below:
+```{r plot_GAD, exercise=TRUE}
 
-```{r global_aes, exercise=TRUE}
-
-data %>% 
-  ggplot(aes(y = countries_visited, x = maths_skills)) +
-  geom_violin() +
-  geom_dotplot(binaxis = "y", # dots grouped according to variable mapped to y
-               binwidth = 1, # how many values do we want grouped (binned) together
-               stackdir = "center", # centre alignment of the dots
-               dotsize = .5, # sizing parameter
-               fill = "blue") # fill colour
+data_GAD %>% 
+  ggplot() +
+  geom_jitter(aes(),
+              width = .25) # width is used to control about of "jitter"
 
 ```
-###
 
-We have added a **violin plot** with `geom_violin()`. This is another way to present distributional data, and gives a sense of the shape of the distribution with its curves. Note that the violin plots were drawn first, and the dotplot on top. The dots would be hidden if it was the other way around.
+```{r plot_GAD-solution}
 
-## Plotting means and standard errors
-
-In previous weeks you have used the `group_by()` and `summarise()` commands to calculate some mean values within your data, as a function of other variables. For example, we can do that here for the mean countries traveled by the home location of the respondent:
-
-```{r group_mean_sd, exercise = TRUE}
-
-data %>% 
-  group_by(home_location) %>% 
-  summarise(mean_travel = mean(countries_visited))
+data_GAD %>% 
+  ggplot() +
+  geom_jitter(aes(x = GAD_q1, y = GAD_q2),
+              width = .25) # width is used to control about of "jitter"
 
 
 ```
 
-In the next code box, add in a second line to the summarise command that calculates the standard deviation (`sd()`) of the data. If you get really stuck here, try pressing the hint button.
+## "Mutating" new variables  
 
-```{r group_sd, exercise = TRUE}
+While these individual items in teh GAD are interesting, we will also want to know someone's total level of self-assessed anxiety. We can do that by adding up all the items on the scale to give a total. That's very easy to do with the function `mutate()`. As the name suggests, `mutate()` is used to create something new from something old. Here's how we would use `mutate()` to create a total rating on the GAD:
 
-data %>% 
-  group_by(home_location) %>% 
-  summarise(mean_travel = mean(countries_visited))
+```{r mutate_example, exercise=TRUE}
 
-
-```
-
-```{r group_sd-hint}
-
-data %>% 
-  group_by(home_location) %>% 
-  summarise(mean_travel = mean(countries_visited),
-            sd_travel = )
-
+data_GAD %>% 
+  mutate(GAD_total = GAD_q1 + GAD_q2 + GAD_q3 + GAD_q4 + GAD_q5 + GAD_q6)
 
 ```
 
-```{r group_sd-solution}
+OK! That's a lot of adding up! In fact, it will be no surprise to you that there is another way to do this type of thing in R. Here's another way that has a bit more code, but is much more useful (especially if you have, say, 25 columns to add up!):
 
-data %>% 
-  group_by(home_location) %>% 
-  summarise(mean_travel = mean(countries_visited),
-            sd_travel = sd(countries_visited))
+```{r mutate_example_2, exercise=TRUE}
 
-
-```
-
-### From SDs to SEs
-
-We've also seen in the lectures that when we make inferences about differences between means, then it is important to estimate the variability in the sampling of the mean. We call this the **standard error**, and when we plot means it is very common to also plot the standard error of the mean (**SEM**). 
-
-SE is calculated as the standard deviation divided by the square root of N. Here is an example of calculating this in the summarise command: 
-
-```{r se_example, exercise = TRUE}
-
-data %>% 
-  group_by(home_location) %>% 
-  summarise(mean_travel = mean(countries_visited),
-            se_travel = sd(countries_visited)/sqrt(n())) 
-
-# n() is simply how many rows of data there are for this selection
-
+data_GAD %>% 
+  mutate(GAD_total = rowSums(across(GAD_q1:GAD_q6))) # sum the row, across the columns q1 to q6
 
 ```
 
-### Pipe it to ggplot()
+The main thing to undestand here is that `mutate()` is what we use to **create a new column**.
 
-The results of this summary can now be graphed, by sending the results (`%>%`) into the ggplot command. Read through the code below carefully, then click Run to plot these means and standard errors in a graph:
+One problem with the last bit of code is that we didn't actually do anything with the new version of data_GAD. That is, we didn't tell R to update data_GAD. To do that, we need to use the assignment operator: **<-**. 
 
-```{r plot_se, exercise = TRUE}
+Consider the following code:
 
-data %>% 
-  group_by(home_location) %>% 
-  summarise(mean_travel = mean(countries_visited),
-            se_travel = sd(countries_visited)/sqrt(n())) %>% # This line and those above are the same as the previous code chunk
-  ggplot(aes(y = mean_travel, x = home_location)) + # Adding a ggplot (graph)
-  geom_col() + # columns
-  geom_errorbar(aes(ymin = mean_travel - se_travel, # the minimum value for the error bar
-                    ymax = mean_travel + se_travel), # the maximum value for the error bar
-                width = .2) # how wide we want the error bar - feel free to change this.
+```{r assignment_example, echo=TRUE}
 
+a <- 1 # set value of a to 1
+
+a + 1 # add 1 to a
+
+a # what is the value of a?
 
 ```
 
-```{r plot_se-solution}
+The value of *a* doesn't change here, because we haven't told R we want to update *a*. It was the same with our mutate function. Let's run it again, but this time update data_GAD:
 
-data %>% 
-  group_by(home_location) %>% 
-  summarise(mean_travel = mean(countries_visited),
-            se_travel = sd(countries_visited)/sqrt(n())) %>% 
-  ggplot(aes(y = mean_travel, x = home_location, colour = home_location, fill = home_location)) +
-  geom_col() +
-  geom_errorbar(aes(ymin = mean_travel - se_travel, # the minimum value for the error bar
-                    ymax = mean_travel + se_travel), # the maximum value for the error bar
-                width = .2) # how wide we want the error bar - feel free to change this.
+```{r mutate_example_3, exercise=TRUE}
 
+data_GAD <- # the result of this process will overwrite the object data_GAD
+  data_GAD %>% 
+  mutate(GAD_total = rowSums(across(GAD_q1:GAD_q6))) # sum the row, across the columns q1 to q6
+
+data_GAD # read out the contents to check it did add the new column
 
 ```
 
-Note how we have placed the y and x mappings into the `ggplot(aes())` here, so that they are shared by the columns (`geom_col`) and the error bars (`geom_errorbar`). 
 
-The graph is very grey and boring! Within `ggplot()`, try to mapping the *home_location* variable to *fill* as well as *x*. Now try mapping it to *colour* instead of, or in addition to, *fill*. Note how the *fill* feature is applied to only the columns, but the *colour* feature applies to both the columns and the error bars. There is a solution available if you get stuck.
+## Filtering data 
 
-There's lots of things you can change in graphs. Try playing around with some of the fixed settings (i.e., outside of `aes()`). Here are some suggestions. What can you come up with?
+Quite often in our data analysis we will want to filter our data to select or remove some of the rows we are working with. To do this, we can use the `filter()` command.
 
-- geom_col(alpha = .3, fill = "orange")
-- geom_col(linetype = 4, fill = "white")
-- geom_col(linetype = 6, size = 2)
-- try the linetype, alpha and size settings in the `geom_errorbar()` geom. Put them outside of `aes()`
+To use `filter()`, we simply specify the data first, and then we need to use an *expression* to state how we want the data to be filtered. Let's look at a new data set, *data_maths*, which we can use for this exercise in filtering:
+
+```{r head_maths, exercise = TRUE}
+
+head(data_maths)
+
+```
+
+You can see that we have our GAD ratings, GAD_total, as well as people's highest maths qualification and their own rating of their maths skills.
+
+Let's first take a look at the distribution of the GAD_total ratings using a boxplot: 
+
+```{r plot_maths, exercise = TRUE}
+
+data_maths %>% 
+  ggplot() +
+  geom_boxplot(aes(y = GAD_total))
+
+```
+
+What if we want to only look at this for people who rate their maths skills as *well_below* the average? Are these people ratings themselves as having greater anxiety?
+
+```{r filter_maths, exercise = TRUE}
+
+data_maths %>%
+  filter(maths_skills == "well_below") %>% # we've added a filter here
+  ggplot() +
+  geom_boxplot(aes(y = GAD_total))
+
+```
+
+### Common expressions
+
+The following table gives some examples of very common expressions used in filtering data:
+
+```{r}
+tibble(Operator = c("==", 
+                    "<", 
+                    ">", 
+                    "!=", 
+                    "&",
+                    "|"),
+       Meaning = c("is the same as",
+                   "is less than",
+                   "is greater than", 
+                   "is not equal to",
+                   "and",
+                   "or"),
+       Example = c("filter(data_maths, maths_skills=='average')",
+                   "filter(data_maths, GAD_total<10)",
+                   "filter(data_maths, GAD_q1>2)",
+                   "filter(data_maths, maths_qual != 'GCSE')",
+                   "filter(data_maths, maths_qual=='ALevel_A & GAD_total > 15)",
+                   "filter(data_maths, GAD_q1>1 | GAD_q2>1)"))
+```
+
+It's particularly important to note the difference between "==" and "=" in R. "=" is used as an assignment operator - you've used it several times already inside functions (e.g., `na.rm = TRUE`, `colour = home_location`). You can think of "=" as meaning "set this to". In contrast the double equals operator, "==", asks a question: "is this thing the same as this other thing?" In the above example, `maths_skills == "well_below"`, it looks for all rows in the data where *maths_skills* is equal to the value "well_above". In programming terms, the expression returns a *boolean value*, which reports whether the statement is TRUE or FALSE (and when used in the filter, it finds all rows where it is TRUE). You can see this in the results of the following "conditional expressions":
+
+```{r binary_test, exercise = TRUE}
+2 == 3
+"blah" == "blah"
+"blah" == "BLAH"
+"John" == "rock star"
+mean(c(3,4,5,6)) == 4.5
+TRUE == FALSE # this is getting pretty meta...
+
+```
+
+### Practice filtering
+
+Practice writing your own filter commands in the box below. Try to filter the data to match the following queries:
+
+1. Data for those people whose *GAD_total* is 3 or under.
+2. Data for those people who rate their *maths_skills* to be "average" **and** have a *maths_qual* of "ALevel_A".
+
+*Feel free to check your answers with staff in your lab class*
+
+```{r filter_play, exercise = TRUE}
+data_maths %>% 
+  filter() # edit this code to perform various filters
+```
+
+##
 
 
 ### End of tutorial
 
-This is now the end of the online tutorial `ggplot`. Please return to the tasks in the lab worksheet.
+This is now the end of the online tutorial on `filter()` and `mutate()`. 
 
 
 

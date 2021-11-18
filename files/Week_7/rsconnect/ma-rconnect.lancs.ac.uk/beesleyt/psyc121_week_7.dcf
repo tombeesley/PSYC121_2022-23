@@ -4,11 +4,10 @@ username: beesleyt
 account: beesleyt
 server: ma-rconnect.lancs.ac.uk
 hostUrl: https://ma-rconnect.lancs.ac.uk/__api__
-appId: 21
-bundleId: 51
-url: https://ma-rconnect.lancs.ac.uk/content/7d41a107-455a-49ed-932a-80c509f7255a/
-when: 1637240742.75885
-lastSyncTime: 1637240742.75885
+appId: 24
+bundleId: 55
+url: https://ma-rconnect.lancs.ac.uk/content/332d3426-e594-4dbf-bd3f-b9f1617137bc/
+when: 1637272841.51391
 asMultiple: FALSE
 asStatic: FALSE
-ignoredFiles: .RData|_bookdown.yml|_output.yml|01-Week1-analysis.Rmd|02-Week2-analysis.Rmd|03-Week3-analysis.Rmd|04-Week4-analysis.Rmd|05-Week6-analysis.Rmd|book.bib|bookdown-start.rds|index.Rmd|preamble.tex|README.md|style.css
+ignoredFiles: .RData|_bookdown.yml|_output.yml|01-Week1-analysis.Rmd|02-Week2-analysis.Rmd|03-Week3-analysis.Rmd|04-Week4-analysis.Rmd|05-Week6-analysis.Rmd|06-Week7-analysis.Rmd|book.bib|bookdown-start.rds|index.Rmd|preamble.tex|README.md|style.css|Week8-analysis.Rmd
