@@ -33,7 +33,7 @@ Today we will look in a bit more detail at people's estimates of the average UK 
 
 3. OK - we've got some pretty funky values here! Some people think the average salary is £500,000!!! Well, maybe they just added too many zeros (let's give them the benefit of the doubt). Run the `arrange()` code to see what those high values are.
 
-4. We'll need to remove these high values to get a better sense of the distribution. Let's use a `filter()` command to do this. Edit the `filter()` command to keep only those estimates that are below £200,000. Note that you are making a new object at this step (*data_w7_f*).
+4. We'll need to remove these high values to get a better sense of the distribution. Let's use a `filter()` command to do this. Edit the `filter()` command to keep only those estimates that are below £200,000. Note that you are making a new object at this step: *data_w7_f*.
 
 5. Now your filter has done its job, let's plot the data again. Edit the `aes()` command to draw the histogram.
 

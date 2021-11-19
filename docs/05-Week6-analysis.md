@@ -17,7 +17,7 @@ They say a picture paints a thousand words, so in this week's lab we will be lea
 
 To access the [**pre-lab tutorial click here**](https://ma-rconnect.lancs.ac.uk/Week_6_LabPrep){target="_blank"} (on campus, or VPN required)
 
-## RStudio Task 1: Creating a new folder and project
+## RStudio Task 1: Creating a new folder and project {#creating_project}
 
 We are going to set up a new folder for this week and an RStudio *Project*. This is a good practice for organising your scripts and data. 
 

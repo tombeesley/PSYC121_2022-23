@@ -24,7 +24,7 @@
 <meta name="author" content="John Towse, Tom Beesley, Margriet Groen, Rob Davies" />
 
 
-<meta name="date" content="2021-11-18" />
+<meta name="date" content="2021-11-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -205,7 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="week-6-visualising-data-and-binomial-tests.html"><a href="week-6-visualising-data-and-binomial-tests.html"><i class="fa fa-check"></i><b>6</b> Week 6: Visualising data and binomial tests</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="week-6-visualising-data-and-binomial-tests.html"><a href="week-6-visualising-data-and-binomial-tests.html#pre-lab-work-online-tutorial"><i class="fa fa-check"></i><b>6.1</b> Pre-lab work: online tutorial</a></li>
-<li class="chapter" data-level="6.2" data-path="week-6-visualising-data-and-binomial-tests.html"><a href="week-6-visualising-data-and-binomial-tests.html#rstudio-task-1-creating-a-new-folder-and-project"><i class="fa fa-check"></i><b>6.2</b> RStudio Task 1: Creating a new folder and project</a></li>
+<li class="chapter" data-level="6.2" data-path="week-6-visualising-data-and-binomial-tests.html"><a href="week-6-visualising-data-and-binomial-tests.html#creating_project"><i class="fa fa-check"></i><b>6.2</b> RStudio Task 1: Creating a new folder and project</a></li>
 <li class="chapter" data-level="6.3" data-path="week-6-visualising-data-and-binomial-tests.html"><a href="week-6-visualising-data-and-binomial-tests.html#rstudio-task-2-visualising-phone-use"><i class="fa fa-check"></i><b>6.3</b> RStudio Task 2: Visualising phone use</a></li>
 <li class="chapter" data-level="6.4" data-path="week-6-visualising-data-and-binomial-tests.html"><a href="week-6-visualising-data-and-binomial-tests.html#rstudio-task-3-conducting-a-binomial-test"><i class="fa fa-check"></i><b>6.4</b> RStudio Task 3: Conducting a binomial test</a></li>
 <li class="chapter" data-level="6.5" data-path="week-6-visualising-data-and-binomial-tests.html"><a href="week-6-visualising-data-and-binomial-tests.html#extra-content-2"><i class="fa fa-check"></i><b>6.5</b> Extra content!</a></li>
@@ -248,7 +248,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><strong>Online tutorial</strong>: To access the <a href="https://ma-rconnect.lancs.ac.uk/Week_7_LabPrep" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
 <p><strong>Getting ready for the lab class</strong></p>
 <ol style="list-style-type: decimal">
-<li><p>Create a folder and a Project for Week 7. <a href="#creating_project">Click here for the instructions</a> from last week if you are unsure.</p></li>
+<li><p>Create a folder and a Project for Week 7. <a href="week-6-visualising-data-and-binomial-tests.html#creating_project">Click here for the instructions</a> from last week if you are unsure.</p></li>
 <li><p>Download the <a href="files/Week_7/Week_7.zip">Week_7.zip</a> and upload it into this new folder in RStudio Server. If you need them, <a href="week-2-descriptive-statistics-in-r-studio.html#uploading_zip">here are the instructions</a> from Week 2.</p></li>
 </ol>
 </div>
@@ -259,7 +259,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Open the Week_7_script and run the <code>library</code> and <code>read_csv</code> commands</p></li>
 <li><p>Complete the <code>geom_histogram()</code> code to plot the distribution of salary data</p></li>
 <li><p>OK - we’ve got some pretty funky values here! Some people think the average salary is £500,000!!! Well, maybe they just added too many zeros (let’s give them the benefit of the doubt). Run the <code>arrange()</code> code to see what those high values are.</p></li>
-<li><p>We’ll need to remove these high values to get a better sense of the distribution. Let’s use a <code>filter()</code> command to do this. Edit the <code>filter()</code> command to keep only those estimates that are below £200,000. Note that you are making a new object at this step (<em>data_w7_f</em>).</p></li>
+<li><p>We’ll need to remove these high values to get a better sense of the distribution. Let’s use a <code>filter()</code> command to do this. Edit the <code>filter()</code> command to keep only those estimates that are below £200,000. Note that you are making a new object at this step: <em>data_w7_f</em>.</p></li>
 <li><p>Now your filter has done its job, let’s plot the data again. Edit the <code>aes()</code> command to draw the histogram.</p></li>
 <li><p>And as you know, we can also look at the distribution as a boxplot. Edit the <code>geom_boxplot()</code> code to do this.</p></li>
 </ol>

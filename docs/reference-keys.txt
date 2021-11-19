@@ -43,7 +43,7 @@ z-scores-3-applying-z-scores-to-inferential-problems
 extra-activity
 week-6-visualising-data-and-binomial-tests
 pre-lab-work-online-tutorial
-rstudio-task-1-creating-a-new-folder-and-project
+creating_project
 rstudio-task-2-visualising-phone-use
 rstudio-task-3-conducting-a-binomial-test
 extra-content-2
