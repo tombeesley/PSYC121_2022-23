@@ -103,7 +103,7 @@ The command was also generated
 
 which presents the data in a windo of R studio. Note that "NA" means not available or missing data. Does this file structure make some sense to you?
 
-### Finding the mean and median estimates
+### Finding the mean and median estimates {#mean_median}
 
 Use the data to answer the following questions...
 

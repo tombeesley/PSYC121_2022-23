@@ -12,6 +12,8 @@ resource_files:
 - tidy_data.RData
 - Week_7_learnr.Rmd
 - tidy_data.RData
+- Week_7_learnr.Rmd
+- tidy_data.RData
 ---
 
 ```{r setup, include=FALSE, exercise.startover = TRUE}
@@ -171,7 +173,7 @@ head(data_maths)
 
 ```
 
-You can see that we have our GAD ratings, GAD_total, as well as people's highest maths qualification and their own rating of their maths skills.
+You can see that we have our GAD ratings, GAD_total, as well as people's highest maths qualification and their own rating of their maths skills. While we might be inclined to draw direct comparisons between GAD scores and self-reported maths ability, it should be noted that ["maths anxiety"](https://www.frontiersin.org/articles/10.3389/fpsyg.2016.00508/full) is a unique personality trait, that may occur independently of GAD. 
 
 Let's first take a look at the distribution of the GAD_total ratings using a boxplot: 
 

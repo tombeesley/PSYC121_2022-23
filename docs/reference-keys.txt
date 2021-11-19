@@ -18,7 +18,7 @@ lab-exercises
 descriptive-information-in-r-studio
 uploading_zip
 basic_script
-finding-the-mean-and-median-estimates
+mean_median
 calculations-from-a-range-of-columns
 simple-graphs
 extra-content-1
@@ -47,7 +47,7 @@ creating_project
 rstudio-task-2-visualising-phone-use
 rstudio-task-3-conducting-a-binomial-test
 extra-content-2
-week-7-draft---do-not-complete-yet-one-sample-t-test-on-salary-estimates
+week-7-one-sample-t-test-on-salary-estimates
 pre-lab-work-online-tutorial-1
 rstudio-task-1-plotting-and-filtering
 rstudio-task-2-one-sample-t-test
