@@ -11,7 +11,7 @@ output:
 
 > Written by Tom Beesley & John Towse
 
-Today we will look in a bit more detail at people's estimates of the average UK salary. We will first plot this data using `geom_histogram()` and also `geom_boxplot()`. When we do this, we'll see that there are some unusual values, and we'll need to do a bit of **data qrangling** to remove them, using the `filter()` command. We'll then turn to the conceptual ideas of the lecture - how can we tell if the mean of our sample is unusual, or whether we would actually expect this mean value under the null hypothesis? Finally, we'll continue to develop our skills in **data visualisation** by exploring `geom_density()` plots.
+Today we will look in a bit more detail at people's estimates of the average UK salary. We will first plot this data using `geom_histogram()` and also `geom_boxplot()`. When we do this, we'll see that there are some unusual values, and we'll need to do a bit of **data wrangling** to remove them, using the `filter()` command. We'll then turn to the conceptual ideas of the lecture - how can we tell if the mean of our sample is unusual, or whether we would actually expect this mean value under the null hypothesis? Finally, we'll continue to develop our skills in **data visualisation** by exploring `geom_density()` plots.
 
 ## Pre-lab work: online tutorial
 
@@ -54,7 +54,7 @@ We now want to know if the salary estimates are different to the actual average 
 
 ## RStudio Task 3: Density plots: salary estimates by home location
 
-11. Draw density plot by adding an *x* mapping for the *uk_salary* column inside `aes()`. This plot can be thought of as a smoothed version of the histogram.
+11. Draw a `geom_density()` (density plot) by adding an *x* mapping for the *uk_salary* column inside `aes()`. This plot can be thought of as a smoothed version of the histogram.
 
 12. Now map the *fill* feature to the variable *home_location*. This should create 3 density plots, one for each home location. You might find that it's a bit difficult to see the shape of all three distributions. To make things clearer, add `alpha = .5` **outside** of the `aes()` command in `geom_denisty()`. This should make the plots a bit more transparent. Try playing around with different values of alpha between 0 and 1. 
 
