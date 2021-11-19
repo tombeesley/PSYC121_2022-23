@@ -68,7 +68,7 @@ We now want to know if the salary estimates are different to the actual average 
 
 12. Now map the *fill* feature to the variable *home_location*. This should create 3 density plots, one for each home location. You might find that it's a bit difficult to see the shape of all three distributions. To make things clearer, add `alpha = .5` **outside** of the `aes()` command in `geom_denisty()`. This should make the plots a bit more transparent. Try playing around with different values of alpha between 0 and 1. 
 
-13. Manually change the colours of the columns by adding (+) this code as a layer to your ggplot code: `scale_fill_manual(values = c("darkgreen", "darkblue", "darkred"))`. Take a look [at this PDF](files/Week_7/Rcolor.pdf) for more colour options than you'll probably ever want!
+13. Manually change the colours of the columns by adding (+) this code as a layer to your ggplot code: `scale_fill_manual(values = c("darkgreen", "darkblue", "darkred"))`. Take a look [at this PDF](files/Week_7/Rcolor.pdf){target="_blank"} for more colour options than you'll probably ever want!
 
 14. You can save your graph outside of R by clicking Export -> Save as Image. 
 
