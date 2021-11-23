@@ -1,8 +1,23 @@
 library(tidyverse)
 
-data <- read_csv("data_stroop.csv")
+# # processing of raw data for use in tasks - remove from final script
+# load("tidy_data.RData")
+# 
+# data %>% 
+#   select(starts_with("stroop")) %>% 
+#   drop_na() %>% 
+#   mutate(pID = 1:n(), .before = "stroop_control") %>%
+#   pivot_longer(cols = starts_with("stroop"), names_to = "condition", values_to = "time", names_prefix = "stroop_") %>% 
+#   write_csv("data_stroop.csv")
 
-view(data)
+
+data_w8 <- read_csv("data_stroop.csv")
+
+view(data_w8)
+
+data_w8 %>% 
+  ggplot() +
+  geom_density(aes(x = time, fill = condition), alpha = .5)
 
 # TASK 2 - REPLACE ALL "MISSING" PARTS
 

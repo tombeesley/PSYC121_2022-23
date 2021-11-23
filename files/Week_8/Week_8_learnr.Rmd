@@ -8,6 +8,12 @@ runtime: shiny_prerendered
 resource_files:
 - tidy_data.RData
 - Week_7_learnr.Rmd
+- Week_7_learnr.Rmd
+- tidy_data.RData
+- Week_8_learnr.Rmd
+- tidy_data.RData
+- Week_8_learnr.Rmd
+- tidy_data.RData
 ---
 
 ```{r setup, include=FALSE, exercise.startover = TRUE}
@@ -29,74 +35,95 @@ data <- data %>%
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-## Exploring the data
-
-For this week's online tutorial we have loaded in a new selection of the data (which we've stored as `data`) from the PSYC121 questionnaire. Let's take a look at the data we have using the `summary()` function. 
-
-```{r summary_example, exercise=TRUE}
-
-summary(data)
-
-```
-
-###
-
-You can see that we have 3 variables (columns) in our data. The first 2 are "character" variables, which reflect nominal (or "categorical") data. The 3rd is numerical, and here we see interesting summary statistics. 
-
-Use the count function to see the different levels of the home_location and maths_skills variables:
-
-```{r count_example, exercise=TRUE}
-
-```
-
-```{r count_example-hint}
-
-count(data,)
-
-
-```
-
-Note that we have removed participants from outside these 3 *home_location* regions, as there were too few people in those regions to compute certain statistics.
-
 ## Visualise the data
 
-Last week you learnt about the ggplot() commands. The code in the next box will create a dotplot of the *countries_visited* variable on the y-axis, separating the data by the *maths_skills* variable on the x-axis. You'll see there are lots of additional parameters, and each one has a comment (use # to add comments to your code!) next to it to explain the purpose.
+For this week's online tutorial we have loaded in a new selection of the data (which we've stored as `data`) from the PSYC121 questionnaire. 
+
+Let's take a look at the data by drawing a new type of graph called a "dotplot". The code below will map the variable *countries_visited* to the y-axis, and will map *maths_skills* variable on the x-axis. You'll see there are a couple of additional parameters, and each one has a comment (use # to add comments to your code!) next to it to explain the purpose.
 
 ```{r dotplot, exercise=TRUE}
 
 data %>% 
-  ggplot(aes(y = countries_visited, x = maths_skills)) +
-  geom_dotplot(binaxis = "y", # dots grouped according to variable mapped to y
-               binwidth = 1, # how many values do we want grouped (binned) together
-               stackdir = "center", # centre alignment of the dots
-               dotsize = .5, # sizing parameter
-               fill = "blue") # fill colour
+  ggplot() +
+  geom_dotplot(aes(y = countries_visited, x = maths_skills),
+               binaxis = "y", # dots grouped according to variable mapped to y
+               stackdir = "center") # centre alignment of the dots
 
 ```
 
+We can also look at the data using another type of distribution plot. This one is called a "violin" plot:
+
+```{r violin, exercise=TRUE}
+
+data %>% 
+  ggplot() +
+  geom_violin(aes(y = countries_visited, x = maths_skills)) 
+
+```
+
+This is another way to present distributional data, and gives a sense of the shape of the distribution with its curves. OK, that's nice. But maybe we want to look at both of these types of plots together. Maybe we want a violin plot, but we also want the dotplot over the top. And why not?! We have said before, `ggplot` is very flexible and we can make almost any plot we want:
+
+```{r violin_boxplot, exercise=TRUE}
+
+data %>% 
+  ggplot() +
+  geom_violin(aes(y = countries_visited, x = maths_skills)) +
+  geom_dotplot(aes(y = countries_visited, x = maths_skills),
+               binaxis = "y", # dots grouped according to variable mapped to y
+               stackdir = "center") # centre alignment of the dots
+
+```
+
+This works just fine, but (as often is the case) there's a better way. We're mapping the same variables to the same features in two graphs (once for the violin plot and once for the dotplot). This is a bit inefficient and of course there's a better way...
+
 ### Global aes()
 
-If you read the code above carefully, then you will have seen that it's a little different to the format we used last week. Here the `aes()` command - which maps the variables in the data to the features of the plot - has been placed within the main `ggplot()` command. 
-
-Why might we do this? Well for this figure it works either way - you can place the `aes()` command in `geom_dotplot()` or `ggplot()` and get the same result. Feel free to try this for yourself if you like. But using the `aes()` within the main `ggplot()` ensures that those mappings will be applied across all of the geoms in the plot. Let's try this ourselves by running the code below:
+What we need to do is use the `aes()` command within the first `ggplot()` command itself. Add the mappings for y and x to the `ggplot(aes())` command below. You can use a hint if you get really stuck.
 
 ```{r global_aes, exercise=TRUE}
 
 data %>% 
-  ggplot(aes(y = countries_visited, x = maths_skills)) +
-  geom_violin() +
-  geom_dotplot(binaxis = "y", # dots grouped according to variable mapped to y
-               binwidth = 1, # how many values do we want grouped (binned) together
-               stackdir = "center", # centre alignment of the dots
-               dotsize = .5, # sizing parameter
-               fill = "blue") # fill colour
+  ggplot(aes()) + 
+  geom_violin(aes()) +
+  geom_dotplot(aes(),
+               binaxis = "y", # dots grouped according to variable mapped to y
+               stackdir = "center") # centre alignment of the dots
 
 ```
-###
+```{r global_aes-hint-1}
 
-We have added a **violin plot** with `geom_violin()`. This is another way to present distributional data, and gives a sense of the shape of the distribution with its curves. Note that the violin plots were drawn first, and the dotplot on top. The dots would be hidden if it was the other way around.
+data %>% 
+  ggplot(aes(y = , x = )) + 
+  geom_violin(aes()) +
+  geom_dotplot(aes(),
+               binaxis = "y", # dots grouped according to variable mapped to y
+               stackdir = "center") # centre alignment of the dots
 
-## Plotting means and standard errors
+```
+```{r global_aes-hint-2}
+
+data %>% 
+  ggplot(aes(y = , x = )) + 
+  geom_violin(aes(fill = )) + 
+  geom_dotplot(aes(),
+               binaxis = "y", # dots grouped according to variable mapped to y
+               stackdir = "center") # centre alignment of the dots
+
+```
+```{r global_aes-solution}
+
+data %>% 
+  ggplot(aes(y = countries_visited, x = maths_skills)) + 
+  geom_violin(aes(fill = maths_skills)) +
+  geom_dotplot(aes(),
+               binaxis = "y", # dots grouped according to variable mapped to y
+               stackdir = "center") # centre alignment of the dots
+
+```
+
+Now, try adding a new mapping only the violin plot: add a mapping between *maths_skills* and *fill*. Use the hints and solution if you get really stuck. Make sure you take in this graph and undestand what the code is doing. Two of the mappings (*y* and *x*) are applied **globally** to both the `geom_violin` and the `geom_dotplot`, while one of the mapping (*fill*) is applied only to the `geom_violin`.
+
+## Calculating means and standard errors
 
 In previous weeks you have used the `group_by()` and `summarise()` commands to calculate some mean values within your data, as a function of other variables. For example, we can do that here for the mean countries traveled by the home location of the respondent:
 
@@ -109,23 +136,14 @@ data %>%
 
 ```
 
-In the next code box, add in a second line to the summarise command that calculates the standard deviation (`sd()`) of the data. If you get really stuck here, try pressing the hint button.
+In the next code box, add in a second line to the summarise command that calculates the standard deviation (`sd()`) of the data. If you get really stuck here, there's a solution.
 
 ```{r group_sd, exercise = TRUE}
 
 data %>% 
   group_by(home_location) %>% 
-  summarise(mean_travel = mean(countries_visited))
-
-
-```
-
-```{r group_sd-hint}
-
-data %>% 
-  group_by(home_location) %>% 
   summarise(mean_travel = mean(countries_visited),
-            sd_travel = )
+            sd_travel = ) # add the missing code here
 
 
 ```
@@ -158,7 +176,7 @@ data %>%
 
 ```
 
-### Pipe it to ggplot()
+### EXTRA - Pipe it to ggplot()
 
 The results of this summary can now be graphed, by sending the results (`%>%`) into the ggplot command. Read through the code below carefully, then click Run to plot these means and standard errors in a graph:
 
