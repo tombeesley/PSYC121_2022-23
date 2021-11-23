@@ -9,7 +9,7 @@ data_w7 <- read_csv("uk_salary.csv")
 # quick look at the salary estimates
 data_w7 %>% 
   ggplot() + 
-  geom_histogram(aes()) # EDIT THIS CODE FOR Q2
+  geom_histogram(aes(x = uk_salary)) # EDIT THIS CODE FOR Q2
 
 # let's look at those unusual values
 data_w7 %>% 
