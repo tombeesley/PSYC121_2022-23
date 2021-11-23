@@ -18,31 +18,31 @@ data_w7 %>%
 # let's remove those really high values
 data_w7_f <- # note the assignment (<-): the result of this calculation will make a new object
   data_w7 %>% # with the data...
-  filter() # EDIT THIS CODE FOR Q4 
+  filter(uk_salary < 200000) # EDIT THIS CODE FOR Q4 
 
 # now let's plot the salary estimates again
 data_w7_f %>% 
   ggplot()+
-  geom_histogram(aes()) # EDIT THIS CODE FOR Q5
+  geom_histogram(aes(x = uk_salary)) # EDIT THIS CODE FOR Q5
 
 # display the data as a boxplot
 data_w7_f%>% 
   ggplot() +
-  geom_boxplot(aes()) # EDIT THIS CODE FOR Q6
+  geom_boxplot(aes(y = uk_salary)) # EDIT THIS CODE FOR Q6
 
 # TASK 2
 
 # What is the mean estimate? 
-mean() # EDIT THIS CODE FOR Q7
-sd() # you might also calculate the standard deviation
+mean(data_w7_f$uk_salary) # EDIT THIS CODE FOR Q7
+sd(data_w7_f$uk_salary) # you might also calculate the standard deviation
 
 # Let's check if the mean estimate is significantly different from the true salary
-t.test(x = , mu = ) # You will need to edit this for Q8
+t.test(x = data_w7_f$uk_salary, mu = 30000) # You will need to edit this for Q8
 
 # EXTRA
 # this is a "by hand" t statistic - you can add the column of salary estimates here and check with the result of t.test
 # check with staff if you're not sure
-t_val <- (mean()-30000)/(sd()/sqrt(nrow())) 
+t_val <- (mean(data_w7_f$uk_salary)-30000)/(sd(data_w7_f$uk_salary)/sqrt(length(data_w7_f$uk_salary))) 
 
 # TASK 3
 
@@ -50,5 +50,7 @@ t_val <- (mean()-30000)/(sd()/sqrt(nrow()))
 # EDIT THIS CODE FOR Q11-14
 data_w7_f %>% 
   ggplot() + 
-  geom_density(aes())
+  geom_density(aes(x = uk_salary, fill = home_location),
+               alpha = .5) +
+  scale_fill_manual(values = c("darkgreen", "darkblue", "darkred"))
 

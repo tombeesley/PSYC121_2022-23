@@ -42,7 +42,7 @@ t.test(x = , mu = ) # You will need to edit this for Q8
 # EXTRA
 # this is a "by hand" t statistic - you can add the column of salary estimates here and check with the result of t.test
 # check with staff if you're not sure
-t_val <- (mean()-30000)/(sd()/sqrt(nrow())) 
+t_val <- (mean()-30000)/(sd()/sqrt(length())) 
 
 # TASK 3
 
