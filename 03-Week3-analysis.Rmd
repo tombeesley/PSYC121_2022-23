@@ -63,7 +63,7 @@ Now we tell R how to group the estimate data, and which column does that
 Specifies which descriptive function is being asked for
 Can you explore whether you can call on alternate measures?)
 
-### group_by()
+### group_by() {#group_by}
 
 There's another way that also allows us to group scores by a (nominal) variable. This is explored in the learnr tutorial, which should help you create the command the get weight estimates broken down by gender identity. You need to define the data frame for the estimates data, and the gender IV and the estimates DV
 

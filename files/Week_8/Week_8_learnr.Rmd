@@ -6,14 +6,7 @@ output:
     allow_skip: yes
 runtime: shiny_prerendered
 resource_files:
-- tidy_data.RData
-- Week_7_learnr.Rmd
-- Week_7_learnr.Rmd
-- tidy_data.RData
-- Week_8_learnr.Rmd
-- tidy_data.RData
-- Week_8_learnr.Rmd
-- tidy_data.RData
+
 ---
 
 ```{r setup, include=FALSE, exercise.startover = TRUE}
@@ -176,55 +169,75 @@ data %>%
 
 ```
 
-### EXTRA - Pipe it to ggplot()
+## Conceptual prep work
 
-The results of this summary can now be graphed, by sending the results (`%>%`) into the ggplot command. Read through the code below carefully, then click Run to plot these means and standard errors in a graph:
+A researcher wants to replicate a published finding that submerging your arm into freezing cold water for 60
+seconds impairs your ability to memorise lists of words. They have 15 people complete the memory test
+before and after submerging their arm. The mean score *before* is 17 items correct, and the mean score *after*
+is 12 items correct. The SD of the difference scores is 9.
 
-```{r plot_se, exercise = TRUE}
+Answer the questions below by conducting a t-test "by hand" - see lecture slides.
 
-data %>% 
-  group_by(home_location) %>% 
-  summarise(mean_travel = mean(countries_visited),
-            se_travel = sd(countries_visited)/sqrt(n())) %>% # This line and those above are the same as the previous code chunk
-  ggplot(aes(y = mean_travel, x = home_location)) + # Adding a ggplot (graph)
-  geom_col() + # columns
-  geom_errorbar(aes(ymin = mean_travel - se_travel, # the minimum value for the error bar
-                    ymax = mean_travel + se_travel), # the maximum value for the error bar
-                width = .2) # how wide we want the error bar - feel free to change this.
-
-
+```{r quiz1, echo=FALSE}
+quiz(caption = "t-test quiz",
+  question("What is the expected mean difference score under the null-hypothesis?",
+    answer("0", correct = TRUE),
+    answer("17"),
+    answer("5"),
+    answer("-5"),
+    random_answer_order = TRUE,
+    incorrect = "If we expect no effect (null hyp) then there will be no difference (=0)"
+  ),
+  question("What is the mean difference score?",
+    answer("5", correct = TRUE),
+    answer("0"),
+    answer("17"),
+    answer("-5", correct = TRUE),
+    random_answer_order = TRUE,
+    incorrect = "Difference in the means for the levels of the IV: (17-12) or (12-17)"
+  ),
+  question("What is the SE of the difference scores?",
+    answer("2.32", correct = TRUE),
+    answer("0"),
+    answer("3.87"),
+    answer("3"),
+    random_answer_order = TRUE,
+    incorrect = "Remember: SE = SD/sqrt(N)"
+  ),
+  question("What is the t value?",
+    answer("2.15", correct = TRUE),
+    answer("5"),
+    answer("1.29"),
+    answer("1.67"),
+    random_answer_order = TRUE,
+    incorrect = "Remember: t = mean_diff/SE"
+  ),
+  question("What are the degrees of freedom?",
+    answer("14", correct = TRUE),
+    answer("15"),
+    answer("13"),
+    answer("16"),
+    random_answer_order = TRUE,
+    incorrect = "DF = N -1 for related-samples t-test"
+  ),
+  question("What is the criterion value for t at 5%? (see lecture slide 7)",
+    answer("2.145", correct = TRUE),
+    answer("2.131"),
+    answer("2.160"),
+    answer("1.761"),
+    random_answer_order = TRUE
+  ),
+  question("Is this a significant result?",
+    answer("Yes", correct = TRUE),
+    answer("No"),
+    random_answer_order = TRUE,
+    incorrect = "Our computed t was larger than the criterion value"
+  )  
+  
+)
 ```
 
-```{r plot_se-solution}
 
-data %>% 
-  group_by(home_location) %>% 
-  summarise(mean_travel = mean(countries_visited),
-            se_travel = sd(countries_visited)/sqrt(n())) %>% 
-  ggplot(aes(y = mean_travel, x = home_location, colour = home_location, fill = home_location)) +
-  geom_col() +
-  geom_errorbar(aes(ymin = mean_travel - se_travel, # the minimum value for the error bar
-                    ymax = mean_travel + se_travel), # the maximum value for the error bar
-                width = .2) # how wide we want the error bar - feel free to change this.
-
-
-```
-
-Note how we have placed the y and x mappings into the `ggplot(aes())` here, so that they are shared by the columns (`geom_col`) and the error bars (`geom_errorbar`). 
-
-The graph is very grey and boring! Within `ggplot()`, try to mapping the *home_location* variable to *fill* as well as *x*. Now try mapping it to *colour* instead of, or in addition to, *fill*. Note how the *fill* feature is applied to only the columns, but the *colour* feature applies to both the columns and the error bars. There is a solution available if you get stuck.
-
-There's lots of things you can change in graphs. Try playing around with some of the fixed settings (i.e., outside of `aes()`). Here are some suggestions. What can you come up with?
-
-- geom_col(alpha = .3, fill = "orange")
-- geom_col(linetype = 4, fill = "white")
-- geom_col(linetype = 6, size = 2)
-- try the linetype, alpha and size settings in the `geom_errorbar()` geom. Put them outside of `aes()`
-
-
-### End of tutorial
-
-This is now the end of the online tutorial `ggplot`. Please return to the tasks in the lab worksheet.
 
 
 

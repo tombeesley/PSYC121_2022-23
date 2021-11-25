@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7 Week 7: One-sample t-test on salary estimates | Statistics for Psychologists</title>
+  <title>8 Week 8: [DRAFT - DO NOT COMPLETE YET] Plotting means, SEs and related-samples t-tests | Statistics for Psychologists</title>
   <meta name="description" content="Course content for PSYC121 and PSYC122 at Lancaster University" />
   <meta name="generator" content="bookdown 0.23 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7 Week 7: One-sample t-test on salary estimates | Statistics for Psychologists" />
+  <meta property="og:title" content="8 Week 8: [DRAFT - DO NOT COMPLETE YET] Plotting means, SEs and related-samples t-tests | Statistics for Psychologists" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="tombeesley/LU_PSYC121_122" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 Week 7: One-sample t-test on salary estimates | Statistics for Psychologists" />
+  <meta name="twitter:title" content="8 Week 8: [DRAFT - DO NOT COMPLETE YET] Plotting means, SEs and related-samples t-tests | Statistics for Psychologists" />
   
   <meta name="twitter:description" content="Course content for PSYC121 and PSYC122 at Lancaster University" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="week-6-visualising-data-and-binomial-tests.html"/>
-<link rel="next" href="week-8-draft---do-not-complete-yet-plotting-means-ses-and-related-samples-t-tests.html"/>
+<link rel="prev" href="week-7-one-sample-t-test-on-salary-estimates.html"/>
+
 <script src="libs/header-attrs-2.10/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -244,50 +244,72 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="week-7-one-sample-t-test-on-salary-estimates" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Week 7: One-sample t-test on salary estimates</h1>
+<div id="week-8-draft---do-not-complete-yet-plotting-means-ses-and-related-samples-t-tests" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Week 8: [DRAFT - DO NOT COMPLETE YET] Plotting means, SEs and related-samples t-tests</h1>
 <blockquote>
 <p>Written by Tom Beesley &amp; John Towse</p>
 </blockquote>
-<p>Today we will look in a bit more detail at people’s estimates of the average UK salary. We will first plot this data using <code>geom_histogram()</code> and also <code>geom_boxplot()</code>. When we do this, we’ll see that there are some unusual values, and we’ll need to do a bit of <strong>data wrangling</strong> to remove them, using the <code>filter()</code> command. We’ll then turn to the conceptual ideas of the lecture - how can we tell if the mean of our sample is unusual, or whether we would actually expect this mean value under the null hypothesis? Finally, we’ll continue to develop our skills in <strong>data visualisation</strong> by exploring <code>geom_density()</code> plots.</p>
-<div id="pre-lab-work-online-tutorial-1" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Pre-lab work: online tutorial</h2>
-<p><strong>Online tutorial</strong>: You must make every attempt to complete this before the lab! To access the <a href="https://ma-rconnect.lancs.ac.uk/Week_7_LabPrep" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
+<p>Today we will take a look at summarising means and standard errors (SEs) from our data. We will look at how we plot these together on the one graph (using <code>ggplot()</code> commands that allow us to share mappings between different geoms0. We will explore our data on the famous “Stroop Task” and we will use a related-samples t-test to examine the differences between the means of our different conditions in this task.</p>
+<div id="pre-lab-work-online-tutorial-2" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Pre-lab work: online tutorial</h2>
+<p><strong>Online tutorial</strong>: You must make every attempt to complete this before the lab! To access the <a href="https://ma-rconnect.lancs.ac.uk/Week_8_LabPrep" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
 <p><strong>Getting ready for the lab class</strong></p>
 <ol style="list-style-type: decimal">
-<li><p>Create a folder and a Project for Week 7. <a href="week-6-visualising-data-and-binomial-tests.html#creating_project">Click here for the instructions</a> from last week if you are unsure.</p></li>
-<li><p>Download the <a href="files/Week_7/Week_7.zip">Week_7.zip</a> and upload it into this new folder in RStudio Server. If you need them, <a href="week-2-descriptive-statistics-in-r-studio.html#uploading_zip">here are the instructions</a> from Week 2.</p></li>
+<li><p>Create a folder and a Project for Week 8. <a href="week-6-visualising-data-and-binomial-tests.html#creating_project">Click here for the instructions</a> from Week 6 if you are unsure.</p></li>
+<li><p>Download the <a href="files/Week_8/Week_8.zip">Week_8.zip</a> and upload it into this new folder in RStudio Server. If you need them, <a href="week-2-descriptive-statistics-in-r-studio.html#uploading_zip">here are the instructions</a> from Week 2.</p></li>
 </ol>
 </div>
-<div id="rstudio-task-1-plotting-and-filtering" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> RStudio Task 1: Plotting and filtering</h2>
-<p><strong>Important!</strong> - You should be using the Week_7_script as you work through these tasks. Edit the script to complete the tasks. Running code from the script is easy - place your cursor on the line or block of code you want to run and press “run” (of ctrl/cmd+enter). See the video on Moodle if you’re unsure. Save your script as you go to keep a record of your work.</p>
+<div id="rstudio-task-1-calculating-means-and-ses" class="section level2" number="8.2">
+<h2><span class="header-section-number">8.2</span> RStudio Task 1: Calculating means and SEs</h2>
+<p>The “Stroop Effect” is a classic demonstration of automaticity of behaviour. Participants have to say the colour a word is printed in, which is an easy task for a “compatible” stimulus like <span style="color:green">GREEN</span>, and a much more difficult task for an “incompatible” stimulus like <span style="color:blue">BLUE</span>. We can’t help but read the text - it has seemingly become an automatic process.</p>
+<p><img src="files/Week_8/stroop.png" />
+In this task we will calculate the means and standard errors of the means. We will then plot them using
+ggplot().</p>
 <ol style="list-style-type: decimal">
-<li><p>Open the Week_7_script and run the <code>library</code>, <code>options</code> and <code>read_csv</code> commands. The <code>options</code> command is new. It is very cryptic and you don’t need to worry too much about this - it is making sure that the values in the graphs are displayed as regular numbers and not as scientific notation.</p></li>
-<li><p>Complete the <code>geom_histogram()</code> code to plot the distribution of salary data</p></li>
-<li><p>OK - we’ve got some pretty funky values here! Some people think the average salary is over £300,000!!! Well, maybe they just added too many zeros (let’s give them the benefit of the doubt). Quite often when we get our “raw” data, it contains weird values like this that we need to consider removing. Let’s run the <code>arrange()</code> code now to see what exactly those high values are.</p></li>
-<li><p>We’ll need to remove these high values to get a better sense of the distribution. Let’s use a <code>filter()</code> command to do this. We need to make a decision about what values to exclude. In later labs we’ll look at a more systematic process of removing <em>outliers</em>, but for now, let’s just remove any that are over £200,000. Edit the <code>filter()</code> command to keep only those estimates that are <em>below</em> £200,000 (&lt;). Remeber that the filter command <em>keeps</em> the data that is <em>TRUE</em> according to the expression. Also note that you are making a new object at this step: <em>data_w7_f</em> .</p></li>
-<li><p>Now your filter has done its job (check the Environment to make sure <em>data_w7_f</em> has fewer rows than <em>data_w7</em>), let’s plot the data again. Edit the <code>aes()</code> command of this next code chunk to draw a new histogram.</p></li>
-<li><p>And as you know, we can also look at the distribution as a boxplot. Edit the <code>geom_boxplot()</code> code to do this.</p></li>
+<li><p>Open the script “Week_8_script.R” (see prep work)</p></li>
+<li><p>Run the <code>library</code> and <code>read_csv</code> lines of code. You should see an object in the environment called <em>data_w8</em></p></li>
+<li><p>View the data with view(data). You will see that the data are a little different from the data we have
+worked with previously. We have an ID variable, which gives a unique number for each person. Each
+person has 3 rows. This is because the different conditions of the stroop task is a within-subjects variable.
+For data like this it is often useful to have them arranged in what is referred to as “long format”, with
+multiple rows for each response the participant provided. For the current data that means we have a
+variable called stroop_condition, which is our IV, and one called stroop_time which is our DV.</p></li>
+<li><p>Let’s look at the distribution of <em>time</em> (our DV) as a function of <em>condition</em>. Complete the next chunk of code by mapping <em>x</em> to <em>time</em> and <em>fill</em> to <em>condition</em> for our <code>geom_denisty()</code> plot. As per last week, you will want to set the <em>alpha</em> parameter to something between 0 and 1 - note that this is done OUTSIDE of the <code>aes()</code> command.</p></li>
+<li><p>We seem to have some outlier values at both the high and the low ends. It’s probably best if we remove data for the whole participant if their <em>average</em> time is unusual. To do that, we’ll need to create a new column (remember <code>mutate()</code>?) to give us these average time values for each participant. Run the next block of code (you don’t need to edit this one) to create the new column, then run the next line to <code>view()</code> it.</p></li>
+<li><p>Edit the <code>geom_histogram()</code> command to plot the values of the avg_time column.</p></li>
+<li><p>We now need the filter out the values in our data that we feel are unusual. Like last week, we will do this in a fairly unprincipled manner, by “eye-balling” the data (next week we’ll consider something a bit more “scientific”). Complete the filter command so that it removes both the very low values in avg_time column, and those that are very high. Because you want to filter out low and high values, you are using an <strong>AND</strong> expression (<strong>&amp;</strong>). But you will need to enter in two numerical values, based on your assessment of the histogram produced for Q6. Note that the filtered data is stored as a new object: <em>data_w8_f</em> (f, for filtered).</p></li>
 </ol>
 </div>
-<div id="rstudio-task-2-one-sample-t-test" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> RStudio Task 2: One-sample t-test</h2>
-<p>We now want to know if the salary estimates are different to the actual average salary in the UK (which is approx. £30,000). Our hypothesis might be that people are inaccurate - they overestimate or underestimate the average UK salary. Let’s test that.</p>
-<ol start="7" style="list-style-type: decimal">
-<li><p>The first step towards this is to calculate a mean of the column of salary estimates. Edit the line of code with <code>mean()</code> to tell R to compute this value. Remember to use the new data object you created after you removed the outliers. If you’re struggling to remember how to compute a <code>mean()</code>, jump back to the <a href="week-2-descriptive-statistics-in-r-studio.html#mean_median">Week 2 content</a></p></li>
-<li><p>Now we can compute a t-statistic and check its significance with <code>t.test()</code>. Edit the code on this line to conduct a one-sample t-test. You need to provide <strong>the sample of data on which you want to conduct the test</strong>, and the <strong>expected mean under the null hypothesis</strong>. Remember our hypothesis is that people are not accurate. Your calculation of the mean should tell you whether they numerically overestimated or underestimated. But would we expect such a result under the null hypothesis? Run the t-test and <strong>note the p value</strong>. How likely is it that we would see this sample of data (this mean value and the distribution of data - the SD) under null hypothesis? The p value ranges from 0 to 1. If it is very low - typically we say p &lt; .05 - then we conclude our result is unlikely under the null hypothesis and it is therefore a <em>significant result</em>.</p></li>
-<li><p>What is the critical value of t in the t-distribution table, for this sample size? Degrees of freedom is N - 1.</p></li>
+<div id="rstudio-task-2-running-related-samples-t-tests" class="section level2" number="8.3">
+<h2><span class="header-section-number">8.3</span> RStudio Task 2: Running related samples t-tests</h2>
+<p>We have seen in our denisty plots that the reaction times (DV) look different in the three different stroop conditions (our IV). But now we need to look at whether there are <strong>statistically significant differences</strong> between the means of the three conditions.</p>
+<p>To do this, we will first summarise the mean time taken by each condition in the stroop task. <a href="week-3-dvs-and-ivs-in-r-studio.html#group_by">Remember from Week 3</a> that we can use <code>group_by()</code> and <code>summarise()</code> to get summary stats (e.g., mean, sd) at each level of the IV. That’s what we want to do now:</p>
+<ol style="list-style-type: decimal">
+<li><p>Edit the <code>group_by()</code> code to specify the IV and the <code>summarise()</code> to calculate the <code>mean()</code> of our DV. If you do this correctly, you’ll get three values - a mean value for each level (condition) of our IV. Do these means reflect what you would expect in the stroop task?</p></li>
+<li><p>Next we need to test if these differences between our means are real. To do that, we can run a related samples t-test; remember that the data for each level of the IV in this experiment came from the same person. We must use a <code>filter()</code> to restrict the data to just two levels of the IV: the <em>condition</em> column/variable in the data. This is because a related samples t-test looks at the difference between two means (and only two), so the column we use needs to have just two levels.</p></li>
+<li><p>Use the filter command to restrict the data to two of the conditions. Note that the filter uses an “|”
+symbol, which means “or”, because we want the data from either one condition OR the another condition.</p></li>
+<li><p>Run the t-test on this selection of data, to compare the means from these two levels of the IV. Is the
+result significant? Note the t-value and the p-value. How would you express this as a statement in a report?</p></li>
+<li><p>With 3 levels to the IV <em>condition</em> there are 3 possible comparisons we can make (1 vs. 2; 1 vs. 3; 2 vs. 3). Complete all three tests, by copying and pasting the commands, editing each to make a different filter selection, and then to run the t-test. Make sure you interpret the results of the t-tests.</p></li>
 </ol>
-<p><img src="files/Week_7/ttable.png" /></p>
 </div>
-<div id="rstudio-task-3-density-plots-salary-estimates-by-home-location" class="section level2" number="7.4">
-<h2><span class="header-section-number">7.4</span> RStudio Task 3: Density plots: salary estimates by home location</h2>
-<ol start="11" style="list-style-type: decimal">
-<li><p>Draw a <code>geom_density()</code> (density plot) by adding an <em>x</em> mapping for the <em>uk_salary</em> column inside <code>aes()</code>. This plot can be thought of as a smoothed version of the histogram.</p></li>
-<li><p>Now map the <em>fill</em> feature to the variable <em>home_location</em>. This should create 3 density plots, one for each home location. You might find that it’s a bit difficult to see the shape of all three distributions. To make things clearer, add <code>alpha = .5</code> <strong>outside</strong> of the <code>aes()</code> command in <code>geom_denisty()</code>. This should make the plots a bit more transparent. Try playing around with different values of alpha between 0 and 1.</p></li>
-<li><p>Manually change the colours of the columns by adding (+) this code as a layer to your ggplot code: <code>scale_fill_manual(values = c("darkgreen", "darkblue", "darkred"))</code>. Take a look <a href="files/Week_7/Rcolor.pdf" target="_blank">at this PDF</a> for more colour options than you’ll probably ever want!</p></li>
-<li><p>You can save your graph outside of R by clicking Export -&gt; Save as Image.</p></li>
+<div id="rstudio-task-3-plotting-the-means-and-ses" class="section level2" number="8.4">
+<h2><span class="header-section-number">8.4</span> RStudio Task 3: Plotting the means and SEs</h2>
+<ol style="list-style-type: decimal">
+<li><p>You will see we have provided you with the “scaffold” of a
+complete analysis process for the Stroop data. The raw data will be grouped and then summarised as
+means and SEs, and then plotted with columns and error bars. This is very similar to the commands
+used at the end of the learnr tutorial, and you can refer to that analysis if you get stuck here. Your job
+is to carefully work through the code and fill in the parts that are marked MISSING. By
+the end, you should have a graph with 3 columns, with the standard error of the means plotted on top.</p></li>
+<li><p>Add a labs() layer to the plot to change the axis titles, and the title of the plot.</p></li>
+<li><p>Change the theme of the plot</p></li>
+<li><p>Map the fill aesthetic to the variable stroop_condition</p></li>
+<li><p>Manually change the colours of the columns with (e.g.) scale_fill_manual(values =
+c(“darkgreen”, “darkblue”, “darkred”)). Open the RColor.pdf in the Week 8 files for
+more colours than you’ll probably ever want!</p></li>
+<li><p>Click Export-&gt;Save as Image. Then show it off to the world (i.e., the Teams channel)</p></li>
 </ol>
 
 </div>
@@ -297,8 +319,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="week-6-visualising-data-and-binomial-tests.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-8-draft---do-not-complete-yet-plotting-means-ses-and-related-samples-t-tests.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-7-one-sample-t-test-on-salary-estimates.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
