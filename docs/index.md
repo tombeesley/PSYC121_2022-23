@@ -1,7 +1,7 @@
 ---
 title: "Statistics for Psychologists"
 author: "John Towse, Tom Beesley, Margriet Groen, Rob Davies"
-date: "2021-11-25"
+date: "2021-11-26"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book

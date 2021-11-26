@@ -52,7 +52,7 @@ We now want to know if the salary estimates are different to the actual average 
 
 ![](files/Week_7/ttable.png)
 
-## RStudio Task 3: Density plots: salary estimates by home location
+## RStudio Task 3: Density plots: salary estimates by home location {#density_plots}
 
 11. Draw a `geom_density()` (density plot) by adding an *x* mapping for the *uk_salary* column inside `aes()`. This plot can be thought of as a smoothed version of the histogram.
 
