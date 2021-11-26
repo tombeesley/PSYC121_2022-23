@@ -5,10 +5,9 @@ account: beesleyt
 server: ma-rconnect.lancs.ac.uk
 hostUrl: https://ma-rconnect.lancs.ac.uk/__api__
 appId: 25
-bundleId: 61
-url: https://ma-rconnect.lancs.ac.uk/content/c29fc7c7-df37-4e97-a79a-19608468858e/
-when: 1637844617.16118
-lastSyncTime: 1637844617.16118
+bundleId: 62
+url: https://ma-rconnect.lancs.ac.uk/Week_8_LabPrep/
+when: 1637934244.78325
 asMultiple: FALSE
 asStatic: FALSE
 additionalFiles: Week_8_learnr.Rmd|tidy_data.RData

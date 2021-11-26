@@ -52,7 +52,7 @@ pre-lab-work-online-tutorial-1
 rstudio-task-1-plotting-and-filtering
 rstudio-task-2-one-sample-t-test
 density_plots
-week-8-draft---do-not-complete-yet-plotting-means-ses-and-related-samples-t-tests
+week-8-plotting-means-ses-and-related-samples-t-tests
 pre-lab-work-online-tutorial-2
 rstudio-task-1-calculating-means-and-ses
 rstudio-task-2-running-related-samples-t-tests

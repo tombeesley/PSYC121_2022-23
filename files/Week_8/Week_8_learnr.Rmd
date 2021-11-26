@@ -6,7 +6,8 @@ output:
     allow_skip: yes
 runtime: shiny_prerendered
 resource_files:
-
+- Week_8_learnr.Rmd
+- tidy_data.RData
 ---
 
 ```{r setup, include=FALSE, exercise.startover = TRUE}
@@ -189,12 +190,12 @@ quiz(caption = "t-test quiz",
     incorrect = "If we expect no effect (null hyp) then there will be no difference (=0)"
   ),
   question("What is the mean difference score?",
-    answer("5", correct = TRUE),
+    answer("+5 or -5", correct = TRUE),
     answer("0"),
-    answer("17"),
-    answer("-5", correct = TRUE),
+    answer("+17 or -17"),
+    answer("+3 or -3"),
     random_answer_order = TRUE,
-    incorrect = "Difference in the means for the levels of the IV: (17-12) or (12-17)"
+    incorrect = "The difference in the means for the levels of the IV: (17-12 = 5) or (12-17 = -5)"
   ),
   question("What is the SE of the difference scores?",
     answer("2.32", correct = TRUE),

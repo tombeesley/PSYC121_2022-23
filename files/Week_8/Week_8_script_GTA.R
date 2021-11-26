@@ -8,7 +8,7 @@ view(data_w8) # view the data
 
 data_w8 %>% 
   ggplot() +
-  geom_density(aes(), alpha = ) # you need to EDIT this for Q4
+  geom_density(aes(x = time, fill = condition), alpha = .5) # you need to EDIT this for Q4
 
 # create a new column which is the average time
 data_w8 <- 
@@ -21,7 +21,7 @@ view(data_w8) # view the data
 # distribution of average times
 data_w8 %>% 
   ggplot() +
-  geom_histogram(aes()) # you need to EDIT this for Q6
+  geom_histogram(aes(avg_time)) # you need to EDIT this for Q6
 
 # Do we need to filter out outliers?
 # hint: you'll probably want to use an OR which is this symbol: |
@@ -51,23 +51,23 @@ t.test(data = stroop_comparison, time ~ condition, paired = TRUE)
 # calculate the means for the 3 levels of the condition IV
 data_w8_summary <-# Notice we are creating/overwriting this object here 
   data_w8_f %>%
-  group_by() %>% # you need to EDIT this for Q
-  summarise(stroop_mean = mean(),
-            stroop_SE = sd()/sqrt(n())) # you need to EDIT the sd() for Q 
+  group_by(condition) %>% # you need to EDIT this for Q
+  summarise(stroop_mean = mean(time),
+            stroop_SE = sd(time)/sqrt(n())) # you need to EDIT the sd() for Q 
 
 view(data_w8_summary) # if you've done the above step correctly, you should have different means and SEs for each condition
 
 # let's first plot the means
 data_w8_summary %>%
-  ggplot(aes(x = , y = )) + # map variables to x and y for Q
+  ggplot(aes(x = condition, y = stroop_mean)) + # map variables to x and y for Q
   geom_col(size = 2)
 
 # let's do the same again, but now with error bars
 data_w8_summary %>%
-  ggplot(aes(x = , y = )) + # map variables to x and y
+  ggplot(aes(x = condition, y = stroop_mean)) + # map variables to x and y
   geom_col(size = 2) +
-  geom_errorbar(aes(ymin = , # edit this for Q
-                    ymax = ), # edit this for Q
+  geom_errorbar(aes(ymin = stroop_mean - stroop_SE, # edit this for Q
+                    ymax = stroop_mean + stroop_SE), # edit this for Q
                 width = .2)
 
 
