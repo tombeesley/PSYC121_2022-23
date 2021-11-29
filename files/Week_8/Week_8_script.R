@@ -68,7 +68,7 @@ data_w8_summary %>%
   geom_col(size = 2) +
   geom_errorbar(aes(ymin = , # edit this for Q5
                     ymax = ), # edit this for Q5
-                width = .2)
+                width = .2) 
 
 
 
