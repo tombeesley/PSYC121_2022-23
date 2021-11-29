@@ -31,7 +31,7 @@ Today we will take a look at summarising means and standard errors (SEs) from ou
 
 1. Create a folder and a Project for Week 8. [Click here for the instructions](#creating_project) from Week 6 if you are unsure.
 
-2. Download the [Week_8.zip](files/Week_8/Week_8.zip) and upload it into this new folder in RStudio Server. If you need them, [here are the instructions](#uploading_zip) from Week 2.
+2. Download the [Week_8.zip](files/Week_8/Week_8.zip) file and upload it into this new folder in RStudio Server. If you need them, [here are the instructions](#uploading_zip) from Week 2.
 
 ## RStudio Task 1: Calculating means and SEs 
 
