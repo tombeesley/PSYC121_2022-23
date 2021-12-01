@@ -25,7 +25,7 @@ Today we will take a look at summarising means and standard errors (SEs) from ou
 
 ## RStudio Task 1: Calculating means and SEs 
 
-The “Stroop Effect” is a classic demonstration of automaticity of behaviour. Participants have to say the colour a word is printed in, which is an easy task for a “compatible” stimulus like <span style="color:green">**GREEN**</span>, and a much more difficult task for an “incompatible” stimulus like <span style="color:blue">**BLUE**</span>. We can’t help but read the text - it has seemingly become an automatic process.
+The “Stroop Effect” is a classic demonstration of automaticity of behaviour. Participants have to say the colour a word is printed in, which is an easy task for a “compatible” stimulus like <span style="color:green">**GREEN**</span>, and a much more difficult task for an “incompatible” stimulus like <span style="color:red">**BLUE**</span>. We can’t help but read the text - it has seemingly become an automatic process.
 
 ![](files/Week_8/stroop.png)
 In this task we will calculate the means and standard errors of the means. We will then plot them using
