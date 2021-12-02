@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>2 Week 1: Introduction to Statistics with R Studio | Statistics for Psychologists</title>
+  <title>9 Week 9: [DRAFT - do not complete yet] | Statistics for Psychologists</title>
   <meta name="description" content="Course content for PSYC121 and PSYC122 at Lancaster University" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="2 Week 1: Introduction to Statistics with R Studio | Statistics for Psychologists" />
+  <meta property="og:title" content="9 Week 9: [DRAFT - do not complete yet] | Statistics for Psychologists" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="tombeesley/LU_PSYC121_122" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="2 Week 1: Introduction to Statistics with R Studio | Statistics for Psychologists" />
+  <meta name="twitter:title" content="9 Week 9: [DRAFT - do not complete yet] | Statistics for Psychologists" />
   
   <meta name="twitter:description" content="Course content for PSYC121 and PSYC122 at Lancaster University" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="index.html"/>
-<link rel="next" href="week-2-descriptive-statistics-in-r-studio.html"/>
+<link rel="prev" href="week-8-plotting-means-ses-and-related-samples-t-tests.html"/>
+
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -252,89 +252,49 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="week-1-introduction-to-statistics-with-r-studio" class="section level1" number="2">
-<h1><span class="header-section-number">2</span> Week 1: Introduction to Statistics with R Studio</h1>
+<div id="week-9-draft---do-not-complete-yet" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Week 9: [DRAFT - do not complete yet]</h1>
 <blockquote>
-<p>Written by John Towse &amp; Tom Beesley</p>
+<p>Written by Tom Beesley &amp; John Towse</p>
 </blockquote>
-<p>The exercises in this section are designed to familiarise you with working in R Studio.</p>
-<div id="lab-work" class="section level2" number="2.1">
-<h2><span class="header-section-number">2.1</span> Lab Work</h2>
-<div id="introducing-r-studio" class="section level3" number="2.1.1">
-<h3><span class="header-section-number">2.1.1</span> Introducing R Studio</h3>
-<p>R and R Studio is the software that we will be using to explore and learn about analysis in your Psychology degree. It’s a computational engine: a very snazzy calculator that you should see as your friend and ally in the journey to understand and appreciate psychology. It sits <em>alongside</em> what we teach about the concepts and interpretation of statistical analysis.</p>
-<p>R is the core software, R Studio is the interface for interacting with it. Put another way, <em>R is the engine, R Studio is the cockpit.</em></p>
-<p>Like even a simplest calculator, it just does what you ask (at least when you ask nicely!) but it requires the user to know what they want from it and to understand what it is telling you. A calculator can’t help a kid get the right answer to a multiplication problem if they don’t know the difference between multiplication and division and addition etc. And whilst a calculator is brilliant at doing the number crunching (and as a bonus, R Studio can help with turning the numbers into beautiful graphs and images too), even a calculator requires a thoughtful person to take the answers and make sensible interpretations from them.</p>
-<p>Therefore, we need to learn both about the concepts of statistical analysis on the one hand, and the processing of statistical information -through R- on the other. The lectures will provide the starting point and the direction for statistical concepts, whilst these analysis labs provide the more practical experiences in how to use R, and how to R your ally. Over the next year, in these labs we will increasingly be using R Studio to focus on the latter, processing side, which will allow you to focus your energies on the conceptual side and its relevance for appreciating psychology.</p>
-</div>
-<div id="getting_started" class="section level3" number="2.1.2">
-<h3><span class="header-section-number">2.1.2</span> Getting started with R Studio</h3>
-<p>For Lancaster University Psychology Students in 2021, we will be learning about R Studio through a simple but powerful web server architecture. That is, through the power of the internet, you can access and use R Studio by logging into a free account that we have provided and we will maintain for your use.</p>
-<blockquote>
-<p>Here’s a little secret: There are several different ways to access R Studio. For example, you can download a copy of the software onto your computer, or use a Virtual Machine set up to run a copy. There’s nothing to stop you having your local copy, but please note - we can’t support your own version through lab classes</p>
-</blockquote>
-<p>So why are we using an R Studio web server?</p>
-<ul>
-<li><p>Uniformity of experience. It doesn’t matter whether you have a PC, a Mac, a Chromebook or whatever. The server provides a consistent, uniform experience. That also means we can spend more time helping you master the software, rather than translating between versions on different platforms</p></li>
-<li><p>Ubiquity of experience. There are <strong>lots</strong> of computers on campus. There are computer rooms, there are pods in the learning centre, there are bookable laptops in the Levy Lab, and so on. Providing a web interface from a browser, means you can practice R from all the different machines. Your not limited to a particular copy on a single machine.</p></li>
-<li><p>Consistency of performance. Since everyone logs into the same installation of R Studio, we can ensure that things work the way we expect. This allows staff to focus on teaching you the key issues, without worrying about software conflicts because different machines have different configurations, or different versions with different features etc. We’ll have more time to focus on the important stuff!</p></li>
-<li><p>Quality of performance. Some installations of R Studio and some commercial versions of the server are set up, well, to be the basic version rather than the premium version. To draw a papelle: do you want to have to put up with the cheap, low-bandwidth broadband package? We’ve got control of the server set up, so we’ll try and make this the most effective way to do this.</p></li>
-</ul>
-<p>We’ve moved to the R Studio server approach this year. We’ve tried hard to set it up to work well- Apologies in advance for any teething issues, we will try to resolve them as quickly as possible.</p>
-<p>You will have received an email with your account information to log onto the R Studio server. Please keep your account details safe.</p>
-<p>From a computer on the campus wifi, you can access R Studio at:</p>
-<p><a href="http://psy-rstudio.lancaster.ac.uk" title="Lancaster Psychology R Studio Server">psy-rstudio.lancaster.ac.uk</a> (off campus, you will need to be on the VPN)</p>
-<p>At the login screen, use your university username (e.g., bloggsj)</p>
-<p>Your password for R Studio is: [password here]</p>
-<div id="what-does-it-look-like" class="section level4" number="2.1.2.1">
-<h4><span class="header-section-number">2.1.2.1</span> What does it look like?</h4>
-<p>When RStudio starts, it will look something like this: <img src="files/Week_1/server_startup.png" alt="Startup screen" /></p>
-<p>RStudio has three panels or windows: there are tabs for Console (taking up the left hand side), Environment (and History top right) , Current file (bottom right). You will also see a 4th window for a script or set of commands you develop, also (on the left hand side).</p>
-</div>
-</div>
-<div id="lets-do-something" class="section level3" number="2.1.3">
-<h3><span class="header-section-number">2.1.3</span> Let’s do something!</h3>
-<p>In the console window on the left hand side, there’s a command prompt “&gt;”. This is where we ask RStudio to do our bidding!</p>
+<div id="pre-lab-work-online-tutorial-3" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Pre-lab work: online tutorial</h2>
+<p><strong>Online tutorial</strong>: You must make every attempt to complete this before the lab! To access the <a href="https://ma-rconnect.lancs.ac.uk/Week_9_LabPrep" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
+<p><strong>Getting ready for the lab class</strong></p>
 <ol style="list-style-type: decimal">
-<li>Click in the console window and we will get R to work as a calculator. Type in:</li>
+<li><p>Create a folder and a Project for Week 9. <a href="week-6-visualising-data-and-binomial-tests.html#creating_project">Click here for the instructions</a> from Week 6 if you are unsure.</p></li>
+<li><p>Download the <a href="files/Week_9/Week_9_new.zip">Week_9.zip</a> file and upload it into this new folder in RStudio Server. If you need them, <a href="week-2-descriptive-statistics-in-r-studio.html#uploading_zip">here are the instructions</a> from Week 2.</p></li>
 </ol>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="week-1-introduction-to-statistics-with-r-studio.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span> <span class="sc">+</span> <span class="dv">5</span></span></code></pre></div>
-<p>and press enter. You should get the answer (amazing huh? OK, maybe not <em>that</em> amazing…). Use your imagination – ask a simple arithmetic question of your own choosing!</p>
-<ol start="2" style="list-style-type: decimal">
-<li>In the first analysis lecture, we looked at measures of central tendency and how to calculate them. So let’s get R to do these calculations also!</li>
-</ol>
-<p>First, we tell R about the data from the lecture. Copy the following line and paste it into the console, then press enter to run it:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="week-1-introduction-to-statistics-with-r-studio.html#cb2-1" aria-hidden="true" tabindex="-1"></a>PSYC121_week_1_data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">8</span>)</span></code></pre></div>
-<p>This creates an “object” called <code>Analysis_week1_data</code>. We can then perform calculations on this object. For example, we can find the mean by using the following command (again, copy and paste)</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="week-1-introduction-to-statistics-with-r-studio.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(PSYC121_week_1_data)</span></code></pre></div>
-<p>Check the answer is the same we found in the lecture (it should be 6!).</p>
-<p>Next, let’s ask for the median:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="week-1-introduction-to-statistics-with-r-studio.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(PSYC121_week_1_data)</span></code></pre></div>
-<p>This also should be the answer from the lecture (7)</p>
-<p>R doesn’t have a single corresponding command for the <em>mode</em>, but we can use this series of commands:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="week-1-introduction-to-statistics-with-r-studio.html#cb5-1" aria-hidden="true" tabindex="-1"></a>getmode <span class="ot">&lt;-</span> </span>
-<span id="cb5-2"><a href="week-1-introduction-to-statistics-with-r-studio.html#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="cf">function</span>(PSYC121_week_1_dataa) {</span>
-<span id="cb5-3"><a href="week-1-introduction-to-statistics-with-r-studio.html#cb5-3" aria-hidden="true" tabindex="-1"></a>    uniqv <span class="ot">&lt;-</span> <span class="fu">unique</span>(PSYC121_week_1_data)</span>
-<span id="cb5-4"><a href="week-1-introduction-to-statistics-with-r-studio.html#cb5-4" aria-hidden="true" tabindex="-1"></a>    uniqv[<span class="fu">which.max</span>(<span class="fu">tabulate</span>(<span class="fu">match</span>(PSYC121_week_1_data, uniqv)))]</span>
-<span id="cb5-5"><a href="week-1-introduction-to-statistics-with-r-studio.html#cb5-5" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb5-6"><a href="week-1-introduction-to-statistics-with-r-studio.html#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="week-1-introduction-to-statistics-with-r-studio.html#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">getmode</span>(PSYC121_week_1_data)</span></code></pre></div>
-<p>This is just a bit of clever jiggery-pokery that gets the mode.</p>
 </div>
-<div id="extra-content" class="section level3" number="2.1.4">
-<h3><span class="header-section-number">2.1.4</span> Extra content</h3>
-<p>The commands above are designed to show you that with RStudio active, you can get quick and accurate answers to material covered in PSYC121 lectures.</p>
-<p>All we have asked is that you write (or copy in) text to get the information. However, after the lab, you could play around with RStudio in your own time and think about the following:</p>
-<p>In R, “&lt;-” is the assignment operator as in the command we used:</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="week-1-introduction-to-statistics-with-r-studio.html#cb6-1" aria-hidden="true" tabindex="-1"></a>PSYC121_week_1_data <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">7</span>,<span class="dv">8</span>,<span class="dv">8</span>,<span class="dv">7</span>,<span class="dv">3</span>,<span class="dv">1</span>,<span class="dv">6</span>,<span class="dv">9</span>,<span class="dv">3</span>,<span class="dv">8</span>)</span></code></pre></div>
-<p>We create the variable label on the left (<code>Analysis_week1_data</code>) and we give it those number on the right. The name <code>Analysis_week1_data</code> is largely arbitrary: try use a variable of your own naming (your own name?) instead - and then use that alternative name for the other commands.</p>
-<hr />
-<p><strong>Throughout this year, we’ll use the convention of the “underscore” to separate words in labels (it_makes_them_easier_to_read than ifyoudidn’thaveanyspaces)</strong></p>
-<hr />
-<p>What does that tell you about the text used to get the mode? Can you figure out what each line does?</p>
-<p>Also, once you have created a variable, you can check what the variable comprises by calling it at the command line. Just write its name, and R will respond with all the data points (all the X values it knows about). Take note that, as you write the variable label, R studio should offer to “auto-complete” the name. It only does that if it you have defined the variable, or are writing a known command.</p>
+<div id="rstudio-task-1-data-visualisation-and-cleaning" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> RStudio Task 1: Data visualisation and cleaning</h2>
+<p>In this class we will be exploring some data on music preferences and social media use. In our survey we asked people to rate how much they liked various music artists out of 5. There were some “pop” artists like Beyonce and Taylor Swift, and some “rock” artists like Coldplay and Nirvana. In the data we have grouped the ratings for pop artists together, and similarly for the rock artists: each respondent therefore gets a <em>pop_score</em> and a <em>rock_score</em>. We’ve also turned these ratings into a <em>categorial variable</em>, which reflects whether someone liked pop more than rock (“pop-tastic”), or not (“rock-on” - either they preferred rock, or they had no preference).</p>
+<p>The other variables relate to social media use. We have the <em>instagram_followers</em> and <em>facebook_friends</em>, which provide a (fairly crude) measure of how much someone engages with these social media platforms.</p>
+<ol style="list-style-type: decimal">
+<li><p>Let’s first take a look at the data on music preferences. We might think that people who like rock music are less likely to be in to pop music (and vice versa). To look at this <em>relationship</em> we can plot one score on the x axis and one on the y axis. Read in the data (make sure it’s called “data_w9”) and complete the <code>geom_jitter()</code> code to do this (we use <code>geom_jitter()</code> here because there are overlapping points.</p></li>
+<li><p>Consider the pattern of data you see. In general, do people who really like pop (high scores) like or dislike rock? Conversley, do those who like rock like or dislike pop? What pattern would you expect for these different relationships in preference? Talk about it with your table.</p></li>
+<li><p>Next you can add a mapping between <em>music_pref</em> and <em>colour</em> to show our boundaries for the three levels of the categorical variable</p></li>
+<li><p>Let’s take a look at the two social media variables. Complete the code for the two histogram plots to view the data on facebook friends and instagram followers.</p></li>
+<li><p>You’ll see that for both variables, there are some extreme values (some people have &gt;1000 friends and &gt; 2000 followers). These outlier values can be problematic when we run our statistical tests, so (like last week) we probably want to control their influence by removing them. As you saw in your online tutorial, we can convert the data to z scores, and then remove z values above and below certain values.</p></li>
+<li><p>Let’s create two “z-transform columns”. Complete the code by adding the two variable (column) names to the code. View the <em>data_w9</em> object to check these have been created correctly. Like in the online tutorial, you should calculate some descriptive statistics for these new columns if you like (e.g., <code>mean()</code>, <code>sd()</code>, <code>min()</code> and <code>max()</code>).</p></li>
+<li><p>We know from our lectures on the z distribution that values of greater than 2 (or less than -2) reflect around 5% of the distribution, and values greater than 3 (or less than -3) represent less than 1% of the distribution:</p></li>
+</ol>
+<p><img src="files/Week_9/z_score_figure.png" />
+8. Let’s consider an outlier any value that has a z of 2.5. Complete the filter command to remove the data where the z value is greater than 2.5 for both the <em>z_FF</em> column and the <em>z_IF</em> column. Note you only need to look at positive values: our histogram has already shown that these data are positively skewed with outliers only at the positive end (you cannot have fewer than 0 friends/followers; these are ratio scales with a true 0 value). Complete the filter command to remove the positive z values above 2.5. When completing this, note the use of the AND (&amp;) symbol: We want to KEEP z values that are below 2.5 for <em>z_FF</em> and for <em>z_IF</em> the variables.</p>
+</div>
+<div id="rstudio-task-2-summarising-and-testing-for-differences" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> RStudio TASK 2: Summarising and testing for differences</h2>
+<ol start="9" style="list-style-type: decimal">
+<li><p>Let’s have a look at whether people’s music preferences relate to their social media use. To do this, let’s use our category variable <em>music_pref</em>. Complete the <code>group_by()</code> and <code>summarise()</code> commands to give the mean values of <em>facebook_friends</em> (meanFF) and <em>instagram_followers</em> (meanIF) for each level of the <em>music_pref</em> variable. You don’t need to edit the <code>N = n()</code> line - this provides the number of participants at each level of the <em>music_pref</em> variable</p></li>
+<li><p>What do the means suggest? Are those rock-grandads stuck in the last decade on Facebook? Are the pop-divas insta-addicts?</p></li>
+<li><p>Let’s test if these differences are real. First, note that most people liked pop music more than rock music. We have unequal sample sizes, and potentially unequal variances. Run the <code>var.test()</code> code to check if the variances of the two samples are similar (homogeneity of variance). If this test produces a p value less that .05, then the variances in the two samples are unequal. That will have consequences for how we run the <code>t-test()</code> in the next step.</p></li>
+<li><p>Now let’s run the t-test. This week we are comparing data from different samples of participants (those who preferred pop and those who preferred rock). We need to tell the t-test that the data are NOT paired (<code>paired = FALSE</code>). The result of the <code>var.test()</code> in the last step will tell you whether the <code>var.equal</code> value should be <code>TRUE</code> or <code>FALSE</code>. Set <code>var.equal = FALSE</code> or <code>var.equal = TRUE</code> depending on whether the variances are equal. When you’re happy with the values, run the t-test. What result did you get and what does this mean? Discuss this with your table, or with the staff in the lab.</p></li>
+<li><p>In that t-test we looked at the <em>facebook_friends</em> variable, but what about the <em>instagram_followers</em> variable? Copy the code to run another <code>var.test()</code> and <code>t.test()</code>, for the <em>instagram_followers</em> variable. Note the t and p values; What do these tell us about the relationship between music preference and social media use?</p></li>
+</ol>
+</div>
+<div id="rstudio-task-3-power" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> RStudio TASK 3: Power</h2>
 
-</div>
 </div>
 </div>
             </section>
@@ -342,8 +302,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-2-descriptive-statistics-in-r-studio.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-8-plotting-means-ses-and-related-samples-t-tests.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

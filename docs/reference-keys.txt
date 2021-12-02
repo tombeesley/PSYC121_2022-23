@@ -58,3 +58,8 @@ rstudio-task-1-calculating-means-and-ses
 rstudio-task-2-running-related-samples-t-tests
 rstudio-task-3-plotting-the-means-and-ses
 saving-your-work
+week-9-draft---do-not-complete-yet
+pre-lab-work-online-tutorial-3
+rstudio-task-1-data-visualisation-and-cleaning
+rstudio-task-2-summarising-and-testing-for-differences
+rstudio-task-3-power
