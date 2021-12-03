@@ -7,7 +7,7 @@ output:
 
 
 
-# Week 8: Plotting means, SEs and related-samples t-tests
+# Week 8: Related-samples t-tests, plotting means and SE bars
 
 > Written by Tom Beesley & John Towse
 
