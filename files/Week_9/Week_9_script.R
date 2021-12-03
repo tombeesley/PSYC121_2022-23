@@ -3,21 +3,7 @@ library(pwr)
 library(car)
 library(rstatix)
 
-# load("tidy_data.RData")
-# data_raw <- data # keep copy
 
-# data <-
-#   data_raw %>%
-#   select(facebook_friends, instagram_followers,
-#          starts_with("music")) %>%
-#   mutate(pop_score = rowSums(across(music_swift:music_drake), na.rm = TRUE),
-#          rock_score = rowSums(across(music_coldplay:music_rhcp), na.rm = TRUE)) %>%
-#   mutate(facebook_friends= round(facebook_friends)) %>%
-#   select(-starts_with("music")) %>%
-#   drop_na() %>%  # at this stage get rid of NAs
-#   mutate(music_pref = if_else(pop_score > rock_score, true = "pop-tastic", false = "rock-on"))
-# 
-# write_csv(data, "music_smedia.csv")
 
 data_w9 <- read_csv("music_smedia.csv") # read in the data
 
@@ -72,15 +58,27 @@ t.test(data = data_w9_f,
        paired = FALSE, 
        var.equal = TRUE) # change this based on the results of your levene test
 
-cohens_d(data = t_test_comp, formula = instagram_followers ~ music_pref)
-
 # TASK 3 - Thinking about power
 
-pwr.t.test(n = 21, d = 0.486, type = "two.sample")
+# use the stroop effect as an example
+
+data_stroop <-read_csv("data_stroop.csv")
+
+# this code removes the control condition
+data_stroop <- 
+  data_stroop %>% 
+  filter(condition == "compatible" | condition == "incompatible")
+
+cohens_d(data = data_stroop, 
+         time ~ condition)
+
+pwr.t.test(n = 20, d = .92, type = "paired") # what power would we achieve?
+
+pwr.t.test(power = .8, d = .92, type = "paired") # what N would we need?
 
 
 
-# TASK 4 - removing outlier values
+
 
 
 
