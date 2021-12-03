@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7 Week 7: One-sample t-test on salary estimates | Statistics for Psychologists</title>
+  <title>9 Week 9: Unrelated-samples t-test and Power | Statistics for Psychologists</title>
   <meta name="description" content="Course content for PSYC121 and PSYC122 at Lancaster University" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7 Week 7: One-sample t-test on salary estimates | Statistics for Psychologists" />
+  <meta property="og:title" content="9 Week 9: Unrelated-samples t-test and Power | Statistics for Psychologists" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   <meta name="github-repo" content="tombeesley/LU_PSYC121_122" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 Week 7: One-sample t-test on salary estimates | Statistics for Psychologists" />
+  <meta name="twitter:title" content="9 Week 9: Unrelated-samples t-test and Power | Statistics for Psychologists" />
   
   <meta name="twitter:description" content="Course content for PSYC121 and PSYC122 at Lancaster University" />
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="week-6-visualising-data-and-binomial-tests.html"/>
-<link rel="next" href="week-8-related-samples-t-tests-plotting-means-and-se-bars.html"/>
+<link rel="prev" href="week-8-related-samples-t-tests-plotting-means-and-se-bars.html"/>
+
 <script src="libs/header-attrs-2.6/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -252,50 +252,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="week-7-one-sample-t-test-on-salary-estimates" class="section level1" number="7">
-<h1><span class="header-section-number">7</span> Week 7: One-sample t-test on salary estimates</h1>
+<div id="week-9-unrelated-samples-t-test-and-power" class="section level1" number="9">
+<h1><span class="header-section-number">9</span> Week 9: Unrelated-samples t-test and Power</h1>
 <blockquote>
 <p>Written by Tom Beesley &amp; John Towse</p>
 </blockquote>
-<p>Today we will look in a bit more detail at people’s estimates of the average UK salary. We will first plot this data using <code>geom_histogram()</code> and also <code>geom_boxplot()</code>. When we do this, we’ll see that there are some unusual values, and we’ll need to do a bit of <strong>data wrangling</strong> to remove them, using the <code>filter()</code> command. We’ll then turn to the conceptual ideas of the lecture - how can we tell if the mean of our sample is unusual, or whether we would actually expect this mean value under the null hypothesis? Finally, we’ll continue to develop our skills in <strong>data visualisation</strong> by exploring <code>geom_density()</code> plots.</p>
-<div id="pre-lab-work-online-tutorial-1" class="section level2" number="7.1">
-<h2><span class="header-section-number">7.1</span> Pre-lab work: online tutorial</h2>
-<p><strong>Online tutorial</strong>: You must make every attempt to complete this before the lab! To access the <a href="https://ma-rconnect.lancs.ac.uk/Week_7_LabPrep" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
+<div id="pre-lab-work-online-tutorial-3" class="section level2" number="9.1">
+<h2><span class="header-section-number">9.1</span> Pre-lab work: online tutorial</h2>
+<p><strong>Online tutorial</strong>: You must make every attempt to complete this before the lab! To access the <a href="https://ma-rconnect.lancs.ac.uk/Week_9_LabPrep" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
 <p><strong>Getting ready for the lab class</strong></p>
 <ol style="list-style-type: decimal">
-<li><p>Create a folder and a Project for Week 7. <a href="week-6-visualising-data-and-binomial-tests.html#creating_project">Click here for the instructions</a> from last week if you are unsure.</p></li>
-<li><p>Download the <a href="files/Week_7/Week_7.zip">Week_7.zip</a> and upload it into this new folder in RStudio Server. If you need them, <a href="week-2-descriptive-statistics-in-r-studio.html#uploading_zip">here are the instructions</a> from Week 2.</p></li>
+<li><p>Create a folder and a Project for Week 9. <a href="week-6-visualising-data-and-binomial-tests.html#creating_project">Click here for the instructions</a> from Week 6 if you are unsure.</p></li>
+<li><p>Download the <a href="files/Week_9/Week_9_new.zip">Week_9.zip</a> file and upload it into this new folder in RStudio Server. If you need them, <a href="week-2-descriptive-statistics-in-r-studio.html#uploading_zip">here are the instructions</a> from Week 2.</p></li>
 </ol>
 </div>
-<div id="rstudio-task-1-plotting-and-filtering" class="section level2" number="7.2">
-<h2><span class="header-section-number">7.2</span> RStudio Task 1: Plotting and filtering</h2>
-<p><strong>Important!</strong> - You should be using the Week_7_script as you work through these tasks. Edit the script to complete the tasks. Running code from the script is easy - place your cursor on the line or block of code you want to run and press “run” (of ctrl/cmd+enter). See the video on Moodle if you’re unsure. Save your script as you go to keep a record of your work.</p>
+<div id="rstudio-task-1-data-visualisation-and-cleaning" class="section level2" number="9.2">
+<h2><span class="header-section-number">9.2</span> RStudio Task 1: Data visualisation and cleaning</h2>
+<p>In this class we will be exploring some data on music preferences and social media use. In our survey we asked people to rate how much they liked various music artists out of 5. There were some “pop” artists like Beyonce and Taylor Swift, and some “rock” artists like Coldplay and Nirvana. In the data we have grouped the ratings for pop artists together, and similarly for the rock artists: each respondent therefore gets a <em>pop_score</em> and a <em>rock_score</em>. We’ve also turned these ratings into a <em>categorial variable</em>, which reflects whether someone liked pop more than rock (“pop-tastic”), or not (“rock-on” - either they preferred rock, or they had no preference).</p>
+<p>The other variables relate to social media use. We have the <em>instagram_followers</em> and <em>facebook_friends</em>, which provide a (fairly crude) measure of how much someone engages with these social media platforms.</p>
 <ol style="list-style-type: decimal">
-<li><p>Open the Week_7_script and run the <code>library</code>, <code>options</code> and <code>read_csv</code> commands. The <code>options</code> command is new. It is very cryptic and you don’t need to worry too much about this - it is making sure that the values in the graphs are displayed as regular numbers and not as scientific notation.</p></li>
-<li><p>Complete the <code>geom_histogram()</code> code to plot the distribution of salary data</p></li>
-<li><p>OK - we’ve got some pretty funky values here! Some people think the average salary is over £300,000!!! Well, maybe they just added too many zeros (let’s give them the benefit of the doubt). Quite often when we get our “raw” data, it contains weird values like this that we need to consider removing. Let’s run the <code>arrange()</code> code now to see what exactly those high values are.</p></li>
-<li><p>We’ll need to remove these high values to get a better sense of the distribution. Let’s use a <code>filter()</code> command to do this. We need to make a decision about what values to exclude. In later labs we’ll look at a more systematic process of removing <em>outliers</em>, but for now, let’s just remove any that are over £200,000. Edit the <code>filter()</code> command to keep only those estimates that are <em>below</em> £200,000 (&lt;). Remeber that the filter command <em>keeps</em> the data that is <em>TRUE</em> according to the expression. Also note that you are making a new object at this step: <em>data_w7_f</em> .</p></li>
-<li><p>Now your filter has done its job (check the Environment to make sure <em>data_w7_f</em> has fewer rows than <em>data_w7</em>), let’s plot the data again. Edit the <code>aes()</code> command of this next code chunk to draw a new histogram.</p></li>
-<li><p>And as you know, we can also look at the distribution as a boxplot. Edit the <code>geom_boxplot()</code> code to do this.</p></li>
+<li><p>Let’s first take a look at the data on music preferences. We might think that people who like rock music are less likely to be in to pop music (and vice versa). To look at this <em>relationship</em> we can plot one score on the x axis and one on the y axis. Read in the data (make sure it’s called “data_w9”) and complete the <code>geom_jitter()</code> code to do this (we use <code>geom_jitter()</code> here because there are overlapping points).</p></li>
+<li><p>Consider the pattern of data you see. In general, do people who really like pop (high scores) like or dislike rock? Conversely, do those who like rock dislike pop? What pattern would you expect for these different relationships in preference? Talk about it with your table.</p></li>
+<li><p>Next you can add a mapping between <em>music_pref</em> and <em>colour</em> to show our boundaries for the three levels of the categorical variable</p></li>
+<li><p>Let’s take a look at the two social media variables. Complete the code for the two histogram plots to view the data on facebook friends and instagram followers.</p></li>
+<li><p>You’ll see that for both variables, there are some extreme values (some people have &gt;1000 friends and &gt; 2000 followers). These outlier values can be problematic when we run our statistical tests, so (like last week) we probably want to control their influence by removing them. As you saw in your online tutorial, we can convert the data to z scores, and then remove z values above and below certain values.</p></li>
+<li><p>Let’s create two “z-transform columns”. Complete the code by adding the two variable (column) names to the code. View the <em>data_w9</em> object to check these have been created correctly. Like in the online tutorial, it would be a good idea to calculate some descriptive statistics for these new columns to check them (e.g., <code>mean()</code>, <code>sd()</code>, <code>min()</code> and <code>max()</code>).</p></li>
+<li><p>We know from our lectures on the z distribution that values of greater than 2 (or less than -2) reflect around 5% of the distribution, and values greater than 3 (or less than -3) represent less than 1% of the distribution:</p></li>
+</ol>
+<p><img src="files/Week_9/z_score_figure.png" /></p>
+<ol start="8" style="list-style-type: decimal">
+<li>Let’s consider an outlier any value that has a z of 2.5 (a conventional cutoff). Complete the filter command to remove the data where the z value is greater than 2.5 for both the <em>z_FF</em> column and the <em>z_IF</em> column. Note you only need to look at positive values: our histogram has already shown that these data are positively skewed with outliers only at the positive end (you cannot have fewer than 0 friends/followers; these are ratio scales with a true 0 value). Complete the filter command to remove the positive z values above 2.5. When completing this, note the use of the AND (&amp;) symbol: We want to KEEP z values that are below 2.5 for both the <em>z_FF</em> and <em>z_IF</em> variables.</li>
 </ol>
 </div>
-<div id="rstudio-task-2-one-sample-t-test" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> RStudio Task 2: One-sample t-test</h2>
-<p>We now want to know if the salary estimates are different to the actual average salary in the UK (which is approx. £30,000). Our hypothesis might be that people are inaccurate - they overestimate or underestimate the average UK salary. Let’s test that.</p>
-<ol start="7" style="list-style-type: decimal">
-<li><p>The first step towards this is to calculate a mean of the column of salary estimates. Edit the line of code with <code>mean()</code> to tell R to compute this value. Remember to use the new data object you created after you removed the outliers. If you’re struggling to remember how to compute a <code>mean()</code>, jump back to the <a href="week-2-descriptive-statistics-in-r-studio.html#mean_median">Week 2 content</a></p></li>
-<li><p>Now we can compute a t-statistic and check its significance with <code>t.test()</code>. Edit the code on this line to conduct a one-sample t-test. You need to provide <strong>the sample of data on which you want to conduct the test</strong>, and the <strong>expected mean under the null hypothesis</strong>. Remember our hypothesis is that people are not accurate. Your calculation of the mean should tell you whether they numerically overestimated or underestimated. But would we expect such a result under the null hypothesis? Run the t-test and <strong>note the p value</strong>. How likely is it that we would see this sample of data (this mean value and the distribution of data - the SD) under null hypothesis? The p value ranges from 0 to 1. If it is very low - typically we say p &lt; .05 - then we conclude our result is unlikely under the null hypothesis and it is therefore a <em>significant result</em>.</p></li>
-<li><p>What is the critical value of t in the t-distribution table, for this sample size? Degrees of freedom is N - 1.</p></li>
+<div id="rstudio-task-2-unrelated-samples-t-test" class="section level2" number="9.3">
+<h2><span class="header-section-number">9.3</span> RStudio Task 2: Unrelated samples t-test</h2>
+<ol start="9" style="list-style-type: decimal">
+<li><p>Let’s have a look at whether people’s music preferences relate to their social media use. To do this, let’s use our category variable <em>music_pref</em>. Complete the <code>group_by()</code> and <code>summarise()</code> commands to give the mean values of <em>facebook_friends</em> (meanFF) and <em>instagram_followers</em> (meanIF) for each level of the <em>music_pref</em> variable. You don’t need to edit the <code>N = n()</code> line - this provides the number of participants at each level of the <em>music_pref</em> variable</p></li>
+<li><p>What do the means suggest? Are those rock-grandads stuck in the last decade on Facebook? Are the pop-divas insta-addicts?</p></li>
+<li><p>Let’s test if these differences are real. First, note that most people liked pop music more than rock music (see the <em>N</em> column in the summary). We have unequal sample sizes, and potentially unequal variances. Run the <code>var.test()</code> code to check if the variances of the two samples are similar (homogeneity of variance). If this test produces a p value less that .05, then the variances in the two samples are unequal. That will have consequences for how we run the <code>t-test()</code> in the next step.</p></li>
+<li><p>Now let’s run the t-test. This week we are comparing data from different samples of participants (those who preferred pop and those who preferred rock). We need to tell the t-test that the data are NOT paired (<code>paired = FALSE</code>). The result of the <code>var.test()</code> in the last step will tell you whether the <code>var.equal</code> value should be <code>TRUE</code> or <code>FALSE</code>. Set <code>var.equal = FALSE</code> or <code>var.equal = TRUE</code> depending on whether the variances are equal. When you’re happy with the values, run the t-test. What result did you get and what does this mean? Discuss this with your table, or with the staff in the lab.</p></li>
+<li><p>In that t-test we looked at the <em>facebook_friends</em> variable, but what about the <em>instagram_followers</em> variable? Copy the code to run another <code>var.test()</code> and <code>t.test()</code>, for the <em>instagram_followers</em> variable. Note the t and p values; What do these tell us about the relationship between music preference and social media use?</p></li>
 </ol>
-<p><img src="files/Week_7/ttable.png" /></p>
 </div>
-<div id="density_plots" class="section level2" number="7.4">
-<h2><span class="header-section-number">7.4</span> RStudio Task 3: Density plots: salary estimates by home location</h2>
-<ol start="11" style="list-style-type: decimal">
-<li><p>Draw a <code>geom_density()</code> (density plot) by adding an <em>x</em> mapping for the <em>uk_salary</em> column inside <code>aes()</code>. This plot can be thought of as a smoothed version of the histogram.</p></li>
-<li><p>Now map the <em>fill</em> feature to the variable <em>home_location</em>. This should create 3 density plots, one for each home location. You might find that it’s a bit difficult to see the shape of all three distributions. To make things clearer, add <code>alpha = .5</code> <strong>outside</strong> of the <code>aes()</code> command in <code>geom_denisty()</code>. This should make the plots a bit more transparent. Try playing around with different values of alpha between 0 and 1.</p></li>
-<li><p>Manually change the colours of the columns by adding (+) this code as a layer to your ggplot code: <code>scale_fill_manual(values = c("darkgreen", "darkblue", "darkred"))</code>. Take a look <a href="files/Week_7/Rcolor.pdf" target="_blank">at this PDF</a> for more colour options than you’ll probably ever want!</p></li>
-<li><p>You can save your graph outside of R by clicking Export -&gt; Save as Image.</p></li>
+<div id="rstudio-task-3-power-and-effect-size-d-calculations" class="section level2" number="9.4">
+<h2><span class="header-section-number">9.4</span> RStudio Task 3: Power and effect size (d) calculations</h2>
+<ol start="14" style="list-style-type: decimal">
+<li><p>We saw in last week’s lab tasks that there was a significant effect in our Stroop task data: participants were faster to say the colour names of the compatible list compared to the incompatible list (there were significant differences with the control list too). We will now use these data to calculate an <strong>effect size</strong> (<em>Cohen’s d</em>) for the t-statistic that we observed in that test.</p></li>
+<li><p>Import the stroop data. It’s always a good idea to <code>view()</code> it (you can do this by clicking on it in the environment) to remind yourself what it looks like.</p></li>
+<li><p>Run the code that will <code>filter()</code> the data to the two conditions we are interested in (compatible and incompatible).</p></li>
+<li><p>Run the <code>cohens_d()</code> code to calculate the effect size, which is reported as <em>effsize</em>. You can ignore any negative sign, taking note of the absolute value.</p></li>
+<li><p>So we know that this large effect size was significant with our fairly large sample of participants. What might we have expected with a much smaller sample size. Use the <code>pwr.t.test()</code> function to add in the effect size (d) and an <em>N</em> of 20. What <strong>power</strong> would we have achieved with this sample size, to detect this large effect?</p></li>
+<li><p>Let’s say we wanted our next experiment to have an 80% chance of finding an effect at least as large as the one we found. Complete the <code>pwr.t.test()</code> function to work out the minimum sample size we would need to achieve power of .8, with this effect size.</p></li>
+<li><p>Let’s say we are looking to run a new experiment in which we give people a stressful task to complete simultaneously. We will ask them to put their hands in a bucket of ice cold water while doing the Stroop task. We are unsure of what consequence this will have for our effect size, but we want to estimate the effect size that could be achieved. We decide to run 40 participants, and want to achieve a power of .90 (90% chance to find an effect at least this large). What is the minimum effect size we could hope to detect under these conditions?</p></li>
 </ol>
 
 </div>
@@ -305,8 +313,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="week-6-visualising-data-and-binomial-tests.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-8-related-samples-t-tests-plotting-means-and-se-bars.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-8-related-samples-t-tests-plotting-means-and-se-bars.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

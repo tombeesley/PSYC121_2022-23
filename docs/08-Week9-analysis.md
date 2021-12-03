@@ -7,7 +7,7 @@ output:
 
 
 
-# Week 9: [DRAFT - do not complete yet] Unrelated-samples t-test and Power
+# Week 9: Unrelated-samples t-test and Power
 
 > Written by Tom Beesley & John Towse
 
