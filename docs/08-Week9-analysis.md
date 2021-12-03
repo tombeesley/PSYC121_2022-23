@@ -19,7 +19,7 @@ output:
 
 1. Create a folder and a Project for Week 9. [Click here for the instructions](#creating_project) from Week 6 if you are unsure.
 
-2. Download the [Week_9.zip](files/Week_9/Week_9_new.zip) file and upload it into this new folder in RStudio Server. If you need them, [here are the instructions](#uploading_zip) from Week 2.
+2. Download the [Week_9.zip](files/Week_9/Week_9.zip) file and upload it into this new folder in RStudio Server. If you need them, [here are the instructions](#uploading_zip) from Week 2.
 
 ## RStudio Task 1: Data visualisation and cleaning
 
