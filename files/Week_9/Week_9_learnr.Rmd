@@ -5,19 +5,7 @@ output:
     progressive: yes
     allow_skip: yes
 runtime: shiny_prerendered
-resource_files:
-- tidy_data.RData
-- Week_9_learnr.Rmd
-- Week_9_learnr.Rmd
-- tidy_data.RData
-- Week_9_learnr.Rmd
-- tidy_data.RData
-- Week_9_learnr.Rmd
-- tidy_data.RData
-- Week_9_learnr.Rmd
-- tidy_data.RData
-- Week_9_learnr.Rmd
-- tidy_data.RData
+
 ---
 
 ```{r setup, include=FALSE, exercise.startover = TRUE}
@@ -111,14 +99,14 @@ data %>%
 ```{r group_by-hint-1}
 
 data %>% 
-  groub_by() %>% 
+  group_by() %>% 
   summarise()
 
 ```
 ```{r group_by-hint-2}
 
 data %>% 
-  groub_by(sibling_order) %>% 
+  group_by(sibling_order) %>% 
   summarise()
 
 ```
