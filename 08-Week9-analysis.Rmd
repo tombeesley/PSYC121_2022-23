@@ -41,7 +41,7 @@ The other variables relate to social media use. We have the *instagram_followers
 
 2. Consider the pattern of data you see. In general, do people who really like pop (high scores) like or dislike rock? Conversely, do those who like rock dislike pop? What pattern would you expect for these different relationships in preference? Talk about it with your table.
 
-3. Next you can add a mapping between *music_pref* and *colour* to show our boundaries for the three levels of the categorical variable
+3. Next you can add a mapping between *music_pref* and *colour* to show our boundaries for the two levels of the categorical variable
 
 4. Let's take a look at the two social media variables. Complete the code for the two histogram plots to view the data on facebook friends and instagram followers.
 

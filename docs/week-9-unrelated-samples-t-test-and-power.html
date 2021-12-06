@@ -24,7 +24,7 @@
 <meta name="author" content="John Towse, Tom Beesley, Margriet Groen, Rob Davies" />
 
 
-<meta name="date" content="2021-12-03" />
+<meta name="date" content="2021-12-06" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -273,7 +273,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li><p>Let’s first take a look at the data on music preferences. We might think that people who like rock music are less likely to be in to pop music (and vice versa). To look at this <em>relationship</em> we can plot one score on the x axis and one on the y axis. Read in the data (make sure it’s called “data_w9”) and complete the <code>geom_jitter()</code> code to do this (we use <code>geom_jitter()</code> here because there are overlapping points).</p></li>
 <li><p>Consider the pattern of data you see. In general, do people who really like pop (high scores) like or dislike rock? Conversely, do those who like rock dislike pop? What pattern would you expect for these different relationships in preference? Talk about it with your table.</p></li>
-<li><p>Next you can add a mapping between <em>music_pref</em> and <em>colour</em> to show our boundaries for the three levels of the categorical variable</p></li>
+<li><p>Next you can add a mapping between <em>music_pref</em> and <em>colour</em> to show our boundaries for the two levels of the categorical variable</p></li>
 <li><p>Let’s take a look at the two social media variables. Complete the code for the two histogram plots to view the data on facebook friends and instagram followers.</p></li>
 <li><p>You’ll see that for both variables, there are some extreme values (some people have &gt;1000 friends and &gt; 2000 followers). These outlier values can be problematic when we run our statistical tests, so (like last week) we probably want to control their influence by removing them. As you saw in your online tutorial, we can convert the data to z scores, and then remove z values above and below certain values.</p></li>
 <li><p>Let’s create two “z-transform columns”. Complete the code by adding the two variable (column) names to the code. View the <em>data_w9</em> object to check these have been created correctly. Like in the online tutorial, it would be a good idea to calculate some descriptive statistics for these new columns to check them (e.g., <code>mean()</code>, <code>sd()</code>, <code>min()</code> and <code>max()</code>).</p></li>
