@@ -25,6 +25,9 @@ data_w9 <-
   mutate(z_FF = scale(facebook_friends), # z-transform of facebook friends
          z_IF = scale(instagram_followers)) # z-transform of instagram followers
 
+# descriptive stats
+mean(data_w9$z_FF) # for example - also sd(), min(), max()
+
 # removing outliers
 data_w9_f <- 
   data_w9 %>% 

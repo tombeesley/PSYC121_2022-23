@@ -44,9 +44,10 @@ extra-activity
 week-6-visualising-data-and-binomial-tests
 pre-lab-work-online-tutorial
 creating_project
-rstudio-task-2-visualising-phone-use
-rstudio-task-3-conducting-a-binomial-test
-extra-content-2
+visualising-phone-use
+conducting-a-binomial-test
+plot-labels-and-themes
+answers
 week-7-one-sample-t-test-on-salary-estimates
 pre-lab-work-online-tutorial-1
 rstudio-task-1-plotting-and-filtering
