@@ -100,4 +100,4 @@ EXTRA: These next steps can be completed to practice customising your plot
 
 When you have completed all of the lab content, you may want to check your answers with our completed version of the script for this week. **Remember**, looking at this script (studying/revising it) does not replace the process of working through the lab activities, trying them out for yourself, getting stuck, asking questions, finding solutions, adding your own comments, etc. **Actively engaging** with the material is the way to learn these analysis skills, not by looking at someone else's completed code...
 
-Download the [answers script](files/Week_6/Week_6_script_answers.R) 
+Download the [answers script](files/Week_8/Week_8_script_answers.R) 

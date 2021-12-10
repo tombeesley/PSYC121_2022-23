@@ -31,7 +31,7 @@ data %>%
 
 2. Download the [Week_9.zip](files/Week_9/Week_9.zip) file and upload it into this new folder in RStudio Server. If you need them, [here are the instructions](#uploading_zip) from Week 2.
 
-## RStudio Task 1: Data visualisation and cleaning
+## Data visualisation and cleaning
 
 In this class we will be exploring some data on music preferences and social media use. In our survey we asked people to rate how much they liked various music artists out of 5. There were some "pop" artists like Beyonce and Taylor Swift, and some "rock" artists like Coldplay and Nirvana. In the data we have grouped the ratings for pop artists together, and similarly for the rock artists: each respondent therefore gets a *pop_score* and a *rock_score*. We've also turned these ratings into a *categorial variable*, which reflects whether someone liked pop more than rock ("pop-tastic"), or not ("rock-on" - either they preferred rock, or they had no preference).
 
@@ -55,7 +55,7 @@ The other variables relate to social media use. We have the *instagram_followers
 
 8. Let's consider an outlier any value that has a z of 2.5 (a conventional cutoff). Complete the filter command to remove the data where the z value is greater than 2.5 for both the *z_FF* column and the *z_IF* column. Note you only need to look at positive values: our histogram has already shown that these data are positively skewed with outliers only at the positive end (you cannot have fewer than 0 friends/followers; these are ratio scales with a true 0 value). Complete the filter command to remove the positive z values above 2.5. When completing this, note the use of the AND (&) symbol: We want to KEEP z values that are below 2.5 for both the *z_FF* and *z_IF* variables. 
 
-## RStudio Task 2: Unrelated samples t-test
+## Unrelated samples t-test
 
 9.  Let's have a look at whether people's music preferences relate to their social media use. To do this, let's use our category variable *music_pref*. Complete the `group_by()` and `summarise()` commands to give the mean values of *facebook_friends* (meanFF) and *instagram_followers* (meanIF) for each level of the *music_pref* variable.  You don't need to edit the `N = n()` line - this provides the number of participants at each level of the *music_pref* variable
 
@@ -67,7 +67,7 @@ The other variables relate to social media use. We have the *instagram_followers
 
 13. In that t-test we looked at the *facebook_friends* variable, but what about the *instagram_followers* variable? Copy the code to run another `var.test()` and `t.test()`, for the *instagram_followers* variable. Note the t and p values; What do these tell us about the relationship between music preference and social media use?
 
-## RStudio Task 3: Power and effect size (d) calculations
+## Power and effect size (d) calculations
 
 14. We saw in last week's lab tasks that there was a significant effect in our Stroop task data: participants were faster to say the colour names of the compatible list compared to the incompatible list (there were significant differences with the control list too). We will now use these data to calculate an **effect size** (*Cohen's d*) for the t-statistic that we observed in that test. 
 
@@ -83,6 +83,11 @@ The other variables relate to social media use. We have the *instagram_followers
 
 20. Let's say we are looking to run a new experiment in which we give people a stressful task to complete simultaneously. We will ask them to put their hands in a bucket of ice cold water while doing the Stroop task. We are unsure of what consequence this will have for our effect size, but we want to estimate the effect size that could be achieved. We decide to run 40 participants, and want to achieve a power of .90 (90% chance to find an effect at least this large). What is the minimum effect size we could hope to detect under these conditions?
 
+## Answers
+
+When you have completed all of the lab content, you may want to check your answers with our completed version of the script for this week. **Remember**, looking at this script (studying/revising it) does not replace the process of working through the lab activities, trying them out for yourself, getting stuck, asking questions, finding solutions, adding your own comments, etc. **Actively engaging** with the material is the way to learn these analysis skills, not by looking at someone else's completed code...
+
+Download the [answers script](files/Week_9/Week_9_script_answers.R) 
 
 
 

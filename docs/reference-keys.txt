@@ -63,6 +63,7 @@ saving-your-work
 answers-2
 week-9-unrelated-samples-t-test-and-power
 pre-lab-work-online-tutorial-3
-rstudio-task-1-data-visualisation-and-cleaning
-rstudio-task-2-unrelated-samples-t-test
-rstudio-task-3-power-and-effect-size-d-calculations
+data-visualisation-and-cleaning
+unrelated-samples-t-test
+power-and-effect-size-d-calculations
+answers-3
