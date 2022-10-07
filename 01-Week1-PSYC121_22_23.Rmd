@@ -23,15 +23,13 @@ Want additional support? Keep in mind that the Department has endorsed and will 
 
 The book covers principles of statistics as well as lesson on using. You can access a library copy [here](https://onesearch.lancaster-university.uk/permalink/f/cssk39/44LAN_ALMA_DS51180136050001221)\
 
-## Activities for this week
-
 ## Task 1 - check-in with the University attendance register
 
 When you arrive, mke sure you have checked-in to your Analysis session in the Levy lab. All students are required by the University to confirm attendance at taught sessions. [Here's information from the University about how to do this](https://www.lancaster.ac.uk/student-and-education-services/check-in/).
 
 Staff will remind you of this in your class.
 
-## Task 2 - Getting dicy_m
+## Task 2 - Getting dicy
 
 ![](files/Week_1/dice.png){width="3in"}
 
@@ -55,7 +53,7 @@ Are all your answers the same? Why / why not? If not, are they very different or
 
 ## Task 3 - Using RStudio
 
-### 3.1 Introducing R Studio
+### Introducing R Studio
 
 R and RStudio is the software that we will be using to explore and learn about analysis in your Psychology degree. It's a computational engine: a very snazzy calculator that you should see as your friend and ally in the journey to understand and appreciate psychology. It sits *alongside* what we teach about the concepts and interpretation of statistical analysis.
 
@@ -65,7 +63,7 @@ Like even a simplest calculator, it just does what you ask (at least when you as
 
 Therefore, we need to learn both about the concepts of statistical analysis on the one hand, and the processing of statistical information -through R- on the other. The lectures will provide the starting pointmand the direction for statistical concepts, whilst these analysis labs provide the more practical experiences in how to use R, and how to R your ally. Over the next year, in these labs we will increasingly be using RStudio to focus on the latter, processing side, which will allow you to focus your energies on the conceptual side and its relevance for appreciating psychology.
 
-### 3.2 Getting started with RStudio {#getting_started}
+### Getting started with RStudio {#getting_started}
 
 For Lancaster University Psychology Students in 2022, we will be learning about R Studio through a simple but powerful web server architecture. That is, through the power of the internet, you can access and use R Studio by logging into a free account that we have provided and we will maintain for your use.
 
@@ -81,13 +79,13 @@ Your password for R Studio is: [password here]
 
 As it says in the subject line, please keep your account details safe!
 
-### 3.3 What does RStudio look like?
+### What does RStudio look like?
 
 When RStudio starts, it will look something like this: ![Startup screen](files/Week_1/RStudio_starup_screen.png)
 
 RStudio has three panels or windows: there are tabs for Console (taking up the left hand side), Environment (and History top right) , Current file (bottom right). You will also see a 4th window for a script or set of commands you develop, also (on the left hand side).
 
-### 3.4 Let's get started!
+### Let's get started!
 
 The first thing we want to do in RStudio is to create a folder for this week so that we can put the relevant material there and keep it tidy.
 
@@ -119,7 +117,7 @@ Use "Save...As" to create a new version of the script. By doing this, you'll be 
 
 In the script, select or highlight the first line of text, which is this one:
 
-#### 3.4.1 Run your first ever R instruction!
+### Run your first ever R instruction!
 
 ```{r eval=FALSE}
 5 + 5
@@ -129,11 +127,11 @@ and "run" this line. That tells RStudio to carry out the instruction.
 
 You should see that in thw console tab, RStudio calculates the answer to this incredibly hard maths challenge! (amazing huh? OK, maybe not \*that\* amazing...).
 
-#### 3.4.2 Modify your first ever R instruction!
+### Modify your first ever R instruction!
 
 Use your imagination -- add a new line to the script and ask a different simple arithmetic question of your own choosing! What happens?
 
-#### 3.4.3 Calculate descriptive stats in R for the first time!
+### Calculate descriptive stats in R for the first time!
 
 In this week's analysis lecture, we looked at measures of central tendency and how to calculate them. So let's get R to do these calculations also!
 
@@ -163,13 +161,13 @@ R doesn't have a single corresponding command for the *mode*, but we can use the
 
 This is just a bit of clever jiggery-pokery that gets the mode. What does R say the mode is?
 
-#### 3.4.3 Your challenge
+### Your challenge
 
 How can you get RStudio to verify / check the dice calculations that you attempted earlier? Think about how you might solve this problem, on the basis of what we have covered so far.
 
 We will discuss this in class and attempt to get RStudio to check your answers. In doing so, annotate the script (add notes for you - not RStudio) using the "#" command
 
-### 3.5 Before you finish
+### Before you finish
 
 Make sure you save a copy of the script that you have been working work by the end of the session. This provides you with the record - the digital trace - on what you have done. And it means you can come back and repeat any of the work you have performed.
 
