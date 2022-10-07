@@ -32,7 +32,7 @@ Staff will remind you of this in your class.
 
 ## Task 2 - Getting dicy_m
 
-![](docs/files/Week_1/dice.png){width="3in"}
+![](files/Week_1/dice.png){width="3in"}
 
 Here's a simple task for you to complete as a group around each of the workstations;
 
@@ -82,7 +82,7 @@ As it says in the subject line, please keep your account details safe!
 
 ### 3.3 What does RStudio look like?
 
-When RStudio starts, it will look something like this: ![Startup screen](docs/files/Week_1/RStudio_starup_screen.png)
+When RStudio starts, it will look something like this: ![Startup screen](files/Week_1/RStudio_starup_screen.png)
 
 RStudio has three panels or windows: there are tabs for Console (taking up the left hand side), Environment (and History top right) , Current file (bottom right). You will also see a 4th window for a script or set of commands you develop, also (on the left hand side).
 
