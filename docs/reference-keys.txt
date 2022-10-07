@@ -16,7 +16,3 @@ before-you-finish
 extra-content-for-outside-the-lab-class
 task-4-review-the-learnr-sample-practice-questions
 task-5-data-collection-exercise
-week-2-blah
-lab-work
-introducing-r-studio-1
-even-further
