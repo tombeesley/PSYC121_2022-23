@@ -10,4 +10,4 @@ link-citations: yes
 github-repo: tombeesley/LU_PSYC121_122
 description: "Course content for PSYC121 at Lancaster University"
 ---
-# header?
+# PSYC121
