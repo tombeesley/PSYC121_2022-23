@@ -1,3 +1,4 @@
+header
 week-1---introduction-to-psyc121
 analysis-labs-and-pre-lab-activity
 task-1---check-in-with-the-university-attendance-register
