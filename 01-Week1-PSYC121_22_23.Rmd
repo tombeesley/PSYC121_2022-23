@@ -30,7 +30,7 @@ When you arrive, mke sure you have checked-in to your Analysis session in the Le
 
 Staff will remind you of this in your class.
 
-## Task 2 - Getting dicy
+## Task 2 - Getting dicy_m
 
 ![](docs/files/Week_1/dice.png){width="3in"}
 

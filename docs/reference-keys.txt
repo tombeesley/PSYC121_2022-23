@@ -1,7 +1,7 @@
 analysis-labs-and-pre-lab-activity
 activities-for-this-week
 task-1---check-in-with-the-university-attendance-register
-task-2---getting-dicy
+task-2---getting-dicy_m
 task-3---using-rstudio
 introducing-r-studio
 getting_started
