@@ -1,4 +1,19 @@
 ---
+title: "Statistics for Psychologists 1"
+author: "John Towse, Tom Beesley"
+date: "2022-10-07"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+biblio-style: apalike
+link-citations: yes
+github-repo: tombeesley/PSYC121_2022-23
+description: "Course content for PSYC121 - 2022 to 2023"
+---
+
+<!--chapter:end:index.Rmd-->
+
+---
 output:
   pdf_document: default
   html_document: default
@@ -220,3 +235,6 @@ So a key task will be for everyone to have a go at taking our online survey, and
 We would like you to complete the survey via your Department Sona system account. This way, you will receive a research credit for doing so, to "jump start" your credit account.
 
 The sona system is can be accessed [at this link](https://lancs.sona-systems.com).
+
+<!--chapter:end:01-Week1-PSYC121_22_23.Rmd-->
+

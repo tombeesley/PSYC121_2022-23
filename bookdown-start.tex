@@ -1,0 +1,387 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{book}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Statistics for Psychologists 1},
+  pdfauthor={John Towse, Tom Beesley},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\usepackage{booktabs}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{Statistics for Psychologists 1}
+\author{John Towse, Tom Beesley}
+\date{2022-10-07}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\begin{quote}
+Written by John Towse \& Tom Beesley
+\end{quote}
+
+\hypertarget{analysis-labs-and-pre-lab-activity}{%
+\section{Analysis labs and `pre-lab' activity}\label{analysis-labs-and-pre-lab-activity}}
+
+For each lab session that you have been scheduled to attend, please come ``prepared'. By this we mean
+
+\begin{itemize}
+\item
+  You have watched the lecture video, made notes, and developed questions where you have them.
+\item
+  You have worked through the online ``prelab'' preparation materials (\href{https://ma-rconnect.lancs.ac.uk/Week_1_prep}{this is the one for week 1})
+\item
+  You read the lab sheet (this one) to get a sense of what we're going to be doing, and you anticipate potential problems so that you can focus on these in the session.
+\end{itemize}
+
+The lecture is designed to deliver important ideas and procedures for learning about analysis. Pre-lab material is then designed to help consolidate this learning, or enhance, expand and apply it in ways that set the scene for the lab session activity.We want to prepare you to be ready to go in the session itself and make the most of your time there.
+
+Want additional support? Keep in mind that the Department has endorsed and will use the Statistics textbook by David Howell called ``\textbf{Fundamental statistics for the behavioral sciences''}
+
+The book covers principles of statistics as well as lesson on using. You can access a library copy \href{https://onesearch.lancaster-university.uk/permalink/f/cssk39/44LAN_ALMA_DS51180136050001221}{here}\\
+
+\hypertarget{activities-for-this-week}{%
+\section{Activities for this week}\label{activities-for-this-week}}
+
+\hypertarget{task-1---check-in-with-the-university-attendance-register}{%
+\section{Task 1 - check-in with the University attendance register}\label{task-1---check-in-with-the-university-attendance-register}}
+
+When you arrive, mke sure you have checked-in to your Analysis session in the Levy lab. All students are required by the University to confirm attendance at taught sessions. \href{https://www.lancaster.ac.uk/student-and-education-services/check-in/}{Here's information from the University about how to do this}.
+
+Staff will remind you of this in your class.
+
+\hypertarget{task-2---getting-dicy_m}{%
+\section{Task 2 - Getting dicy\_m}\label{task-2---getting-dicy_m}}
+
+\includegraphics[width=3in,height=\textheight]{docs/files/Week_1/dice.png}
+
+Here's a simple task for you to complete as a group around each of the workstations;
+
+You will be given a pair of dice
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Working in pairs, one person rolls both dice.
+\item
+  Add up the total on each of them and have someone record that total (if you don't have some spare paper or a pen, use your computer)
+\item
+  Repeat those steps 20 times.
+\item
+  Then swap over your roles (the person rolling the dice, the person recording the outcome)
+\item
+  Once everyone at the workstation has had a turn at this, each person should attempt to work out (a) the mean and (b) the median of their dice roll total.
+\item
+  Check each others working, and discuss any differences or problems you have.
+\end{enumerate}
+
+Are all your answers the same? Why / why not? If not, are they very different or very similar?
+
+\hypertarget{task-3---using-rstudio}{%
+\section{Task 3 - Using RStudio}\label{task-3---using-rstudio}}
+
+\hypertarget{introducing-r-studio}{%
+\subsection{3.1 Introducing R Studio}\label{introducing-r-studio}}
+
+R and RStudio is the software that we will be using to explore and learn about analysis in your Psychology degree. It's a computational engine: a very snazzy calculator that you should see as your friend and ally in the journey to understand and appreciate psychology. It sits \emph{alongside} what we teach about the concepts and interpretation of statistical analysis.
+
+R is the core software, RStudio is the interface for interacting with it. Put another way, *R is the engine, RStudio is the cockpit.*
+
+Like even a simplest calculator, it just does what you ask (at least when you ask nicely!) but it requires the user to know what they want from it and to understand what it is telling you. A calculator can't help a kid get the right answer to a multiplication problem if they don't know the difference between multiplication and division and addition etc. And whilst a calculator is brilliant at doing the number crunching (and as a bonus, R Studio can help with turning the numbers into beautiful graphs and images too), even a calculator requires a thoughtful person to take the answers and make sensible interpretations from them.
+
+Therefore, we need to learn both about the concepts of statistical analysis on the one hand, and the processing of statistical information -through R- on the other. The lectures will provide the starting pointmand the direction for statistical concepts, whilst these analysis labs provide the more practical experiences in how to use R, and how to R your ally. Over the next year, in these labs we will increasingly be using RStudio to focus on the latter, processing side, which will allow you to focus your energies on the conceptual side and its relevance for appreciating psychology.
+
+\hypertarget{getting_started}{%
+\subsection{3.2 Getting started with RStudio}\label{getting_started}}
+
+For Lancaster University Psychology Students in 2022, we will be learning about R Studio through a simple but powerful web server architecture. That is, through the power of the internet, you can access and use R Studio by logging into a free account that we have provided and we will maintain for your use.
+
+\begin{quote}
+Here's a little secret: There are several different ways to access RStudio. For example, you can download a copy of the software onto your computer, or use a Virtual Machine set up to run a copy. There's nothing to stop you having your local copy, but please note - we can't support your own version through lab classes. We're using the web server to make sure everyone has the same, controlled experience.
+\end{quote}
+
+You will have received an email with your account information to log onto From a computer on the campus wifi, you can access R Studio at:
+
+\href{http://psy-rstudio.lancaster.ac.uk}{Lancaster Psychology R Studio Server}
+
+At the login screen, use your university username (e.g., bloggsj)
+
+Your password for R Studio is: {[}password here{]}
+
+As it says in the subject line, please keep your account details safe!
+
+\hypertarget{what-does-rstudio-look-like}{%
+\subsection{3.3 What does RStudio look like?}\label{what-does-rstudio-look-like}}
+
+When RStudio starts, it will look something like this: \includegraphics{docs/files/Week_1/RStudio_starup_screen.png}
+
+RStudio has three panels or windows: there are tabs for Console (taking up the left hand side), Environment (and History top right) , Current file (bottom right). You will also see a 4th window for a script or set of commands you develop, also (on the left hand side).
+
+\hypertarget{lets-get-started}{%
+\subsection{3.4 Let's get started!}\label{lets-get-started}}
+
+The first thing we want to do in RStudio is to create a folder for this week so that we can put the relevant material there and keep it tidy.
+
+From the lower-right panel of RStudio, click the files tab.
+
+Select the ``new folder'' option and create a new folder (eg ``week 1'')
+
+Click on that folder to open it
+
+Next, we've prepared some \emph{instructions} for RStudio to use - this is called a ``script''. So we need to get this script into the server for you to explore and play with
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Download the ``zip'' file by \href{files/Week_1/week_1.zip}{clicking this link}
+\item
+  Find the location of the file on your computer and check it is saved as a ``.zip'' file
+\item
+  Return to RStudio
+\item
+  Click ``Upload''
+\item
+  Click choose file and find the file on your computer.
+\item
+  Select the file and click ``Open''. Click ``OK''
+\end{enumerate}
+
+You should now see the files extracted in the directory. If you receive an ``unexpected server error'' please try this process in a different browser. If you still have trouble, send your username to us \href{mailto:t.beesley@lancaster.ac.uk}{\nolinkurl{t.beesley@lancaster.ac.uk}}~for support.
+
+You should now have the script available in RStudio.
+
+Use ``Save\ldots As'' to create a new version of the script. By doing this, you'll be abe to have a ``before'' and ``after'' version of the script and can go back over the changes
+
+In the script, select or highlight the first line of text, which is this one:
+
+\hypertarget{run-your-first-ever-r-instruction}{%
+\subsubsection{3.4.1 Run your first ever R instruction!}\label{run-your-first-ever-r-instruction}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{5} \SpecialCharTok{+} \DecValTok{5}
+\end{Highlighting}
+\end{Shaded}
+
+and ``run'' this line. That tells RStudio to carry out the instruction.
+
+You should see that in thw console tab, RStudio calculates the answer to this incredibly hard maths challenge! (amazing huh? OK, maybe not *that* amazing\ldots).
+
+\hypertarget{modify-your-first-ever-r-instruction}{%
+\subsubsection{3.4.2 Modify your first ever R instruction!}\label{modify-your-first-ever-r-instruction}}
+
+Use your imagination -- add a new line to the script and ask a different simple arithmetic question of your own choosing! What happens?
+
+\hypertarget{calculate-descriptive-stats-in-r-for-the-first-time}{%
+\subsubsection{3.4.3 Calculate descriptive stats in R for the first time!}\label{calculate-descriptive-stats-in-r-for-the-first-time}}
+
+In this week's analysis lecture, we looked at measures of central tendency and how to calculate them. So let's get R to do these calculations also!
+
+First, we tell R about the data used in the lecture. We've already created the instruction that will do exacly this and it is in the script, so run this line from the script
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{week\_1\_lecture\_data }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+This creates an ``object'' called \texttt{week\_1\_lecture\_data}. We can then perform calculations on this object. For example, we can find the mean by running the following command (use the script to do this)
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{mean}\NormalTok{(week\_1\_lecture\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+Check the answer is the same we found in the lecture (it should be 6!).
+
+Next, let's ask for the median by running this line from the script:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{median}\NormalTok{(week\_1\_lecture\_data)}
+\end{Highlighting}
+\end{Shaded}
+
+This also should be the answer from the lecture (7)
+
+R doesn't have a single corresponding command for the \emph{mode}, but we can use the block of code in the script for this that starts and ends with the ``getmode'' text (there are 6 lines of text)
+
+This is just a bit of clever jiggery-pokery that gets the mode. What does R say the mode is?
+
+\hypertarget{your-challenge}{%
+\subsubsection{3.4.3 Your challenge}\label{your-challenge}}
+
+How can you get RStudio to verify / check the dice calculations that you attempted earlier? Think about how you might solve this problem, on the basis of what we have covered so far.
+
+We will discuss this in class and attempt to get RStudio to check your answers. In doing so, annotate the script (add notes for you - not RStudio) using the ``\#'' command
+
+\hypertarget{before-you-finish}{%
+\subsection{3.5 Before you finish}\label{before-you-finish}}
+
+Make sure you save a copy of the script that you have been working work by the end of the session. This provides you with the record - the digital trace - on what you have done. And it means you can come back and repeat any of the work you have performed.
+
+\hypertarget{extra-content-for-outside-the-lab-class}{%
+\subsection{Extra content for outside the lab class}\label{extra-content-for-outside-the-lab-class}}
+
+In the Howell text book on statistics, there's some R code on descriptive statistics. It is included in the script for you to look at and play with.
+
+in your own time and think about the following:
+
+In R, ``\textless-'' is the assignment operator as in the command we used:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{PSYC121\_week\_1\_data }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{7}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{8}\NormalTok{,}\DecValTok{7}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{1}\NormalTok{,}\DecValTok{6}\NormalTok{,}\DecValTok{9}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{8}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+We create the variable label on the left (\texttt{Analysis\_week1\_data}) and we give it those numbers on the right. The name \texttt{Analysis\_week1\_data} is largely arbitrary: try use a variable of your own naming (your own name?) instead - and then use that alternative name for the other commands.
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+Throughout this year, we'll use the convention of the ``underscore'' to separate words in labels (it\_makes\_them\_easier\_to\_read than ifyoudidn'thaveanyspaces)
+
+\begin{center}\rule{0.5\linewidth}{0.5pt}\end{center}
+
+\hypertarget{task-4-review-the-learnr-sample-practice-questions}{%
+\section{Task 4 -- Review the learnr sample / practice questions}\label{task-4-review-the-learnr-sample-practice-questions}}
+
+After every block of teaching in part-1 analysis (specifically, we mean in week 5, week 10, week 15 and week 20) there will be a class test. This will assess your knowledge and your understanding of the material that has been covered.
+
+The class test will comprise a set of Multiple Choice Questions (and the set of questions will be different for each student, as the test will involve random selection from a larger pool) under timed conditions.
+
+in order to help you get (a) get a broad or basic feel for the sort of questions you might get in the class test (b) self-review your progress through the term, we will provide MCQs each week for you to attempt.
+
+So these are for your benefit\ldots{} you can take the questions when you choose to, and the learnr quiz will provide feedback on the answers your provide. Just bear in mind
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\item
+  We place a set of questions at the end of the learnr pages so that you can attempt these at the end of each week, after you've completed lab activities, follow-up work, weekly Q\&As etc. But it's up to you when you answer the questions
+\item
+  These are meant as \emph{indicative questions}. There's no point in learning/ memorising these questions (they won't be on the quiz!) and our advice is to reflect on how the teaching and content links to the sorts of questions that get posed.
+\end{enumerate}
+
+\hypertarget{task-5-data-collection-exercise}{%
+\section{Task 5 -- Data collection exercise}\label{task-5-data-collection-exercise}}
+
+In order to learn about psychology and data analysis techniques, we need data! Rather than rely too much on artificial data (certainly it is sometimes useful to say ``Here are a bunch of numbers and this is what we can do with them'' -- think about the R Studio example for this week's lab) for the most part, we prefer to draw on datasets that are a bit more engaging and meaningful that you have a stake in yourself! By using a common data set, that we can return to over the year, we can also build up familiarity and confidence in the data and remove a potential obstacle to thinking about the more important analysis part.
+
+So a key task will be for everyone to have a go at taking our online survey, and contribute to a dataset that can be used throughout the year.
+
+We would like you to complete the survey via your Department Sona system account. This way, you will receive a research credit for doing so, to ``jump start'' your credit account.
+
+The sona system is can be accessed \href{https://lancs.sona-systems.com}{at this link}.
+
+\end{document}
