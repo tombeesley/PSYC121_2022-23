@@ -7,6 +7,8 @@ output: bookdown::gitbook
 documentclass: book
 biblio-style: apalike
 link-citations: yes
+gitbook: 
+  toc_depth: 4
 github-repo: tombeesley/LU_PSYC121_122
 description: "Course content for PSYC121 at Lancaster University"
 ---
