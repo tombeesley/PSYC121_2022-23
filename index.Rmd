@@ -1,5 +1,5 @@
 ---
-title: "Statistics for Psychologists 1"
+title: "Statistics for Psychologists"
 author: "John Towse, Tom Beesley"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
@@ -7,6 +7,6 @@ output: bookdown::gitbook
 documentclass: book
 biblio-style: apalike
 link-citations: yes
-github-repo: tombeesley/PSYC121_2022-23
-description: "Course content for PSYC121 - 2022 to 2023"
+github-repo: tombeesley/LU_PSYC121_122
+description: "Course content for PSYC121 at Lancaster University"
 ---

@@ -1,5 +1,5 @@
 book_filename: "bookdown-start"
-repo: https://github.com/tombeesley/PSYC121_2022-23
+repo: https://github.com/tombeesley/PSYC121_2022-23/
 output_dir: docs
 rmd_files: 
 clean: [packages.bib, bookdown.bbl]

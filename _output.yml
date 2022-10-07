@@ -1,5 +1,4 @@
 bookdown::gitbook:
-  number_sections: false
   css: style.css
   split_by: chapter
   config:
