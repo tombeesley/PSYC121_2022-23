@@ -1,7 +1,7 @@
 ---
 title: "Statistics for Psychologists"
 author: "John Towse, Tom Beesley"
-date: "2022-10-07"
+date: "2022-10-10"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -13,9 +13,14 @@ github-repo: tombeesley/LU_PSYC121_122
 description: "Course content for PSYC121 at Lancaster University"
 ---
 
+<head>
+  <base target="_blank">
+</head>
+
 # Week 1 - Introduction to PSYC121
 
 > Written by John Towse & Tom Beesley
+
 
 ## Analysis labs and 'pre-lab' activity
 
@@ -31,7 +36,7 @@ The lecture is designed to deliver important ideas and procedures for learning a
 
 Want additional support? Keep in mind that the Department has endorsed and will use the Statistics textbook by David Howell called "**Fundamental statistics for the behavioral sciences"**
 
-The book covers principles of statistics as well as lesson on using. You can access a library copy [here](https://onesearch.lancaster-university.uk/permalink/f/cssk39/44LAN_ALMA_DS51180136050001221)\
+The book covers principles of statistics as well as lesson on using. You can access a library copy [here](https://onesearch.lancaster-university.uk/permalink/f/cssk39/44LAN_ALMA_DS51180136050001221)
 
 ## Activities for this week
 
@@ -69,7 +74,7 @@ Are all your answers the same? Why / why not? If not, are they very different or
 
 R and RStudio is the software that we will be using to explore and learn about analysis in your Psychology degree. It's a computational engine: a very snazzy calculator that you should see as your friend and ally in the journey to understand and appreciate psychology. It sits *alongside* what we teach about the concepts and interpretation of statistical analysis.
 
-R is the core software, RStudio is the interface for interacting with it. Put another way, \*R is the engine, RStudio is the cockpit.\*
+R is the core software, RStudio is the interface for interacting with it. Put another way, *R is the engine, RStudio is the cockpit.*
 
 Like even a simplest calculator, it just does what you ask (at least when you ask nicely!) but it requires the user to know what they want from it and to understand what it is telling you. A calculator can't help a kid get the right answer to a multiplication problem if they don't know the difference between multiplication and division and addition etc. And whilst a calculator is brilliant at doing the number crunching (and as a bonus, R Studio can help with turning the numbers into beautiful graphs and images too), even a calculator requires a thoughtful person to take the answers and make sensible interpretations from them.
 
@@ -121,7 +126,7 @@ Next, we've prepared some *instructions* for RStudio to use - this is called a "
 
 6.  Select the file and click "Open". Click "OK"
 
-You should now see the files extracted in the directory. If you receive an "unexpected server error" please try this process in a different browser. If you still have trouble, send your username to us [t.beesley\@lancaster.ac.uk](mailto:t.beesley@lancaster.ac.uk) for support.
+You should now see the files extracted in the directory. If you receive an "unexpected server error" please try this process in a different browser. If you still have trouble, send your username to us [t.beesley\@lancaster.ac.uk](mailto:t.beesley@lancaster.ac.uk) for support.
 
 You should now have the script available in RStudio.
 
@@ -206,7 +211,7 @@ In R, "\<-" is the assignment operator as in the command we used:
 PSYC121_week_1_data <- c(7,8,8,7,3,1,6,9,3,8)
 ```
 
-We create the variable label on the left (Analysis_week1_data`) and we give it those numbers on the right. The name`Analysis_week1_data\` is largely arbitrary: try use a variable of your own naming (your own name?) instead - and then use that alternative name for the other commands.
+We create the variable label on the left (Analysis_week1_data`) and we give it those numbers on the right. The name`Analysis_week1_data` is largely arbitrary: try use a variable of your own naming (your own name?) instead - and then use that alternative name for the other commands.
 
 ------------------------------------------------------------------------
 
@@ -236,4 +241,4 @@ So a key task will be for everyone to have a go at taking our online survey, and
 
 We would like you to complete the survey via your Department Sona system account. This way, you will receive a research credit for doing so, to "jump start" your credit account.
 
-The sona system is can be accessed [at this link](https://lancs.sona-systems.com).
+The sona system is can be accessed [at this link.](https://lancs.sona-systems.com)
