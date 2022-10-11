@@ -25,8 +25,7 @@ For each lab session that you have been scheduled to attend, please come "prepar
 
 -   You have watched the lecture video, made notes, and developed questions where you have them.
 
--   You have worked through the online "prelab" preparation materials
-<a href="https://ma-rconnect.lancs.ac.uk/Week_1_prep" target="_blank">Here is the week 1 learnr tutorial,</a>
+-   You have worked through the online "prelab" preparation materials - [Here is the one for Week 1](https://ma-rconnect.lancs.ac.uk/Week_1_prep){target="_blank"}
 
 -   You read the lab sheet (this one) to get a sense of what we're going to be doing, and you anticipate potential problems so that you can focus on these in the session.
 
@@ -34,8 +33,7 @@ The lecture is designed to deliver important ideas and procedures for learning a
 
 Want additional support? Keep in mind that the Department has endorsed and will use the Statistics textbook by David Howell called "**Fundamental statistics for the behavioral sciences"**
 
-The book covers principles of statistics as well as lesson on using. You can access a library copy
-<a href="https://onesearch.lancaster-university.uk/permalink/f/cssk39/44LAN_ALMA_DS51180136050001221" target="_blank">from the library pages.</a>
+The book covers principles of statistics as well as lesson on using. You can access a library copy [from the library pages]("https://onesearch.lancaster-university.uk/permalink/f/cssk39/44LAN_ALMA_DS51180136050001221"){target="_blank"}
 
 ## Activities for this week
 
