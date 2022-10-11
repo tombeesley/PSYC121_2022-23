@@ -222,7 +222,7 @@ After every block of teaching in part-1 analysis (specifically, we mean in week 
 
 The class test will comprise a set of Multiple Choice Questions (and the set of questions will be different for each student, as the test will involve random selection from a larger pool) under timed conditions.
 
-in order to help you get (a) get a broad or basic feel for the sort of questions you might get in the class test (b) self-review your progress through the term, we will provide MCQs each week for you to attempt.
+In order to help you get (a) get a broad or basic feel for the sort of questions you might get in the class test (b) self-review your progress through the term, we will provide MCQs each week for you to attempt.
 
 So these are for your benefit... you can take the questions when you choose to, and the learnr quiz will provide feedback on the answers your provide. Just bear in mind
 
