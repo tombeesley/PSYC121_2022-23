@@ -33,14 +33,13 @@ The lecture is designed to deliver important ideas and procedures for learning a
 
 Want additional support? Keep in mind that the Department has endorsed and will use the Statistics textbook by David Howell called "**Fundamental statistics for the behavioral sciences"**
 
-The book covers principles of statistics as well as lesson on using. You can access a library copy [from the library pages]("https://onesearch.lancaster-university.uk/permalink/f/cssk39/44LAN_ALMA_DS51180136050001221"){target="_blank"}
+The book covers principles of statistics as well as some tutorials on using R. You can access a library copy [from the library pages](https://onesearch.lancaster-university.uk/permalink/f/cssk39/44LAN_ALMA_DS51180136050001221){target="_blank"}
 
 ## Activities for this week
 
 ## Task 1 - check-in with the University attendance register
 
-When you arrive, mke sure you have checked-in to your Analysis session in the Levy lab. All students are required by the University to confirm attendance at taught sessions.
-<a href="https://www.lancaster.ac.uk/student-and-education-services/check-in/" target="_blank">from the libary pages.</a>
+When you arrive, make sure you have checked-in to your Analysis session in the Levy lab. All students are required by the University to [confirm attendance at taught session](https://www.lancaster.ac.uk/student-and-education-services/check-in/){target="_blank"}
 
 Staff will remind you of this in your class.
 
@@ -86,7 +85,7 @@ For Lancaster University Psychology Students in 2022, we will be learning about 
 
 You will have received an email with your account information to log onto From a computer on the campus wifi, you can access R Studio at:
 
-<a href="http://psy-rstudio.lancaster.ac.uk" target="_blank">Lancaster Psychology R Studio Server</a>
+[Lancaster Psychology R Studio Server](http://psy-rstudio.lancaster.ac.uk){target="_blank}
 
 At the login screen, use your university username (e.g., bloggsj)
 
@@ -234,5 +233,4 @@ So a key task will be for everyone to have a go at taking our online survey, and
 
 We would like you to complete the survey via your Department Sona system account. This way, you will receive a research credit for doing so, to "jump start" your credit account.
 
-The sona system is can be accessed
-<a href="https://lancs.sona-systems.co" target="_blank">by following this link</a>
+The sona system is can be accessed [by following this link](https://lancs.sona-systems.com){target="_blank"}
