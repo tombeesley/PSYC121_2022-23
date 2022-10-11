@@ -187,7 +187,7 @@ We will discuss this in class and attempt to get RStudio to check your answers. 
 
 ## Before you finish
 
-a)  Make sure you save a copy of the script that you have been working work by the end of the session. This provides you with the record - the digital trace - on what you have done. And it means you can come back and repeat any of the work you have performed.
+a)  Make sure you save a copy of the script that you have been working on by the end of the session. This provides you with the record - the digital trace - on what you have done. And it means you can come back and repeat any of the work you have performed.
 
 b)  End your session on the RStudio server, this logs you out of the server and stops any ongoing activities and tasks you have set up, maybe in the background.
 
