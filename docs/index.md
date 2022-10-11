@@ -1,7 +1,7 @@
 ---
 title: "Statistics for Psychologists"
 author: "John Towse, Tom Beesley"
-date: "2022-10-10"
+date: "2022-10-11"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
@@ -13,9 +13,6 @@ github-repo: tombeesley/LU_PSYC121_122
 description: "Course content for PSYC121 at Lancaster University"
 ---
 
-<head>
-  <base target="_blank">
-</head>
 
 # Week 1 - Introduction to PSYC121
 
@@ -28,7 +25,8 @@ For each lab session that you have been scheduled to attend, please come "prepar
 
 -   You have watched the lecture video, made notes, and developed questions where you have them.
 
--   You have worked through the online "prelab" preparation materials ([this is the one for week 1](https://ma-rconnect.lancs.ac.uk/Week_1_prep))
+-   You have worked through the online "prelab" preparation materials
+<a href="https://ma-rconnect.lancs.ac.uk/Week_1_prep" target="_blank">Here is the week 1 learnr tutorial,</a>
 
 -   You read the lab sheet (this one) to get a sense of what we're going to be doing, and you anticipate potential problems so that you can focus on these in the session.
 
@@ -36,13 +34,15 @@ The lecture is designed to deliver important ideas and procedures for learning a
 
 Want additional support? Keep in mind that the Department has endorsed and will use the Statistics textbook by David Howell called "**Fundamental statistics for the behavioral sciences"**
 
-The book covers principles of statistics as well as lesson on using. You can access a library copy [here](https://onesearch.lancaster-university.uk/permalink/f/cssk39/44LAN_ALMA_DS51180136050001221)
+The book covers principles of statistics as well as lesson on using. You can access a library copy
+<a href="https://onesearch.lancaster-university.uk/permalink/f/cssk39/44LAN_ALMA_DS51180136050001221" target="_blank">from the library pages.</a>
 
 ## Activities for this week
 
 ## Task 1 - check-in with the University attendance register
 
-When you arrive, mke sure you have checked-in to your Analysis session in the Levy lab. All students are required by the University to confirm attendance at taught sessions. [Here's information from the University about how to do this](https://www.lancaster.ac.uk/student-and-education-services/check-in/).
+When you arrive, mke sure you have checked-in to your Analysis session in the Levy lab. All students are required by the University to confirm attendance at taught sessions.
+<a href="https://www.lancaster.ac.uk/student-and-education-services/check-in/" target="_blank">from the libary pages.</a>
 
 Staff will remind you of this in your class.
 
@@ -88,7 +88,7 @@ For Lancaster University Psychology Students in 2022, we will be learning about 
 
 You will have received an email with your account information to log onto From a computer on the campus wifi, you can access R Studio at:
 
-[Lancaster Psychology R Studio Server](http://psy-rstudio.lancaster.ac.uk "Lancaster Psychology R Studio Server")
+<a href="http://psy-rstudio.lancaster.ac.uk" target="_blank">Lancaster Psychology R Studio Server</a>
 
 At the login screen, use your university username (e.g., bloggsj)
 
@@ -241,4 +241,5 @@ So a key task will be for everyone to have a go at taking our online survey, and
 
 We would like you to complete the survey via your Department Sona system account. This way, you will receive a research credit for doing so, to "jump start" your credit account.
 
-The sona system is can be accessed [at this link.](https://lancs.sona-systems.com)
+The sona system is can be accessed
+<a href="https://lancs.sona-systems.co" target="_blank">by following this link</a>
