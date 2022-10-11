@@ -75,7 +75,7 @@ R is the core software, RStudio is the interface for interacting with it. Put an
 
 Like even a simplest calculator, it just does what you ask (at least when you ask nicely!) but it requires the user to know what they want from it and to understand what it is telling you. A calculator can't help a kid get the right answer to a multiplication problem if they don't know the difference between multiplication and division and addition etc. And whilst a calculator is brilliant at doing the number crunching (and as a bonus, R Studio can help with turning the numbers into beautiful graphs and images too), even a calculator requires a thoughtful person to take the answers and make sensible interpretations from them.
 
-Therefore, we need to learn both about the concepts of statistical analysis on the one hand, and the processing of statistical information -through R- on the other. The lectures will provide the starting pointmand the direction for statistical concepts, whilst these analysis labs provide the more practical experiences in how to use R, and how to R your ally. Over the next year, in these labs we will increasingly be using RStudio to focus on the latter, processing side, which will allow you to focus your energies on the conceptual side and its relevance for appreciating psychology.
+Therefore, we need to learn both about the concepts of statistical analysis on the one hand, and the processing of statistical information -through R- on the other. The lectures will provide the starting point and the direction for statistical concepts, whilst these analysis labs provide the more practical experiences in how to use R, and how to make R your ally. Over the next year, in these labs we will increasingly be using RStudio to focus on the latter, processing side, which will allow you to focus your energies on the conceptual side and its relevance for appreciating psychology.
 
 ### Getting started with RStudio {#getting_started}
 
@@ -123,11 +123,11 @@ Next, we've prepared some *instructions* for RStudio to use - this is called a "
 
 6.  Select the file and click "Open". Click "OK"
 
-You should now see the files extracted in the directory. If you receive an "unexpected server error" please try this process in a different browser. If you still have trouble, send your username to us [t.beesley\@lancaster.ac.uk](mailto:t.beesley@lancaster.ac.uk) for support.
+You should now see the files extracted in the directory. If you receive an "unexpected server error" please try this process in a different browser. If you still have trouble, send your username to [t.beesley\@lancaster.ac.uk](mailto:t.beesley@lancaster.ac.uk) for support.
 
 You should now have the script available in RStudio.
 
-Use "Save...As" to create a new version of the script. By doing this, you'll be abe to have a "before" and "after" version of the script and can go back over the changes
+Use "Save...As" to create a new version of the script. By doing this, you'll be able to have a "before" and "after" version of the script and can go back over the changes
 
 In the script, select or highlight the first line of text, which is this one:
 
@@ -139,7 +139,7 @@ In the script, select or highlight the first line of text, which is this one:
 
 and "run" this line. That tells RStudio to carry out the instruction.
 
-You should see that in thw console tab, RStudio calculates the answer to this incredibly hard maths challenge! (amazing huh? OK, maybe not \*that\* amazing...).
+You should see that in the console tab, RStudio calculates the answer to this incredibly hard maths challenge! (amazing huh? OK, maybe not \*that\* amazing...).
 
 #### Modify your first ever R instruction!
 
@@ -217,9 +217,9 @@ After every block of teaching in part-1 analysis (specifically, we mean in week 
 
 The class test will comprise a set of Multiple Choice Questions (and the set of questions will be different for each student, as the test will involve random selection from a larger pool) under timed conditions.
 
-In order to help you get (a) get a broad or basic feel for the sort of questions you might get in the class test (b) self-review your progress through the term, we will provide MCQs each week for you to attempt.
+In order to help you get (a) a broad or basic feel for the sort of questions you might get in the class test (b) self-review your progress through the term, we will provide MCQs each week for you to attempt.
 
-So these are for your benefit... you can take the questions when you choose to, and the learnr quiz will provide feedback on the answers your provide. Just bear in mind
+So these are for your benefit... you can take the questions when you choose to, and the learnr quiz will provide feedback on the answers your provide. Just bear in mind:
 
 a)  We place a set of questions at the end of the learnr pages so that you can attempt these at the end of each week, after you've completed lab activities, follow-up work, weekly Q&As etc. But it's up to you when you answer the questions
 
