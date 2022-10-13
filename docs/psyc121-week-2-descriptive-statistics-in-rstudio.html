@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 PSYC121: week 2: Descriptive statistics in RStudio | Statistics for Psychologists</title>
+  <meta name="description" content="Course content for PSYC121 at Lancaster University" />
+  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 PSYC121: week 2: Descriptive statistics in RStudio | Statistics for Psychologists" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Course content for PSYC121 at Lancaster University" />
+  <meta name="github-repo" content="tombeesley/LU_PSYC121_122" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 PSYC121: week 2: Descriptive statistics in RStudio | Statistics for Psychologists" />
+  
+  <meta name="twitter:description" content="Course content for PSYC121 at Lancaster University" />
+  
+
+<meta name="author" content="John Towse, Tom Beesley" />
+
+
+<meta name="date" content="2022-10-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">PSYC121 - Statistics for Psychologists I</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Week 1 - Introduction to PSYC121</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#analysis-labs-and-pre-lab-activity"><i class="fa fa-check"></i><b>1.1</b> Analysis labs and ‘pre-lab’ activity</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#activities-for-this-week"><i class="fa fa-check"></i><b>1.2</b> Activities for this week</a></li>
+<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#task-1---check-in-with-the-university-attendance-register"><i class="fa fa-check"></i><b>1.3</b> Task 1 - check-in with the University attendance register</a></li>
+<li class="chapter" data-level="1.4" data-path="index.html"><a href="index.html#task-2---getting-dicy"><i class="fa fa-check"></i><b>1.4</b> Task 2 - Getting dicy</a></li>
+<li class="chapter" data-level="1.5" data-path="index.html"><a href="index.html#task-3---using-rstudio"><i class="fa fa-check"></i><b>1.5</b> Task 3 - Using RStudio</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="index.html"><a href="index.html#introducing-r-studio"><i class="fa fa-check"></i><b>1.5.1</b> Introducing R Studio</a></li>
+<li class="chapter" data-level="1.5.2" data-path="index.html"><a href="index.html#getting_started"><i class="fa fa-check"></i><b>1.5.2</b> Getting started with RStudio</a></li>
+<li class="chapter" data-level="1.5.3" data-path="index.html"><a href="index.html#what-does-rstudio-look-like"><i class="fa fa-check"></i><b>1.5.3</b> What does RStudio look like?</a></li>
+<li class="chapter" data-level="1.5.4" data-path="index.html"><a href="index.html#lets-get-started"><i class="fa fa-check"></i><b>1.5.4</b> Let’s get started!</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="index.html"><a href="index.html#before-you-finish"><i class="fa fa-check"></i><b>1.6</b> Before you finish</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="index.html"><a href="index.html#extra-content-for-outside-the-lab-class"><i class="fa fa-check"></i><b>1.6.1</b> Extra content for outside the lab class</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="index.html"><a href="index.html#task-4-review-the-learnr-sample-practice-questions"><i class="fa fa-check"></i><b>1.7</b> Task 4 – Review the learnr sample / practice questions</a></li>
+<li class="chapter" data-level="1.8" data-path="index.html"><a href="index.html#task-5-data-collection-exercise"><i class="fa fa-check"></i><b>1.8</b> Task 5 – Data collection exercise</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="psyc121-week-2-descriptive-statistics-in-rstudio.html"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html"><i class="fa fa-check"></i><b>2</b> PSYC121: week 2: Descriptive statistics in RStudio</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="psyc121-week-2-descriptive-statistics-in-rstudio.html"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#pre-lab-work"><i class="fa fa-check"></i><b>2.1</b> Pre-lab work</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="psyc121-week-2-descriptive-statistics-in-rstudio.html"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#r-studio-tasks"><i class="fa fa-check"></i><b>2.1.1</b> R Studio tasks</a></li>
+<li class="chapter" data-level="2.1.2" data-path="psyc121-week-2-descriptive-statistics-in-rstudio.html"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#bringing-data-scripts-and-files-into-r-studio"><i class="fa fa-check"></i><b>2.1.2</b> Bringing data, scripts and files into R Studio</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="psyc121-week-2-descriptive-statistics-in-rstudio.html"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#lab-exercises---descriptive-information-in-r-studio"><i class="fa fa-check"></i><b>2.2</b> Lab exercises - descriptive information in R Studio</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="psyc121-week-2-descriptive-statistics-in-rstudio.html"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#loading-the-data"><i class="fa fa-check"></i><b>2.2.1</b> Loading the data</a></li>
+<li class="chapter" data-level="2.2.2" data-path="psyc121-week-2-descriptive-statistics-in-rstudio.html"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#using-the-r-script"><i class="fa fa-check"></i><b>2.2.2</b> Using the R script</a></li>
+<li class="chapter" data-level="2.2.3" data-path="psyc121-week-2-descriptive-statistics-in-rstudio.html"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#finding-the-mean-and-median-estimates"><i class="fa fa-check"></i><b>2.2.3</b> Finding the mean and median estimates</a></li>
+<li class="chapter" data-level="2.2.4" data-path="psyc121-week-2-descriptive-statistics-in-rstudio.html"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#calculations-from-a-range-of-columns"><i class="fa fa-check"></i><b>2.2.4</b> Calculations from a range of columns</a></li>
+<li class="chapter" data-level="2.2.5" data-path="psyc121-week-2-descriptive-statistics-in-rstudio.html"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#simple-graphs"><i class="fa fa-check"></i><b>2.2.5</b> Simple graphs</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Statistics for Psychologists</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="psyc121-week-2-descriptive-statistics-in-rstudio" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> PSYC121: week 2: Descriptive statistics in RStudio<a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#psyc121-week-2-descriptive-statistics-in-rstudio" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<blockquote>
+<p>Written by John Towse &amp; Tom Beesley</p>
+</blockquote>
+<div id="pre-lab-work" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Pre-lab work<a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#pre-lab-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Last week, among other things, we asked you to</p>
+<ul>
+<li>Roll some dice, carry out some (relatively) straightforward ‘hand’ caclulations of central tendency</li>
+<li>Connect to the RStudio server and create a folder</li>
+<li>Within RStudiom upload and run a script - a set of instructions, and explore annotations</li>
+<li>Adapt the script commands to perform calculations on the dice rolls within RStudio</li>
+<li>Complete a survey so that we can collect data for analysis teaching</li>
+</ul>
+<p>Your progress was great! We start with small steps and build up - but this is a nice start and we’e pleased how things went!</p>
+<p>Before the lab, make sure you have worked through the material in the week2 learnr tutorial.
+<a href="https://ma-rconnect.lancs.ac.uk/W2LabPrep/" target="_blank">The link is here</a></p>
+<div id="r-studio-tasks" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> R Studio tasks<a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#r-studio-tasks" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>For a reminder of how to start RStudio,
+<a href="https://tombeesley.github.io/PSYC121_2022-23/#task-3---using-rstudio" target="_blank">see week 1 lab sheet</a></p>
+<p>(remember: off campus, you will need to be on the VPN)</p>
+<blockquote>
+<p>A word of advice (from David Howell’s statistics book: “One more word of advice”I can’t resist adding what is perhaps the best advice I have. If there is something that you don’t understand, just remember that “Google is your friend.” She certainly is mine. (Well, maybe Google is getting a bit pushy, but there are many other search sites.) If you don’t understand what Fisher’s Exact Test is, or you don’t like my explanation, go to Google and type in Fisher’s Exact Test. I just did that and had 260,000 hits. You can’t tell me that there isn’t going to be something useful in there.)”</p>
+</blockquote>
+</div>
+<div id="bringing-data-scripts-and-files-into-r-studio" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> Bringing data, scripts and files into R Studio<a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#bringing-data-scripts-and-files-into-r-studio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In week 1, we had a tiny dataset (relatively speakeing) that we entered into R through a script line.
+That worked for what is was. But it’s going to become painful and tedious when (a) we want to work with larger datasets (b) we have data more complex than a 1-dimensionallist of numbers (think about some 2-dimensional data sheets you might have encountered in excel for example)</p>
+<p>R can handle data files, and this week we’re going to explore them. Within R, we can specify ‘data frames’ which can have, essentially, multiple columbns of data, and we can link data files to data frames for processing</p>
+<p>To make things straightforward, each week we’ll provide students with a “zip” file that contains the script to start from (which you can expand and annotate etc, and save on your file space). We’ll also provide a data file or data files for you to use in the zip file. R can then <em>import</em> these files into the RStudio environment. So when you upload the zip file, you can import the data AND you can open up the script</p>
+</div>
+</div>
+<div id="lab-exercises---descriptive-information-in-r-studio" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Lab exercises - descriptive information in R Studio<a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#lab-exercises---descriptive-information-in-r-studio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Some years ago, a large group of participants gave an estimate of the weight of Penelope the cow. Just over 17,000 guesses. And the distribution of guesses was something like this:<a href="penelope.png">Penelope the cow</a></p>
+<p>What we can see from this graph is that:</p>
+<ol style="list-style-type: decimal">
+<li>Guesses formed a roughly normal distribution. There is a bit of a skew with a right-hand tail, but this is inevitable as a weight of less than 0 is physically impossible, but there is no limit of the semantics of a large guess.</li>
+<li>The mean guess weight (1,287 lbs) is very close to the actual (true) weight of the cow (1,355 lbs). So even though lots of people were inaccurate, a central tendency measure has a pretty good alignment with te true weight. This is known as the Wisdom of Crowds phenomenon, first identified by Galton in 1907 (though he suggested using the median weight)</li>
+</ol>
+<p>Let’s look at (a sample of) the PSYC121 student data collected on guessing the weight of Penelope, and ask whether it resembles the properties of this large dataset.</p>
+<div id="loading-the-data" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Loading the data<a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#loading-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Using the instructions and advice given on moodle, get the week2.zip file and bring the data and R script into R Studio</p>
+</div>
+<div id="using-the-r-script" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Using the R script<a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#using-the-r-script" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Step 1. Download the <code>week_2.zip</code> file
+(If you are using a mac, there is a video guide on moodle to explain how to download the zip file as is)</p>
+<p>Step 2. Open the appropriate folder on the RStudio server</p>
+<p>Step 3. Upload the zip file</p>
+<p>Let’s start working with our data, by opening up (clicking on) the script “Week_2.R” file.</p>
+<p>The first command is to load a library of functions:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<p>To run this, simply click anywhere on line 1 of the R script to put the cursor there, and press ctrl+enter (cmd+enter on a mac) or click the button called run. You will see a number of messages appear in the console. Don’t worry about these, or worry too much about what exactly this command is doing. Essentially this is giving us some useful tools for our analysis. We will introduce the features of the <strong>tidyverse</strong> gradually during this course.</p>
+<p>(side note: If you were using a local version of R studio on your computer, it might not have the ‘tidyverse’ library already installed. You would need to install the package first)</p>
+<p>The data are on the RStudio server if you have followed all the lab sheet to this point. Note that when you imported the data into the R environment, a command line was generated at the console</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#cb7-1" aria-hidden="true" tabindex="-1"></a> penelope22 <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;~/penelope22.csv&quot;</span>)</span></code></pre></div>
+<p>What this command accomplished was to read the spreadsheet called ‘penelope22’ into an object in R called penelope21. You could use any object label, but it’s important to then keep that name consistent in what you do next.</p>
+<p>The command was also generated</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#cb8-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">View</span>(penelope22)</span></code></pre></div>
+<p>which presents the data in a windo of RStudio. Note that “NA” means not available or missing data. Does this file structure make some sense to you?</p>
+</div>
+<div id="finding-the-mean-and-median-estimates" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Finding the mean and median estimates<a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#finding-the-mean-and-median-estimates" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Use the data to answer the following questions…</p>
+<ol style="list-style-type: decimal">
+<li>What is the mean weight estimates?</li>
+<li>What is the standard deviation of the estimates?</li>
+<li>What is the median weight of the estimates?</li>
+<li>Which of these central tendency measures is the more accurate measure of the true cow weight? (make a judgement)</li>
+<li>What is the mean weight estimate (and standard deviation) for female respondents and non-female (male / non-binary /prefer not to say) respondents?</li>
+</ol>
+<p>You may be thinking, how do I possibly do any of this?! Well this week most of the commands you need are contained in the R script you have downloaded. Also, remember from last week, we explored the R command:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(lecture1_data)</span></code></pre></div>
+<p>That gave us the mean of the small dataset “lecture1_data”. This time, we want to explore the penelope dataset. But also, the lecture_data was just a single list of numbers. The penelope21 object is more like a datasheet. So we need to tell R Studio which <strong>column</strong> we are interested in. RStudio uses the format <strong>data$column</strong>. So run the followinbg line in the script</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(penelope22<span class="sc">$</span>estimate) </span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(penelope22<span class="sc">$</span>estimate)</span></code></pre></div>
+<p>So from this, can you work out what you would do to get the median value (remember from last week how we got the median value?)? Part fo the command is given to you, can you change the text so that it works?</p>
+</div>
+<div id="calculations-from-a-range-of-columns" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Calculations from a range of columns<a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#calculations-from-a-range-of-columns" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We have seen that:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(penelope22<span class="sc">$</span>estimate) </span></code></pre></div>
+<p>will provide a mean of the column “estimate”. In the third column, named “female_estimate”, we have the estimates of just the female respondents. In the fourth column, named “other_estimate”, we have the estimates of the “other” respondents (males and non-binary and prefer not to say).</p>
+<p>So can you now figure out how you might get information about the estimate from the female data (only) or the non-female data? Try it, based on what you have just done. Does it work?</p>
+<p>You will find that the result of the this command produces an “NA” result. This means that the answer is “Not Available”, or in other words, is a “missing value”. This is because some of the values in this column are NA, and the mean of a column with NAs will always lead to the result NA.</p>
+<p>Instead, try this command:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(penelope21<span class="sc">$</span>female_estimate, <span class="at">na.rm =</span> <span class="cn">TRUE</span> )</span></code></pre></div>
+<p>Any different? The <code>na.rm = TRUE</code> instruction tells RStudio that missing data can be ignored in this mean calculation. (in technical language, <code>na.rm</code> is a parameter of the function <code>mean</code> that removes the NAs if set to TRUE)</p>
+</div>
+<div id="simple-graphs" class="section level3 hasAnchor" number="2.2.5">
+<h3><span class="header-section-number">2.2.5</span> Simple graphs<a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#simple-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>RStudio can be used to create graphical data plots that can help interpret datasets</p>
+<p>The first thing we can do is create a histogram distribution of guesses from the sample student data to compare with the previous large sample study (i.e. the 17,000 guesses):</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(penelope22<span class="sc">$</span>estimate)</span></code></pre></div>
+<p>One way to alter or adjust the histogram is to change the width of the bars, the intervals, between each plot section. Try run this line from the script</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="psyc121-week-2-descriptive-statistics-in-rstudio.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(penelope22<span class="sc">$</span>estimate, <span class="at">breaks =</span> ??)</span></code></pre></div>
+<p>Does it work? No? What you need to do is replace the two question marks with a numerical value representing the number of different plot bars. Try at least 3 diffeernt values. Look at and thinkk about how this affects the visual distribution.</p>
+<p>We can also create a “box and whisker plot”. Here’s a general simple description of a box-and-whisker plot as a graphical representation of data:</p>
+<p><img src="Box_and_whisker.png" /></p>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["bookdown-start.pdf", "bookdown-start.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
