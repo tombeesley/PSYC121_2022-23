@@ -16,3 +16,5 @@ before-you-finish
 extra-content-for-outside-the-lab-class
 task-4-review-the-learnr-sample-practice-questions
 task-5-data-collection-exercise
+week-2---psyc121
+analysis-labs-and-pre-lab-activity-1
