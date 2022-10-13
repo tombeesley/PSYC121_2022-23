@@ -47,7 +47,8 @@ To make things straightforward, each week we'll provide students with a "zip" fi
 
 ## Lab exercises - descriptive information in R Studio
 
-Some years ago, a large group of participants gave an estimate of the weight of Penelope the cow. Just over 17,000 guesses. And the distribution of guesses was something like this:[Penelope the cow](penelope.png)
+Some years ago, a large group of participants gave an estimate of the weight of Penelope the cow. Just over 17,000 guesses. And the distribution of guesses was something like this:
+![](files/Week_2/penelope.png)
 
 What we can see from this graph is that:
 
@@ -182,4 +183,4 @@ Does it work? No? What you need to do is replace the two question marks with a n
 
 We can also create a "box and whisker plot". Here's a general simple description of a box-and-whisker plot as a graphical representation of data:
 
-![ ](Box_and_whisker.png)
+![ ](files/Week_2/Box_and_whisker.png)
