@@ -13,13 +13,13 @@ output:
 
 Last week, among other things, we asked you to
 
--   Roll some dice, carry out some (relatively) straightforward 'hand' caclulations of central tendency
+-   Roll some dice, carry out some (relatively) straightforward 'hand' calculations of central tendency
 -   Connect to the RStudio server and create a folder
--   Within RStudiom upload and run a script - a set of instructions, and explore annotations
+-   Within RStudio upload and run a script - a set of instructions, and explore annotations
 -   Adapt the script commands to perform calculations on the dice rolls within RStudio
 -   Complete a survey so that we can collect data for analysis teaching
 
-Your progress was great! We start with small steps and build up - but this is a nice start and we'e pleased how things went!
+Your progress was great! We start with small steps and build up - but this is a nice start and we're pleased how things went!
 
 Before the lab, make sure you have worked through the material in the week2 learnr tutorial. 
 [The link is here](https://ma-rconnect.lancs.ac.uk/W2LabPrep/){target="_blank"}
@@ -38,10 +38,10 @@ For a reminder of how to start RStudio,
 
 ### Bringing data, scripts and files into R Studio
 
-In week 1, we had a tiny dataset (relatively speakeing) that we entered into R through a script line. 
-That worked for what is was. But it's going to become painful and tedious when (a) we want to work with larger datasets (b) we have data more complex than a 1-dimensionallist of numbers (think about some 2-dimensional data sheets you might have encountered in excel for example)
+In week 1, we had a tiny dataset (relatively speaking) that we entered into R through a script line. 
+That worked for what is was. But it's going to become painful and tedious when (a) we want to work with larger datasets (b) we have data more complex than a 1-dimensional list of numbers (think about some 2-dimensional data sheets you might have encountered in excel for example)
 
-R can handle data files, and this week we're going to explore them. Within R, we can specify 'data frames' which can have, essentially, multiple columbns of data, and we can link data files to data frames for processing
+R can handle data files, and this week we're going to explore them. Within R, we can specify 'data frames' which can have, essentially, multiple columns of data, and we can link data files to data frames for processing
 
 To make things straightforward, each week we'll provide students with a "zip" file that contains the script to start from (which you can expand and annotate etc, and save on your file space). We'll also provide a data file or data files for you to use in the zip file. R can then *import* these files into the RStudio environment. So when you upload the zip file, you can import the data AND you can open up the script
 
@@ -53,18 +53,18 @@ Some years ago, a large group of participants gave an estimate of the weight of 
 What we can see from this graph is that:
 
 1.  Guesses formed a roughly normal distribution. There is a bit of a skew with a right-hand tail, but this is inevitable as a weight of less than 0 is physically impossible, but there is no limit of the semantics of a large guess.
-2.  The mean guess weight (1,287 lbs) is very close to the actual (true) weight of the cow (1,355 lbs). So even though lots of people were inaccurate, a central tendency measure has a pretty good alignment with te true weight. This is known as the Wisdom of Crowds phenomenon, first identified by Galton in 1907 (though he suggested using the median weight)
+2.  The mean guess weight (1,287 lbs) is very close to the actual (true) weight of the cow (1,355 lbs). So even though lots of people were inaccurate, a central tendency measure has a pretty good alignment with the true weight. This is known as the Wisdom of Crowds phenomenon, first identified by Galton in 1907 (though he suggested using the median weight)
 
 Let's look at (a sample of) the PSYC121 student data collected on guessing the weight of Penelope, and ask whether it resembles the properties of this large dataset.
 
 ### Loading the data
 
-Using the instructions and advice given on moodle, get the `week2.zip` file and bring the data and R script into R Studio. [The week 2 zip file is here](files/Week_2/week_2.zip)
+Using the instructions and advice given on Moodle, get the `week2.zip` file and bring the data and R script into R Studio. [The week 2 zip file is here](files/Week_2/week_2.zip)
 
 ### Using the R script
 
 Step 1. Download the `week_2.zip` file
-(If you are using a mac, there is a video guide on moodle to explain how to download the zip file as is)
+(If you are using a mac, there is a video guide on Moodle to explain how to download the zip file as is)
 
 Step 2. Open the appropriate folder on the RStudio server
 
@@ -91,7 +91,7 @@ The data are on the RStudio server if you have followed all the lab sheet to thi
 cows <- read_csv("~/penelope22.csv")
 ```
 
-What this command accomplished was to read the spreadsheet called 'penelope22' into an object in R called penelope21. You could use any object label, but it's important to then keep that name consistent in what you do next.
+What this command accomplished was to read the spreadsheet called 'penelope22' into an object in R called `cows`. You could use any object label, but it's important to then keep that name consistent in what you do next.
 
 The command was also generated
 
@@ -100,7 +100,7 @@ The command was also generated
  View(cows)
 ```
 
-which presents the data in a windo of RStudio. Note that "NA" means not available or missing data. Does this file structure make some sense to you?
+which presents the data in a window of RStudio. Note that "NA" means not available or missing data. Does this file structure make some sense to you?
 
 ### Finding the mean and median estimates
 
@@ -177,12 +177,13 @@ One way to alter or adjust the histogram is to change the width of the bars, the
 hist(cows$estimate, breaks = ??)
 ```
 
-Does it work? No? What you need to do is replace the two question marks in the script (or better still, create a new instruction line in which you amend this to have a numerical value representing the number of different plot bars. Try at least 3 diffeernt values. Look at and think about how this affects the visual distribution.
+Does it work? No? What you need to do is replace the two question marks in the script (or better still, create a new instruction line in which you amend this to have a numerical value representing the number of different plot bars. Try at least 3 different values. Look at and think about how this affects the visual distribution.
 
 
 We can also create a "box and whisker plot". Here's a general simple description of a box-and-whisker plot as a graphical representation of data:
 
 ![ ](files/Week_2/Box_and_whisker.png)
+
 ### Additional challenge
 
-In the zip file, we also provide data on the estimates of the percentage of immigranmts in the UK. This will allow you to explore the data discussed in the analysis lecture, and create visualisations of the data and its spread. Can you apply the analysis of ther penelope data to the immigration data?
+In the zip file, we also provide data on the estimates of the percentage of immigrants in the UK. This will allow you to explore the data discussed in the analysis lecture, and create visualisations of the data and its spread. Can you apply the analysis of the penelope data to the immigration data?

@@ -170,6 +170,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.3" data-path="week-2-descriptive-statistics-in-rstudio.html"><a href="week-2-descriptive-statistics-in-rstudio.html#finding-the-mean-and-median-estimates"><i class="fa fa-check"></i><b>2.2.3</b> Finding the mean and median estimates</a></li>
 <li class="chapter" data-level="2.2.4" data-path="week-2-descriptive-statistics-in-rstudio.html"><a href="week-2-descriptive-statistics-in-rstudio.html#calculations-from-a-range-of-columns"><i class="fa fa-check"></i><b>2.2.4</b> Calculations from a range of columns</a></li>
 <li class="chapter" data-level="2.2.5" data-path="week-2-descriptive-statistics-in-rstudio.html"><a href="week-2-descriptive-statistics-in-rstudio.html#simple-graphs"><i class="fa fa-check"></i><b>2.2.5</b> Simple graphs</a></li>
+<li class="chapter" data-level="2.2.6" data-path="week-2-descriptive-statistics-in-rstudio.html"><a href="week-2-descriptive-statistics-in-rstudio.html#additional-challenge"><i class="fa fa-check"></i><b>2.2.6</b> Additional challenge</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -198,13 +199,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">2.1</span> Pre-lab work<a href="week-2-descriptive-statistics-in-rstudio.html#pre-lab-work" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Last week, among other things, we asked you to</p>
 <ul>
-<li>Roll some dice, carry out some (relatively) straightforward ‘hand’ caclulations of central tendency</li>
+<li>Roll some dice, carry out some (relatively) straightforward ‘hand’ calculations of central tendency</li>
 <li>Connect to the RStudio server and create a folder</li>
-<li>Within RStudiom upload and run a script - a set of instructions, and explore annotations</li>
+<li>Within RStudio upload and run a script - a set of instructions, and explore annotations</li>
 <li>Adapt the script commands to perform calculations on the dice rolls within RStudio</li>
 <li>Complete a survey so that we can collect data for analysis teaching</li>
 </ul>
-<p>Your progress was great! We start with small steps and build up - but this is a nice start and we’e pleased how things went!</p>
+<p>Your progress was great! We start with small steps and build up - but this is a nice start and we’re pleased how things went!</p>
 <p>Before the lab, make sure you have worked through the material in the week2 learnr tutorial.
 <a href="https://ma-rconnect.lancs.ac.uk/W2LabPrep/" target="_blank">The link is here</a></p>
 <div id="r-studio-tasks" class="section level3 hasAnchor" number="2.1.1">
@@ -218,9 +219,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="bringing-data-scripts-and-files-into-r-studio" class="section level3 hasAnchor" number="2.1.2">
 <h3><span class="header-section-number">2.1.2</span> Bringing data, scripts and files into R Studio<a href="week-2-descriptive-statistics-in-rstudio.html#bringing-data-scripts-and-files-into-r-studio" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>In week 1, we had a tiny dataset (relatively speakeing) that we entered into R through a script line.
-That worked for what is was. But it’s going to become painful and tedious when (a) we want to work with larger datasets (b) we have data more complex than a 1-dimensionallist of numbers (think about some 2-dimensional data sheets you might have encountered in excel for example)</p>
-<p>R can handle data files, and this week we’re going to explore them. Within R, we can specify ‘data frames’ which can have, essentially, multiple columbns of data, and we can link data files to data frames for processing</p>
+<p>In week 1, we had a tiny dataset (relatively speaking) that we entered into R through a script line.
+That worked for what is was. But it’s going to become painful and tedious when (a) we want to work with larger datasets (b) we have data more complex than a 1-dimensional list of numbers (think about some 2-dimensional data sheets you might have encountered in excel for example)</p>
+<p>R can handle data files, and this week we’re going to explore them. Within R, we can specify ‘data frames’ which can have, essentially, multiple columns of data, and we can link data files to data frames for processing</p>
 <p>To make things straightforward, each week we’ll provide students with a “zip” file that contains the script to start from (which you can expand and annotate etc, and save on your file space). We’ll also provide a data file or data files for you to use in the zip file. R can then <em>import</em> these files into the RStudio environment. So when you upload the zip file, you can import the data AND you can open up the script</p>
 </div>
 </div>
@@ -231,17 +232,17 @@ That worked for what is was. But it’s going to become painful and tedious when
 <p>What we can see from this graph is that:</p>
 <ol style="list-style-type: decimal">
 <li>Guesses formed a roughly normal distribution. There is a bit of a skew with a right-hand tail, but this is inevitable as a weight of less than 0 is physically impossible, but there is no limit of the semantics of a large guess.</li>
-<li>The mean guess weight (1,287 lbs) is very close to the actual (true) weight of the cow (1,355 lbs). So even though lots of people were inaccurate, a central tendency measure has a pretty good alignment with te true weight. This is known as the Wisdom of Crowds phenomenon, first identified by Galton in 1907 (though he suggested using the median weight)</li>
+<li>The mean guess weight (1,287 lbs) is very close to the actual (true) weight of the cow (1,355 lbs). So even though lots of people were inaccurate, a central tendency measure has a pretty good alignment with the true weight. This is known as the Wisdom of Crowds phenomenon, first identified by Galton in 1907 (though he suggested using the median weight)</li>
 </ol>
 <p>Let’s look at (a sample of) the PSYC121 student data collected on guessing the weight of Penelope, and ask whether it resembles the properties of this large dataset.</p>
 <div id="loading-the-data" class="section level3 hasAnchor" number="2.2.1">
 <h3><span class="header-section-number">2.2.1</span> Loading the data<a href="week-2-descriptive-statistics-in-rstudio.html#loading-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Using the instructions and advice given on moodle, get the <code>week2.zip</code> file and bring the data and R script into R Studio. <a href="files/Week_2/week_2.zip">The week 2 zip file is here</a></p>
+<p>Using the instructions and advice given on Moodle, get the <code>week2.zip</code> file and bring the data and R script into R Studio. <a href="files/Week_2/week_2.zip">The week 2 zip file is here</a></p>
 </div>
 <div id="using-the-r-script" class="section level3 hasAnchor" number="2.2.2">
 <h3><span class="header-section-number">2.2.2</span> Using the R script<a href="week-2-descriptive-statistics-in-rstudio.html#using-the-r-script" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Step 1. Download the <code>week_2.zip</code> file
-(If you are using a mac, there is a video guide on moodle to explain how to download the zip file as is)</p>
+(If you are using a mac, there is a video guide on Moodle to explain how to download the zip file as is)</p>
 <p>Step 2. Open the appropriate folder on the RStudio server</p>
 <p>Step 3. Upload the zip file</p>
 <p>Let’s start working with our data, by opening up (clicking on) the script “Week_2.R” file.</p>
@@ -251,10 +252,10 @@ That worked for what is was. But it’s going to become painful and tedious when
 <p>(side note: If you were using a local version of R studio on your computer, it might not have the ‘tidyverse’ library already installed. You would need to install the package first)</p>
 <p>The data are on the RStudio server if you have followed all the lab sheet to this point. Note that when you imported the data into the R environment, a command line was generated at the console</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="week-2-descriptive-statistics-in-rstudio.html#cb7-1" aria-hidden="true" tabindex="-1"></a>cows <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;~/penelope22.csv&quot;</span>)</span></code></pre></div>
-<p>What this command accomplished was to read the spreadsheet called ‘penelope22’ into an object in R called penelope21. You could use any object label, but it’s important to then keep that name consistent in what you do next.</p>
+<p>What this command accomplished was to read the spreadsheet called ‘penelope22’ into an object in R called <code>cows</code>. You could use any object label, but it’s important to then keep that name consistent in what you do next.</p>
 <p>The command was also generated</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="week-2-descriptive-statistics-in-rstudio.html#cb8-1" aria-hidden="true" tabindex="-1"></a> <span class="fu">View</span>(cows)</span></code></pre></div>
-<p>which presents the data in a windo of RStudio. Note that “NA” means not available or missing data. Does this file structure make some sense to you?</p>
+<p>which presents the data in a window of RStudio. Note that “NA” means not available or missing data. Does this file structure make some sense to you?</p>
 </div>
 <div id="finding-the-mean-and-median-estimates" class="section level3 hasAnchor" number="2.2.3">
 <h3><span class="header-section-number">2.2.3</span> Finding the mean and median estimates<a href="week-2-descriptive-statistics-in-rstudio.html#finding-the-mean-and-median-estimates" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -291,11 +292,13 @@ That worked for what is was. But it’s going to become painful and tedious when
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="week-2-descriptive-statistics-in-rstudio.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(cows<span class="sc">$</span>estimate)</span></code></pre></div>
 <p>One way to alter or adjust the histogram is to change the width of the bars, the intervals, between each plot section. Try run this line from the script</p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="week-2-descriptive-statistics-in-rstudio.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(cows<span class="sc">$</span>estimate, <span class="at">breaks =</span> ??)</span></code></pre></div>
-<p>Does it work? No? What you need to do is replace the two question marks in the script (or better still, create a new instruction line in which you amend this to have a numerical value representing the number of different plot bars. Try at least 3 diffeernt values. Look at and think about how this affects the visual distribution.</p>
+<p>Does it work? No? What you need to do is replace the two question marks in the script (or better still, create a new instruction line in which you amend this to have a numerical value representing the number of different plot bars. Try at least 3 different values. Look at and think about how this affects the visual distribution.</p>
 <p>We can also create a “box and whisker plot”. Here’s a general simple description of a box-and-whisker plot as a graphical representation of data:</p>
-<p><img src="files/Week_2/Box_and_whisker.png" />
-### Additional challenge</p>
-<p>In the zip file, we also provide data on the estimates of the percentage of immigranmts in the UK. This will allow you to explore the data discussed in the analysis lecture, and create visualisations of the data and its spread. Can you apply the analysis of ther penelope data to the immigration data?</p>
+<p><img src="files/Week_2/Box_and_whisker.png" /></p>
+</div>
+<div id="additional-challenge" class="section level3 hasAnchor" number="2.2.6">
+<h3><span class="header-section-number">2.2.6</span> Additional challenge<a href="week-2-descriptive-statistics-in-rstudio.html#additional-challenge" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In the zip file, we also provide data on the estimates of the percentage of immigrants in the UK. This will allow you to explore the data discussed in the analysis lecture, and create visualisations of the data and its spread. Can you apply the analysis of the penelope data to the immigration data?</p>
 
 </div>
 </div>
