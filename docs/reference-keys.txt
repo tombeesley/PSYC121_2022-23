@@ -16,7 +16,7 @@ before-you-finish
 extra-content-for-outside-the-lab-class
 task-4-review-the-learnr-sample-practice-questions
 task-5-data-collection-exercise
-psyc121-week-2-descriptive-statistics-in-rstudio
+week-2-descriptive-statistics-in-rstudio
 pre-lab-work
 r-studio-tasks
 bringing-data-scripts-and-files-into-r-studio

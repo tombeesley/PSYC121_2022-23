@@ -1,12 +1,12 @@
 ---
+author: "John Towse, Tom Beesley"
+date: "2022-10-14"
 output:
   html_document: default
   pdf_document: default
 ---
 
-# PSYC121: week 2: Descriptive statistics in RStudio
-
-> Written by John Towse & Tom Beesley
+# Week 2: Descriptive statistics in RStudio
 
 
 ## Pre-lab work
@@ -59,7 +59,7 @@ Let's look at (a sample of) the PSYC121 student data collected on guessing the w
 
 ### Loading the data
 
-Using the instructions and advice given on moodle, get the week2.zip file and bring the data and R script into R Studio
+Using the instructions and advice given on moodle, get the `week2.zip` file and bring the data and R script into R Studio. [The week 2 zip file is here](files/Week_1/week_2.zip)
 
 ### Using the R script
 
@@ -88,7 +88,7 @@ The data are on the RStudio server if you have followed all the lab sheet to thi
 
 
 ```r
- penelope22 <- read.csv("~/penelope22.csv")
+cows <- read_csv("~/penelope22.csv")
 ```
 
 What this command accomplished was to read the spreadsheet called 'penelope22' into an object in R called penelope21. You could use any object label, but it's important to then keep that name consistent in what you do next.
@@ -97,7 +97,7 @@ The command was also generated
 
 
 ```r
- View(penelope22)
+ View(cows)
 ```
 
 which presents the data in a windo of RStudio. Note that "NA" means not available or missing data. Does this file structure make some sense to you?
@@ -116,20 +116,20 @@ You may be thinking, how do I possibly do any of this?! Well this week most of t
 
 
 ```r
-mean(lecture1_data)
+mean(week_1_lecture_dataa)
 ```
 
-That gave us the mean of the small dataset "lecture1_data". This time, we want to explore the penelope dataset. But also, the lecture_data was just a single list of numbers. The penelope21 object is more like a datasheet. So we need to tell R Studio which **column** we are interested in. RStudio uses the format **data$column**. So run the followinbg line in the script
+That gave us the mean of the small dataset `week_1_lecture_data`. This time, we want to explore the penelope dataset. But also, the lecture_data was just a single list of numbers. The penelope22 object is more like a datasheet. So we need to tell R Studio which **column** we are interested in. RStudio uses the format **data$column**. So run the followinbg line in the script
 
 
 ```r
-mean(penelope22$estimate) 
+mean(cows$estimate) 
 ```
 
 
 
 ```r
-sd(penelope22$estimate)
+sd(cows$estimate)
 ```
 
 
@@ -141,7 +141,7 @@ We have seen that:
 
 
 ```r
-mean(penelope22$estimate) 
+mean(cows$estimate) 
 ```
 
 will provide a mean of the column "estimate". In the third column, named "female_estimate", we have the estimates of just the female respondents. In the fourth column, named "other_estimate", we have the estimates of the "other" respondents (males and non-binary and prefer not to say).
@@ -150,11 +150,11 @@ So can you now figure out how you might get information about the estimate from 
 
 You will find that the result of the this command produces an "NA" result. This means that the answer is "Not Available", or in other words, is a "missing value". This is because some of the values in this column are NA, and the mean of a column with NAs will always lead to the result NA.
 
-Instead, try this command:
+Instead, try change the script so it looks like this:
 
 
 ```r
-mean(penelope21$female_estimate, na.rm = TRUE )
+mean(cows$female_estimate, na.rm = TRUE )
 ```
 
 Any different? The `na.rm = TRUE` instruction tells RStudio that missing data can be ignored in this mean calculation. (in technical language, `na.rm` is a parameter of the function `mean` that removes the NAs if set to TRUE)
@@ -167,20 +167,22 @@ The first thing we can do is create a histogram distribution of guesses from the
 
 
 ```r
-hist(penelope22$estimate)
+hist(cows$estimate)
 ```
 
 One way to alter or adjust the histogram is to change the width of the bars, the intervals, between each plot section. Try run this line from the script
 
 
 ```r
-hist(penelope22$estimate, breaks = ??)
+hist(cows$estimate, breaks = ??)
 ```
 
-Does it work? No? What you need to do is replace the two question marks with a numerical value representing the number of different plot bars. Try at least 3 diffeernt values. Look at and thinkk about how this affects the visual distribution.
-
+Does it work? No? What you need to do is replace the two question marks in the script (or better still, create a new instruction line in which you amend this to have a numerical value representing the number of different plot bars. Try at least 3 diffeernt values. Look at and think about how this affects the visual distribution.
 
 
 We can also create a "box and whisker plot". Here's a general simple description of a box-and-whisker plot as a graphical representation of data:
 
 ![ ](files/Week_2/Box_and_whisker.png)
+### Additional challenge
+
+In the zip file, we also provide data on the estimates of the percentage of immigranmts in the UK. This will allow you to explore the data discussed in the analysis lecture, and create visualisations of the data and its spread. Can you apply the analysis of ther penelope data to the immigration data?
