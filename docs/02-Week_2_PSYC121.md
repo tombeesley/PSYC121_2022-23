@@ -59,7 +59,7 @@ Let's look at (a sample of) the PSYC121 student data collected on guessing the w
 
 ### Loading the data
 
-Using the instructions and advice given on moodle, get the `week2.zip` file and bring the data and R script into R Studio. [The week 2 zip file is here](files/Week_1/week_2.zip)
+Using the instructions and advice given on moodle, get the `week2.zip` file and bring the data and R script into R Studio. [The week 2 zip file is here](files/Week_2/week_2.zip)
 
 ### Using the R script
 
