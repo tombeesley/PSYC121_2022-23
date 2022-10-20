@@ -27,3 +27,5 @@ finding-the-mean-and-median-estimates
 calculations-from-a-range-of-columns
 simple-graphs
 additional-challenge
+week-3
+pre-lab-work-1

@@ -1,0 +1,17 @@
+---
+author: "John Towse, Tom Beesley"
+date: "`r Sys.Date()`"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+# Week 3: 
+
+
+## Pre-lab work
+
+To be updated soon...
+
+Before the lab, make sure you have worked through the material in the week2 learnr tutorial. 
+[The link is here](https://ma-rconnect.lancs.ac.uk/W3LabPrep/){target="_blank"}
