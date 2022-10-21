@@ -27,5 +27,13 @@ finding-the-mean-and-median-estimates
 calculations-from-a-range-of-columns
 simple-graphs
 additional-challenge
-week-3
+week-3-dvs-and-ivs-in-rstudio
 pre-lab-work-1
+r-studio-tasks-1
+task-1---more-with-the-penelope22-data
+group_by
+the-assignment-operator
+task-2---salary-data
+task-3---phone-use-data
+task-4---final-challenge---visuallisation
+now-youre-finished

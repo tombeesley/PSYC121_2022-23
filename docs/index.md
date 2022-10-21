@@ -1,7 +1,7 @@
 ---
 title: "Statistics for Psychologists"
 author: "John Towse, Tom Beesley"
-date: "2022-10-20"
+date: "2022-10-21"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
