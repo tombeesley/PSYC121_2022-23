@@ -35,5 +35,5 @@ group_by
 the-assignment-operator
 task-2---salary-data
 task-3---phone-use-data
-task-4---final-challenge---visuallisation
+task-4---final-challenge-visualisation
 now-youre-finished
