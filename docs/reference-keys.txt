@@ -37,3 +37,12 @@ task-2---salary-data
 task-3---phone-use-data
 task-4---final-challenge-visualisation
 now-youre-finished
+week-4-customisation-of-graphs-and-z-scores
+pre-lab-work-2
+r-studio-tasks-2
+section-1---customisation-of-data-plots
+section-2-z-scores
+z-scores-1
+z-scores-2-using-z-score-tables
+z-scores-3-applying-z-scores-to-inferential-problems
+extra-activity
