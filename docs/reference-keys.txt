@@ -49,4 +49,5 @@ extra-activity
 week-5-class-test
 week-6-sampling-probability-and-binomial-tests
 pre-lab-work-3
-r-studio-tasks-3
+card-sampling-task
+set-up-and-instructions

@@ -201,7 +201,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="6" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html"><i class="fa fa-check"></i><b>6</b> Week 6: Sampling, probability and binomial tests</a>
 <ul>
 <li class="chapter" data-level="6.1" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#pre-lab-work-3"><i class="fa fa-check"></i><b>6.1</b> Pre-lab work</a></li>
-<li class="chapter" data-level="6.2" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#r-studio-tasks-3"><i class="fa fa-check"></i><b>6.2</b> R Studio tasks</a></li>
+<li class="chapter" data-level="6.2" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#card-sampling-task"><i class="fa fa-check"></i><b>6.2</b> Card sampling task</a>
+<ul>
+<li class="chapter" data-level="6.2.1" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#set-up-and-instructions"><i class="fa fa-check"></i><b>6.2.1</b> Set up and instructions:</a></li>
+</ul></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -236,9 +239,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>If you create a folder and upload the file into RStudio before the lab class you’ll be even more ready to follow along!</p></li>
 </ul>
 </div>
-<div id="r-studio-tasks-3" class="section level2 hasAnchor" number="6.2">
-<h2><span class="header-section-number">6.2</span> R Studio tasks<a href="week-6-sampling-probability-and-binomial-tests.html#r-studio-tasks-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="card-sampling-task" class="section level2 hasAnchor" number="6.2">
+<h2><span class="header-section-number">6.2</span> Card sampling task<a href="week-6-sampling-probability-and-binomial-tests.html#card-sampling-task" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><img src="files/Week_6/cards.jpg" /></p>
+<p>In the first task this week we will look at the sampling of events and we will apply the basic statistical test of the binomial test: <code>binom.test()</code></p>
+<p>Each table has a set of cards. These will be 13 red cards and 13 black cards - please check your set to ensure you have the right number of each colour (it doesn’t matter what suit the cards are).</p>
+<p>In this task we will be drawing samples from the deck, and trying to tell whether the deck is biased towards red or black. Think of the cards as the population of scores out there in world, and when you can only see back of the cards, that data is unobserved.</p>
+<p>As an experimenter we are trying to estimate what is true about the world, and in order to do this we need to draw a sample. So each time you draw a card, you are observing one data point from the population, and based on a collection of data (the sample) you are going to draw an inference about what is true about the population.</p>
+<div id="set-up-and-instructions" class="section level3 hasAnchor" number="6.2.1">
+<h3><span class="header-section-number">6.2.1</span> Set up and instructions:<a href="week-6-sampling-probability-and-binomial-tests.html#set-up-and-instructions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p>One person on each table should act as the “world” (the dealer). Congratulations, you are God. That is, this person will determine what is true about the state of things in the world. In this example, that means they control what is contained in the deck of cards. For each experiment, secretly remove some cards from the deck and place those face down. It’s important that no one sees what these cards are. For example, you might take out 5 red cards, so that 13 black and 8 red are left; this deck is now biased to black. Or you might take out 3 red and 3 black; this deck is not biased.</p></li>
+<li><p>The remaining people (1 or more) will act as the experimenters. Your job is to draw samples and work out whether you think the deck is biased or not towards either red or black.</p></li>
+</ol>
+<p>For each experiment, go through the following steps:</p>
+<p>2.1 The world removes some cards from the full deck (the number and colour of the cards removed is up to them) and they place these face down on the table. They shuffle the deck ready to start the “experiment”.</p>
+<p>2.2 The experimenters “pre-register” their sample size. That is, they state how many cards they are going to draw.</p>
+<p>2.3 Draw samples one at a time. Importantly - make sure you replace the cards each time and the world/dealer should give the pack a quick shuffle.</p>
+<p>2.4 Mark down whether the card was red or black in <a href="files/Week_6/Week_6_card_logbook.docx">your logbook</a></p>
+<p>2.5 The world should shuffle the cards after each draw. Repeat 2.3 and 2.4 until you have reached your sample size.</p>
+<p>2.6 At the end of each experiment, the experimenters should draw a conclusion based initially on their own “gut feeling” about the data. Do you think the deck was biased towards red, black, or was it unbiased?</p>
+<p>2.7 As a group, run a <code>binom.test()</code> to provide a statistical result. Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.</p>
+<p>2.8 The “world” can then reveal the hidden cards. Was the deck actually biased or not? How does this sit with a) your initial conclusions, and b) the result of the binomial test?</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Repeat steps 2.1-2.8 again for a new experiment, making sure that you try different parameters for the experiment. So vary a) how many cards are removed from the deck, b) the combination of cards removed from the deck, and c) the pre-registered sample size. Feel free to swap the roles around.</p></li>
+<li><p>Once you’ve conducted a few experiments, discuss…</p></li>
+</ol>
 
+</div>
 </div>
 </div>
             </section>
