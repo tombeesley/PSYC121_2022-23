@@ -262,25 +262,27 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li><p>One person on each table should act as the “world” (the dealer). Congratulations, you are God. That is, this person will determine what is true about the state of things in the world. In this example, that means they control what is contained in the deck of cards. For each experiment, secretly remove some cards from the deck and place those face down. It’s important that no one sees what these cards are. For example, you might take out 5 red cards, so that 13 black and 8 red are left; this deck is now biased to black. Or you might take out 3 red and 3 black; this deck is not biased.</p></li>
 <li><p>The remaining people (1 or more) will act as the experimenters. Your job is to draw samples and work out whether you think the deck is biased or not towards either red or black.</p></li>
+<li><p>For each experiment, go through the following steps:</p></li>
 </ol>
-<p>For each experiment, go through the following steps:</p>
-<p>2.1 The world removes some cards from the full deck (the number and colour of the cards removed is up to them) and they place these face down on the table. They shuffle the deck ready to start the “experiment”.</p>
-<p>2.2 The experimenters “pre-register” their sample size. That is, they state how many cards they are going to draw.</p>
-<p>2.3 Draw samples one at a time. Importantly - make sure you replace the cards each time and the world/dealer should give the pack a quick shuffle.</p>
-<p>2.4 Mark down whether the card was red or black in <a href="files/Week_6/Week_6_card_logbook.docx">your logbook</a></p>
-<p>2.5 The world should shuffle the cards after each draw. Repeat 2.3 and 2.4 until you have reached your sample size.</p>
-<p>2.6 At the end of each experiment, the experimenters should draw a conclusion based initially on their own “gut feeling” about the data. Do you think the deck was biased towards red, black, or was it unbiased?</p>
-<p>2.7 As a group, use RStudio to run a <code>binom.test()</code> to provide a statistical result (you can do this in the console, or create a new script to save your tests and results - it’s up to you). Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.</p>
-<p>2.8 The “world” can then reveal the hidden cards. Was the deck actually biased or not? How does this sit with a) your initial conclusions, and b) the result of the binomial test?</p>
-<ol start="3" style="list-style-type: decimal">
-<li><p>Repeat steps 2.1-2.8 again for a new experiment, <strong>making sure that you try different parameters for the experiment</strong>. So vary a) how many cards are removed from the deck, b) the combination of cards removed from the deck, and c) the pre-registered sample size. Feel free to swap the roles around.</p></li>
+<ul>
+<li><p>The world removes some cards from the full deck (the number and colour of the cards removed is up to them) and they place these face down on the table. They shuffle the deck ready to start the “experiment”.</p></li>
+<li><p>The experimenters “pre-register” their sample size. That is, they state how many cards they are going to draw.</p></li>
+<li><p>Draw samples one at a time. Importantly - make sure you replace the cards each time and the world/dealer should give the pack a quick shuffle.</p></li>
+<li><p>Mark down whether the card was red or black in <a href="files/Week_6/Week_6_card_logbook.docx">your logbook</a></p></li>
+<li><p>The world should shuffle the cards after each draw. Repeat 2.3 and 2.4 until you have reached your sample size.</p></li>
+<li><p>At the end of each experiment, the experimenters should draw a conclusion based initially on their own “gut feeling” about the data. Do you think the deck was biased towards red, black, or was it unbiased?</p></li>
+<li><p>As a group, use RStudio to run a <code>binom.test()</code> to provide a statistical result (you can do this in the console, or create a new script to save your tests and results - it’s up to you). Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.</p></li>
+<li><p>The “world” can then reveal the hidden cards. Was the deck actually biased or not? How does this sit with a) your initial conclusions, and b) the result of the binomial test?</p></li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Repeat all steps in part 3 again for a new experiment, <strong>making sure that you try different parameters for the experiment</strong>. So vary a) how many cards are removed from the deck, b) the combination of cards removed from the deck, and c) the pre-registered sample size. Feel free to swap the roles around.</p></li>
 <li><p>Once you’ve conducted a few experiments, discuss on your table the results you found. It might be useful to think about the following things:</p></li>
 </ol>
-<ol style="list-style-type: lower-alpha">
+<ul>
 <li><p>were there times when your intuitions were different to the statistical result? For example, you were sure there was a bias, but in fact the statistics told you this was not that unusual (p was &gt; .05)?</p></li>
 <li><p>were there times when the deck was actually biased, but you failed to prove this with your experiment (you failed to see p &lt; .05)? Do you remember what this type of error is called?</p></li>
 <li><p>were there times when the deck was <em>not</em> biased, but the test result suggested it was (p &lt; .05)? Do you remember what type of error this is called?</p></li>
-</ol>
+</ul>
 </div>
 </div>
 <div id="rstudio-tasks" class="section level2 hasAnchor" number="6.3">

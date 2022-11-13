@@ -38,33 +38,33 @@ As an experimenter we are trying to estimate what is true about the world, and i
 
 2. The remaining people (1 or more) will act as the experimenters. Your job is to draw samples and work out whether you think the deck is biased or not towards either red or black. 
 
-For each experiment, go through the following steps:
+3. For each experiment, go through the following steps:
 
-2.1 The world removes some cards from the full deck (the number and colour of the cards removed is up to them) and they place these face down on the table. They shuffle the deck ready to start the "experiment".
+  + The world removes some cards from the full deck (the number and colour of the cards removed is up to them) and they place these face down on the table. They shuffle the deck ready to start the "experiment".
 
-2.2 The experimenters "pre-register" their sample size. That is, they state how many cards they are going to draw.
+  + The experimenters "pre-register" their sample size. That is, they state how many cards they are going to draw.
 
-2.3 Draw samples one at a time. Importantly - make sure you replace the cards each time and the world/dealer should give the pack a quick shuffle. 
+  + Draw samples one at a time. Importantly - make sure you replace the cards each time and the world/dealer should give the pack a quick shuffle. 
 
-2.4 Mark down whether the card was red or black in [your logbook](files/Week_6/Week_6_card_logbook.docx)
+  + Mark down whether the card was red or black in [your logbook](files/Week_6/Week_6_card_logbook.docx)
 
-2.5 The world should shuffle the cards after each draw. Repeat 2.3 and 2.4 until you have reached your sample size.
+  + The world should shuffle the cards after each draw. Repeat 2.3 and 2.4 until you have reached your sample size.
 
-2.6 At the end of each experiment, the experimenters should draw a conclusion based initially on their own "gut feeling" about the data. Do you think the deck was biased towards red, black, or was it unbiased?
+  + At the end of each experiment, the experimenters should draw a conclusion based initially on their own "gut feeling" about the data. Do you think the deck was biased towards red, black, or was it unbiased?
 
-2.7 As a group, use RStudio to run a `binom.test()` to provide a statistical result (you can do this in the console, or create a new script to save your tests and results - it's up to you). Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.
+  + As a group, use RStudio to run a `binom.test()` to provide a statistical result (you can do this in the console, or create a new script to save your tests and results - it's up to you). Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.
 
-2.8 The "world" can then reveal the hidden cards. Was the deck actually biased or not? How does this sit with a) your initial conclusions, and b) the result of the binomial test?
+  + The "world" can then reveal the hidden cards. Was the deck actually biased or not? How does this sit with a) your initial conclusions, and b) the result of the binomial test?
 
-3. Repeat steps 2.1-2.8 again for a new experiment, **making sure that you try different parameters for the experiment**. So vary a) how many cards are removed from the deck, b) the combination of cards removed from the deck, and c) the pre-registered sample size. Feel free to swap the roles around.
+4. Repeat all steps in part 3 again for a new experiment, **making sure that you try different parameters for the experiment**. So vary a) how many cards are removed from the deck, b) the combination of cards removed from the deck, and c) the pre-registered sample size. Feel free to swap the roles around.
 
-4. Once you've conducted a few experiments, discuss on your table the results you found. It might be useful to think about the following things: 
+5. Once you've conducted a few experiments, discuss on your table the results you found. It might be useful to think about the following things: 
 
-a) were there times when your intuitions were different to the statistical result? For example, you were sure there was a bias, but in fact the statistics told you this was not that unusual (p was > .05)? 
+  + were there times when your intuitions were different to the statistical result? For example, you were sure there was a bias, but in fact the statistics told you this was not that unusual (p was > .05)? 
 
-b) were there times when the deck was actually biased, but you failed to prove this with your experiment (you failed to see p < .05)? Do you remember what this type of error is called?
+  + were there times when the deck was actually biased, but you failed to prove this with your experiment (you failed to see p < .05)? Do you remember what this type of error is called?
 
-c) were there times when the deck was *not* biased, but the test result suggested it was (p < .05)? Do you remember what type of error this is called?
+  + were there times when the deck was *not* biased, but the test result suggested it was (p < .05)? Do you remember what type of error this is called?
 
 ## RStudio tasks
 
