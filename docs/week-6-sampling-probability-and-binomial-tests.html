@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>6 Week 6: Sampling, probability and binomial tests | Statistics for Psychologists</title>
   <meta name="description" content="Course content for PSYC121 at Lancaster University" />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="6 Week 6: Sampling, probability and binomial tests | Statistics for Psychologists" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="John Towse, Tom Beesley" />
 
 
-<meta name="date" content="2022-11-11" />
+<meta name="date" content="2022-11-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -205,6 +205,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.2.1" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#set-up-and-instructions"><i class="fa fa-check"></i><b>6.2.1</b> Set up and instructions:</a></li>
 </ul></li>
+<li class="chapter" data-level="6.3" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#rstudio-tasks"><i class="fa fa-check"></i><b>6.3</b> RStudio tasks</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -236,6 +237,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><p>Ensure you have watched the lecture for Week 6.</p></li>
 <li><p>There is a learnr tutorial to complete which will help you to think about <strong>binomial tests</strong>. You : <a href="https://ma-rconnect.lancs.ac.uk/PSYC121_2022_W6_prep/" target="_blank">You can find it here</a>.</p></li>
+<li><p>Set up a new folder in RStudio and upload the files from the <a href="files/WeeWeek_6.zip.zip">Week 6 zip file</a></p></li>
 <li><p>If you create a folder and upload the file into RStudio before the lab class you’ll be even more ready to follow along!</p></li>
 </ul>
 </div>
@@ -259,14 +261,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>2.4 Mark down whether the card was red or black in <a href="files/Week_6/Week_6_card_logbook.docx">your logbook</a></p>
 <p>2.5 The world should shuffle the cards after each draw. Repeat 2.3 and 2.4 until you have reached your sample size.</p>
 <p>2.6 At the end of each experiment, the experimenters should draw a conclusion based initially on their own “gut feeling” about the data. Do you think the deck was biased towards red, black, or was it unbiased?</p>
-<p>2.7 As a group, run a <code>binom.test()</code> to provide a statistical result. Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.</p>
+<p>2.7 As a group, use RStudio to run a <code>binom.test()</code> to provide a statistical result (you can do this in the console, or create a new script to save your tests and results - it’s up to you). Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.</p>
 <p>2.8 The “world” can then reveal the hidden cards. Was the deck actually biased or not? How does this sit with a) your initial conclusions, and b) the result of the binomial test?</p>
 <ol start="3" style="list-style-type: decimal">
-<li><p>Repeat steps 2.1-2.8 again for a new experiment, making sure that you try different parameters for the experiment. So vary a) how many cards are removed from the deck, b) the combination of cards removed from the deck, and c) the pre-registered sample size. Feel free to swap the roles around.</p></li>
-<li><p>Once you’ve conducted a few experiments, discuss…</p></li>
+<li><p>Repeat steps 2.1-2.8 again for a new experiment, <strong>making sure that you try different parameters for the experiment</strong>. So vary a) how many cards are removed from the deck, b) the combination of cards removed from the deck, and c) the pre-registered sample size. Feel free to swap the roles around.</p></li>
+<li><p>Once you’ve conducted a few experiments, discuss on your table the results you found. It might be useful to think about the following things:</p></li>
 </ol>
-
+<ol style="list-style-type: lower-alpha">
+<li><p>were there times when your intuitions were different to the statistical result? For example, you were sure there was a bias, but in fact the statistics told you this was not that unusual (p was &gt; .05)?</p></li>
+<li><p>were there times when the deck was actually biased, but you failed to prove this with your experiment (you failed to see p &lt; .05)? Do you remember what this type of error is called?</p></li>
+<li><p>were there times when the deck was <em>not</em> biased, but the test result suggested it was (p &lt; .05)? Do you remember what type of error this is called?</p></li>
+</ol>
 </div>
+</div>
+<div id="rstudio-tasks" class="section level2 hasAnchor" number="6.3">
+<h2><span class="header-section-number">6.3</span> RStudio tasks<a href="week-6-sampling-probability-and-binomial-tests.html#rstudio-tasks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>For the second exercise today we will take a look at the phone data again. If you haven’t already, set up a new folder for Week 6 and upload the data from the Week 6 zip (see pre-lab instructions).</p>
+
 </div>
 </div>
             </section>

@@ -16,6 +16,8 @@ output:
 
 -   There  is a learnr tutorial to complete which will help you to think about **binomial tests**. You : [You can find it here](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_W6_prep/){target="_blank"}.
 
+-   Set up a new folder in RStudio and upload the files from the [Week 6 zip file](files/WeeWeek_6.zip.zip)
+
 -   If you create a folder and upload the file into RStudio before the lab class you'll be even more ready to follow along!
 
 ## Card sampling task
@@ -50,7 +52,7 @@ For each experiment, go through the following steps:
 
 2.6 At the end of each experiment, the experimenters should draw a conclusion based initially on their own "gut feeling" about the data. Do you think the deck was biased towards red, black, or was it unbiased?
 
-2.7 As a group, run a `binom.test()` to provide a statistical result. Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.
+2.7 As a group, use RStudio to run a `binom.test()` to provide a statistical result (you can do this in the console, or create a new script to save your tests and results - it's up to you). Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.
 
 2.8 The "world" can then reveal the hidden cards. Was the deck actually biased or not? How does this sit with a) your initial conclusions, and b) the result of the binomial test?
 
@@ -66,7 +68,9 @@ c) were there times when the deck was *not* biased, but the test result suggeste
 
 ## RStudio tasks
 
-For the second exercise today we will take a look at the phone data again. ...
+For the second exercise today we will take a look at the phone data again. If you haven't already, set up a new folder for Week 6 and upload the data from the Week 6 zip (see pre-lab instructions).
+
+
 
 
 

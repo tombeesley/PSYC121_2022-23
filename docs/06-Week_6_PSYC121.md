@@ -1,6 +1,6 @@
 ---
 author: "John Towse, Tom Beesley"
-date: "2022-11-11"
+date: "2022-11-13"
 output:
   html_document: default
   pdf_document: default
@@ -15,6 +15,8 @@ output:
 -   Ensure you have watched the lecture for Week 6.
 
 -   There  is a learnr tutorial to complete which will help you to think about **binomial tests**. You : [You can find it here](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_W6_prep/){target="_blank"}.
+
+-   Set up a new folder in RStudio and upload the files from the [Week 6 zip file](files/WeeWeek_6.zip.zip)
 
 -   If you create a folder and upload the file into RStudio before the lab class you'll be even more ready to follow along!
 
@@ -50,13 +52,24 @@ For each experiment, go through the following steps:
 
 2.6 At the end of each experiment, the experimenters should draw a conclusion based initially on their own "gut feeling" about the data. Do you think the deck was biased towards red, black, or was it unbiased?
 
-2.7 As a group, run a `binom.test()` to provide a statistical result. Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.
+2.7 As a group, use RStudio to run a `binom.test()` to provide a statistical result (you can do this in the console, or create a new script to save your tests and results - it's up to you). Was this result unusual? How likely were the data given the null hypothesis? Note down the p value that this test gives you.
 
 2.8 The "world" can then reveal the hidden cards. Was the deck actually biased or not? How does this sit with a) your initial conclusions, and b) the result of the binomial test?
 
-3. Repeat steps 2.1-2.8 again for a new experiment, making sure that you try different parameters for the experiment. So vary a) how many cards are removed from the deck, b) the combination of cards removed from the deck, and c) the pre-registered sample size. Feel free to swap the roles around.
+3. Repeat steps 2.1-2.8 again for a new experiment, **making sure that you try different parameters for the experiment**. So vary a) how many cards are removed from the deck, b) the combination of cards removed from the deck, and c) the pre-registered sample size. Feel free to swap the roles around.
 
-4. Once you've conducted a few experiments, discuss...
+4. Once you've conducted a few experiments, discuss on your table the results you found. It might be useful to think about the following things: 
+
+a) were there times when your intuitions were different to the statistical result? For example, you were sure there was a bias, but in fact the statistics told you this was not that unusual (p was > .05)? 
+
+b) were there times when the deck was actually biased, but you failed to prove this with your experiment (you failed to see p < .05)? Do you remember what this type of error is called?
+
+c) were there times when the deck was *not* biased, but the test result suggested it was (p < .05)? Do you remember what type of error this is called?
+
+## RStudio tasks
+
+For the second exercise today we will take a look at the phone data again. If you haven't already, set up a new folder for Week 6 and upload the data from the Week 6 zip (see pre-lab instructions).
+
 
 
 
