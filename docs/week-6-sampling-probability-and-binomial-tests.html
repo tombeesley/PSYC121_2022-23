@@ -209,10 +209,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li class="chapter" data-level="6.3.1" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#read-in-the-csv-data-file"><i class="fa fa-check"></i><b>6.3.1</b> Read in the csv data file</a></li>
 <li class="chapter" data-level="6.3.2" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#take-a-look-at-the-data"><i class="fa fa-check"></i><b>6.3.2</b> Take a look at the data</a></li>
-<li class="chapter" data-level="6.3.3" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#create-a-boxplot-the-phone-data"><i class="fa fa-check"></i><b>6.3.3</b> Create a boxplot the phone data</a></li>
+<li class="chapter" data-level="6.3.3" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#create-a-boxplot-of-the-phone-data"><i class="fa fa-check"></i><b>6.3.3</b> Create a boxplot of the phone data</a></li>
 <li class="chapter" data-level="6.3.4" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#create-a-density-plot-andor-hisotgram-of-the-phone-data"><i class="fa fa-check"></i><b>6.3.4</b> Create a density plot and/or hisotgram of the phone data</a></li>
 <li class="chapter" data-level="6.3.5" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#plot-the-relationship-between-estimated-and-actual-phone-use"><i class="fa fa-check"></i><b>6.3.5</b> Plot the relationship between estimated and actual phone use</a></li>
 <li class="chapter" data-level="6.3.6" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#binomial-test-of-the-accuracy-of-phone-use-estimates"><i class="fa fa-check"></i><b>6.3.6</b> Binomial test of the accuracy of phone use estimates</a></li>
+<li class="chapter" data-level="6.3.7" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#more-things-to-try-with-your-scatter-plot"><i class="fa fa-check"></i><b>6.3.7</b> More things to try with your scatter plot</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -293,8 +294,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h3><span class="header-section-number">6.3.2</span> Take a look at the data<a href="week-6-sampling-probability-and-binomial-tests.html#take-a-look-at-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>There are lots of ways to get a quick look at the data. Here are a few useful ones (some you’ve come across, some that might be new): <code>glimpse()</code>, <code>summary()</code>, <code>View()</code>, <code>head()</code>.</p>
 </div>
-<div id="create-a-boxplot-the-phone-data" class="section level3 hasAnchor" number="6.3.3">
-<h3><span class="header-section-number">6.3.3</span> Create a boxplot the phone data<a href="week-6-sampling-probability-and-binomial-tests.html#create-a-boxplot-the-phone-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="create-a-boxplot-of-the-phone-data" class="section level3 hasAnchor" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> Create a boxplot of the phone data<a href="week-6-sampling-probability-and-binomial-tests.html#create-a-boxplot-of-the-phone-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Complete the code to create a boxplot of the estimated phone use. Note that you can put the boxes on either the x or you y axis. Copy and paste the code and edit it so you can also plot the actual phone use.</p>
 </div>
 <div id="create-a-density-plot-andor-hisotgram-of-the-phone-data" class="section level3 hasAnchor" number="6.3.4">
@@ -303,11 +304,38 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="plot-the-relationship-between-estimated-and-actual-phone-use" class="section level3 hasAnchor" number="6.3.5">
 <h3><span class="header-section-number">6.3.5</span> Plot the relationship between estimated and actual phone use<a href="week-6-sampling-probability-and-binomial-tests.html#plot-the-relationship-between-estimated-and-actual-phone-use" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>So far we’ve looked at these…</p>
+<p>So far we’ve looked at the phone use estimate and the actual phone use separately. But if people are at all accurate in their estimates, we’d expect these two things to be related (those people who use their phone more probably know they do). Let’s use a scatter plot to see if this relationship exists in our data. In <code>ggplot()</code> we can do with with <code>geom_point()</code>. Each point on the graph needs an x and y value, so with the code you’ve been given, you just need to add in the two variables we want to plot.</p>
+<ul>
+<li>Is there a relationship between these variables?</li>
+<li>How would you describe this relationship in words?</li>
+</ul>
 </div>
 <div id="binomial-test-of-the-accuracy-of-phone-use-estimates" class="section level3 hasAnchor" number="6.3.6">
 <h3><span class="header-section-number">6.3.6</span> Binomial test of the accuracy of phone use estimates<a href="week-6-sampling-probability-and-binomial-tests.html#binomial-test-of-the-accuracy-of-phone-use-estimates" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>How accurate were people in their estimates…</p>
+<p>So did people overestimate or underestimate their phone use on average? We have given you a column called <em>accuracy</em> which simply says whether each participant underestimated or overestimated. Add your dataset name to this code to use the <code>count()</code> function to get the total who overestimated and underestimated. With these totals, you have enough information to run a binomial test:</p>
+<ul>
+<li>for this test focus on the totals for “underestimate” and “overestimate” (for simplicity we can ignore people who were “accurate” and the NA values)</li>
+<li>These give you your first two parameters for <code>binom.test()</code></li>
+<li>to get the probability, we consider the null hypothesis</li>
+<li>that is what’s the probability of overestimating or underestimating under the null hypothesis?</li>
+<li>what is the result of the binomial test?</li>
+<li>You can also include the <em>UK_region</em> within your count, and then run binomial tests on these sub-groups. Do you find any interesting reuslts? What issues might we have with running the <code>binom.test()</code> on these sub groups?</li>
+</ul>
+</div>
+<div id="more-things-to-try-with-your-scatter-plot" class="section level3 hasAnchor" number="6.3.7">
+<h3><span class="header-section-number">6.3.7</span> More things to try with your scatter plot<a href="week-6-sampling-probability-and-binomial-tests.html#more-things-to-try-with-your-scatter-plot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>We can customise our plot even further:</p>
+<ul>
+<li>Try adding/changing the <code>size =</code> within <code>geom_point()</code> to make the points bigger or smaller (values from .1 to 30)</li>
+<li>Try adding/changing the <code>alpha =</code> within <code>geom_point()</code> to make the points transparent (try values between 0.1 and 1)</li>
+<li>try adding <code>colour =</code> within <code>ggplot(aes( ))</code> to <em>map</em> the colour to the ‘UK_region’ variable.</li>
+<li>you can change the colours used by ggplot by adding <code>+ scale_colour_brewer()</code> to your plot code. Within this, try setting the pallete parameter to one of these options (e.g., <code>scale_colour_brewer(palette = "Set3")</code>)</li>
+</ul>
+<p><img src="files/Week_6/brewer_cols.png" /></p>
+<ul>
+<li>remember you can add labels using <code>+labs()</code></li>
+<li>remember you can set a new theme, such as <code>+ theme_minimal()</code></li>
+</ul>
 
 </div>
 </div>

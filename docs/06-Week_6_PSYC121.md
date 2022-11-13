@@ -78,7 +78,7 @@ You should know how to do this by now. But if not, try searching "csv" at the to
 
 There are lots of ways to get a quick look at the data. Here are a few useful ones (some you've come across, some that might be new): `glimpse()`, `summary()`, `View()`, `head()`.
 
-### Create a boxplot the phone data
+### Create a boxplot of the phone data
 
 Complete the code to create a boxplot of the estimated phone use. Note that you can put the boxes on either the x or you y axis. Copy and paste the code and edit it so you can also plot the actual phone use.
 
@@ -88,12 +88,35 @@ It's very easy to convert the boxplot code into either a density plot (`geom_den
 
 ### Plot the relationship between estimated and actual phone use
 
-So far we've looked at these...
+So far we've looked at the phone use estimate and the actual phone use separately. But if people are at all accurate in their estimates, we'd expect these two things to be related (those people who use their phone more probably know they do). Let's use a scatter plot to see if this relationship exists in our data. In `ggplot()` we can do with with `geom_point()`. Each point on the graph needs an x and y value, so with the code you've been given, you just need to add in the two variables we want to plot. 
+
+- Is there a relationship between these variables?
+- How would you describe this relationship in words?
+
 
 ### Binomial test of the accuracy of phone use estimates
 
-How accurate were people in their estimates...
+So did people overestimate or underestimate their phone use on average? We have given you a column called *accuracy* which simply says whether each participant underestimated or overestimated. Add your dataset name to this code to use the `count()` function to get the total who overestimated and underestimated. With these totals, you have enough information to run a binomial test:
+
+- for this test focus on the totals for "underestimate" and "overestimate" (for simplicity we can ignore people who were "accurate" and the NA values)
+- These give you your first two parameters for `binom.test()`
+- to get the probability, we consider the null hypothesis
+- that is what's the probability of overestimating or underestimating under the null hypothesis?
+- what is the result of the binomial test?
+- You can also include the *UK_region* within your count, and then run binomial tests on these sub-groups. Do you find any interesting reuslts? What issues might we have with running the `binom.test()` on these sub groups?
 
 
+### More things to try with your scatter plot
 
+We can customise our plot even further:
+
+- Try adding/changing the `size =` within `geom_point()` to make the points bigger or smaller (values from .1 to 30)
+- Try adding/changing the `alpha =` within `geom_point()` to make the points transparent (try values between 0.1 and 1) 
+- try adding `colour = ` within `ggplot(aes( ))` to *map* the colour to the 'UK_region' variable. 
+- you can change the colours used by ggplot by adding `+ scale_colour_brewer()` to your plot code. Within this, try setting the pallete parameter to one of these options (e.g., `scale_colour_brewer(palette = "Set3")`)
+
+![](files/Week_6/brewer_cols.png)
+
+- remember you can add labels using `+labs()`
+- remember you can set a new theme, such as `+ theme_minimal()`
 

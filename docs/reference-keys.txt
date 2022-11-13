@@ -54,7 +54,8 @@ set-up-and-instructions
 rstudio-tasks
 read-in-the-csv-data-file
 take-a-look-at-the-data
-create-a-boxplot-the-phone-data
+create-a-boxplot-of-the-phone-data
 create-a-density-plot-andor-hisotgram-of-the-phone-data
 plot-the-relationship-between-estimated-and-actual-phone-use
 binomial-test-of-the-accuracy-of-phone-use-estimates
+more-things-to-try-with-your-scatter-plot
