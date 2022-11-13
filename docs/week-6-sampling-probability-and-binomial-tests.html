@@ -207,8 +207,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="6.3" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#rstudio-tasks"><i class="fa fa-check"></i><b>6.3</b> RStudio tasks</a>
 <ul>
-<li class="chapter" data-level="6.3.1" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#read-in-the-data-file"><i class="fa fa-check"></i><b>6.3.1</b> Read in the data file</a></li>
-<li class="chapter" data-level="6.3.2" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#section"><i class="fa fa-check"></i><b>6.3.2</b> </a></li>
+<li class="chapter" data-level="6.3.1" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#read-in-the-csv-data-file"><i class="fa fa-check"></i><b>6.3.1</b> Read in the csv data file</a></li>
+<li class="chapter" data-level="6.3.2" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#take-a-look-at-the-data"><i class="fa fa-check"></i><b>6.3.2</b> Take a look at the data</a></li>
+<li class="chapter" data-level="6.3.3" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#create-a-boxplot-the-phone-data"><i class="fa fa-check"></i><b>6.3.3</b> Create a boxplot the phone data</a></li>
+<li class="chapter" data-level="6.3.4" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#create-a-density-plot-andor-hisotgram-of-the-phone-data"><i class="fa fa-check"></i><b>6.3.4</b> Create a density plot and/or hisotgram of the phone data</a></li>
+<li class="chapter" data-level="6.3.5" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#plot-the-relationship-between-estimated-and-actual-phone-use"><i class="fa fa-check"></i><b>6.3.5</b> Plot the relationship between estimated and actual phone use</a></li>
+<li class="chapter" data-level="6.3.6" data-path="week-6-sampling-probability-and-binomial-tests.html"><a href="week-6-sampling-probability-and-binomial-tests.html#binomial-test-of-the-accuracy-of-phone-use-estimates"><i class="fa fa-check"></i><b>6.3.6</b> Binomial test of the accuracy of phone use estimates</a></li>
 </ul></li>
 </ul></li>
 <li class="divider"></li>
@@ -281,11 +285,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="rstudio-tasks" class="section level2 hasAnchor" number="6.3">
 <h2><span class="header-section-number">6.3</span> RStudio tasks<a href="week-6-sampling-probability-and-binomial-tests.html#rstudio-tasks" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For the second exercise today we will take a look at the phone data again. If you haven’t already, set up a new folder for Week 6 and upload the data from the Week 6 zip (see pre-lab instructions).</p>
-<div id="read-in-the-data-file" class="section level3 hasAnchor" number="6.3.1">
-<h3><span class="header-section-number">6.3.1</span> Read in the data file<a href="week-6-sampling-probability-and-binomial-tests.html#read-in-the-data-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="read-in-the-csv-data-file" class="section level3 hasAnchor" number="6.3.1">
+<h3><span class="header-section-number">6.3.1</span> Read in the csv data file<a href="week-6-sampling-probability-and-binomial-tests.html#read-in-the-csv-data-file" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>You should know how to do this by now. But if not, try searching “csv” at the top. Remember that what you name your data set is important for the following commands.</p>
 </div>
-<div id="section" class="section level3" number="6.3.2">
-<h3><span class="header-section-number">6.3.2</span> </h3>
+<div id="take-a-look-at-the-data" class="section level3 hasAnchor" number="6.3.2">
+<h3><span class="header-section-number">6.3.2</span> Take a look at the data<a href="week-6-sampling-probability-and-binomial-tests.html#take-a-look-at-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>There are lots of ways to get a quick look at the data. Here are a few useful ones (some you’ve come across, some that might be new): <code>glimpse()</code>, <code>summary()</code>, <code>View()</code>, <code>head()</code>.</p>
+</div>
+<div id="create-a-boxplot-the-phone-data" class="section level3 hasAnchor" number="6.3.3">
+<h3><span class="header-section-number">6.3.3</span> Create a boxplot the phone data<a href="week-6-sampling-probability-and-binomial-tests.html#create-a-boxplot-the-phone-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Complete the code to create a boxplot of the estimated phone use. Note that you can put the boxes on either the x or you y axis. Copy and paste the code and edit it so you can also plot the actual phone use.</p>
+</div>
+<div id="create-a-density-plot-andor-hisotgram-of-the-phone-data" class="section level3 hasAnchor" number="6.3.4">
+<h3><span class="header-section-number">6.3.4</span> Create a density plot and/or hisotgram of the phone data<a href="week-6-sampling-probability-and-binomial-tests.html#create-a-density-plot-andor-hisotgram-of-the-phone-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>It’s very easy to convert the boxplot code into either a density plot (<code>geom_density()</code>) or a histogram (<code>geom_histogram()</code>). Have a play around with these different types of graphs. Which one communicates the spread of the data most clearly? Is it better to plot these on the x or y axis?</p>
+</div>
+<div id="plot-the-relationship-between-estimated-and-actual-phone-use" class="section level3 hasAnchor" number="6.3.5">
+<h3><span class="header-section-number">6.3.5</span> Plot the relationship between estimated and actual phone use<a href="week-6-sampling-probability-and-binomial-tests.html#plot-the-relationship-between-estimated-and-actual-phone-use" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>So far we’ve looked at these…</p>
+</div>
+<div id="binomial-test-of-the-accuracy-of-phone-use-estimates" class="section level3 hasAnchor" number="6.3.6">
+<h3><span class="header-section-number">6.3.6</span> Binomial test of the accuracy of phone use estimates<a href="week-6-sampling-probability-and-binomial-tests.html#binomial-test-of-the-accuracy-of-phone-use-estimates" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>How accurate were people in their estimates…</p>
 
 </div>
 </div>

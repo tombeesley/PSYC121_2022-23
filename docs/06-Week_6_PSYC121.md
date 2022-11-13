@@ -70,10 +70,29 @@ c) were there times when the deck was *not* biased, but the test result suggeste
 
 For the second exercise today we will take a look at the phone data again. If you haven't already, set up a new folder for Week 6 and upload the data from the Week 6 zip (see pre-lab instructions).
 
-### Read in the data file
+### Read in the csv data file
 
+You should know how to do this by now. But if not, try searching "csv" at the top. Remember that what you name your data set is important for the following commands.
 
-### 
+### Take a look at the data
+
+There are lots of ways to get a quick look at the data. Here are a few useful ones (some you've come across, some that might be new): `glimpse()`, `summary()`, `View()`, `head()`.
+
+### Create a boxplot the phone data
+
+Complete the code to create a boxplot of the estimated phone use. Note that you can put the boxes on either the x or you y axis. Copy and paste the code and edit it so you can also plot the actual phone use.
+
+### Create a density plot and/or hisotgram of the phone data
+
+It's very easy to convert the boxplot code into either a density plot (`geom_density()`) or a histogram (`geom_histogram()`). Have a play around with these different types of graphs. Which one communicates the spread of the data most clearly? Is it better to plot these on the x or y axis?
+
+### Plot the relationship between estimated and actual phone use
+
+So far we've looked at these...
+
+### Binomial test of the accuracy of phone use estimates
+
+How accurate were people in their estimates...
 
 
 
