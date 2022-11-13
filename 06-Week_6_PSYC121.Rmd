@@ -16,7 +16,7 @@ output:
 
 -   There  is a learnr tutorial to complete which will help you to think about **binomial tests**. You : [You can find it here](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_W6_prep/){target="_blank"}.
 
--   Set up a new folder in RStudio and upload the files from the [Week 6 zip file](files/WeeWeek_6.zip.zip)
+-   Set up a new folder in RStudio and upload the files from the [Week 6 zip file](files/Week_6/Week_6.zip)
 
 -   If you create a folder and upload the file into RStudio before the lab class you'll be even more ready to follow along!
 
@@ -70,6 +70,10 @@ c) were there times when the deck was *not* biased, but the test result suggeste
 
 For the second exercise today we will take a look at the phone data again. If you haven't already, set up a new folder for Week 6 and upload the data from the Week 6 zip (see pre-lab instructions).
 
+### Read in the data file
+
+
+### 
 
 
 

@@ -52,3 +52,5 @@ pre-lab-work-3
 card-sampling-task
 set-up-and-instructions
 rstudio-tasks
+read-in-the-data-file
+section
