@@ -1,6 +1,6 @@
 ---
 author: "John Towse, Tom Beesley"
-date: "2022-11-13"
+date: "2022-11-14"
 output:
   html_document: default
   pdf_document: default
@@ -119,4 +119,8 @@ We can customise our plot even further:
 
 - remember you can add labels using `+labs()`
 - remember you can set a new theme, such as `+ theme_minimal()`
+
+## Week 6 Quiz
+
+You can access a set of quiz questions related to this week [here.](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_6_Quiz/)
 

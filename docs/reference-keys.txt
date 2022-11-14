@@ -59,3 +59,4 @@ create-a-density-plot-andor-hisotgram-of-the-phone-data
 plot-the-relationship-between-estimated-and-actual-phone-use
 binomial-test-of-the-accuracy-of-phone-use-estimates
 more-things-to-try-with-your-scatter-plot
+week-6-quiz
