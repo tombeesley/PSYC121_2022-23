@@ -122,5 +122,5 @@ We can customise our plot even further:
 
 ## Week 6 Quiz
 
-You can access a set of quiz questions related to this week [here.](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_6_Quiz/)
+You can access a set of quiz questions related to this week [here.](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_6_Quiz/){target="_blank"}
 
