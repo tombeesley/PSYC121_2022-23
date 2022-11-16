@@ -28,15 +28,8 @@ d <-
                                          str_detect(home_location_in_UK, "Midlands") ~ "Midlands",
                                          str_detect(home_location_in_UK, "Wales") ~ "Wales"),
          attention_check = case_when(str_detect(attention_check, "strongly dis") ~ "strongly disagree",
-                                     TRUE ~ attention_check))
-  
-  #write_csv("data_salary.csv")
-
-d %>% 
-  filter(uk_salary < 200000) %>% 
-  ggplot(aes(x = uk_salary, fill = )) +
-  geom_density(alpha = .3)
-
+                                     TRUE ~ attention_check)) %>% 
+  write_csv("files/Week_7/salary_data_wk7.csv")
 
 ```
 
