@@ -33,7 +33,7 @@ d <-
 
 ```
 
-# Week 7: One-sample t-test on salary estimates [DRAFT NOT READY FOR COMPLETION YET - CHECK BACK THURS/FRI]
+# Week 7: Filtering data and testing means (one-sample t-test)
 
 > Written by Tom Beesley & John Towse
 
@@ -41,11 +41,9 @@ Today we will look in a bit more detail at people's estimates of the average UK 
 
 ## Pre-lab work: online tutorial
 
-**Online tutorial**: You must make every attempt to complete this before the lab! To access the  (on campus, or VPN required)
+Please make every attempt to complete this before the lab! To access the  (on campus, or VPN required) - Not available yet - try later on Friday.
 
-**Getting ready for the lab class** 
-
-1. Create a folder and a Project for Week 7. [Click here for the instructions](#creating_project) from last week if you are unsure.
+- Create a folder for Week 7
 
 2. Download the [Week_7.zip](files/Week_7/Week_7.zip) and upload it into this new folder in RStudio Server. If you need them, [here are the instructions](#uploading_zip) from Week 2.
 
@@ -53,9 +51,7 @@ Today we will look in a bit more detail at people's estimates of the average UK 
 
 ### Plotting and filtering
 
-**Important!** - You should be using the Week_7_script as you work through these tasks. Edit the script to complete the tasks. Running code from the script is easy - place your cursor on the line or block of code you want to run and press "run" (of ctrl/cmd+enter). See the video on Moodle if you're unsure. Save your script as you go to keep a record of your work.
-
-1. Open the Week_7_script and run the `library`, `options` and `read_csv` commands. The `options` command is new. It is very cryptic and you don't need to worry too much about this - it is making sure that the values in the graphs are displayed as regular numbers and not as scientific notation.
+1. Open the Week_7_script and run the `library`, `options` commands. The `options` command is new. It is very cryptic and you don't need to worry too much about this - it is making sure that the values in the graphs are displayed as regular numbers and not as scientific notation. Add a `read_csv()` command to get the data - you've done this every week, so this should be familiar. 
 
 2. Complete the `geom_histogram()` code to plot the distribution of salary data. Try setting `bins=20` within your `geom_histogram()` code. Play around with the number of bins for the histogram.
 
@@ -73,9 +69,11 @@ Today we will look in a bit more detail at people's estimates of the average UK 
 
 We now want to know if the salary estimates are different to the actual average salary in the UK (which is approx. £30,000). Our hypothesis might be that people are inaccurate - they overestimate or underestimate the average UK salary. Let's test that.
 
-8. Now we can compute a t-statistic and check its significance with `t.test()`. Edit the code on this line to conduct a one-sample t-test. You need to provide **the sample of data on which you want to conduct the test**, and the **expected mean under the null hypothesis**. Remember our hypothesis is that people are not accurate. Your calculation of the mean should tell you whether they numerically overestimated or underestimated. But would we expect such a result under the null hypothesis? Run the t-test and **note the p value**. How likely is it that we would see this sample of data (this mean value and the distribution of data - the SD) under the null hypothesis? The p value ranges from 0 to 1. If it is very low - typically we say p < .05 - then we conclude our result is unlikely under the null hypothesis and it is therefore a *significant result*.
+8. First, let's calculate the mean and sd of the column.
 
-9. What is the critical value of t in the t-distribution table, for this sample size? Degrees of freedom is N - 1.
+9. Now we can compute a t-statistic and check whether this mean is significantly different from the expected mean. We do this with `t.test()`. Edit the code on this line to conduct a one-sample t-test. You need to provide **the sample of data on which you want to conduct the test**, and the **expected mean under the null hypothesis**. Remember our hypothesis is that people are not accurate. Your calculation of the mean should tell you whether they numerically overestimated or underestimated. But would we expect such a result under the null hypothesis? Run the t-test and **note the p value**. How likely is it that we would see this sample of data (this mean value and the distribution of data - the SD) under the null hypothesis? The p value ranges from 0 to 1. If it is very low - typically we say p < .05 - then we conclude our result is unlikely under the null hypothesis and it is therefore a *significant result*.
+
+10. What is the critical value of t in the t-distribution table, for this sample size? Degrees of freedom is N - 1.
 
 
 ![](files/Week_7/ttable.png) 

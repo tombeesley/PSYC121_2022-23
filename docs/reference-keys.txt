@@ -60,7 +60,7 @@ plot-the-relationship-between-estimated-and-actual-phone-use
 binomial-test-of-the-accuracy-of-phone-use-estimates
 more-things-to-try-with-your-scatter-plot
 week-6-quiz
-week-7-one-sample-t-test-on-salary-estimates-draft-not-ready-for-completion-yet---check-back-thursfri
+week-7-filtering-data-and-testing-means-one-sample-t-test
 pre-lab-work-online-tutorial
 rstudio-tasks-1
 plotting-and-filtering
