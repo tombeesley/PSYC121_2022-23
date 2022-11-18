@@ -34,7 +34,7 @@ t.test(x = *MISSING_data_set_name*$uk_salary, mu = 30000) # You will need to edi
 # EXTRA
 # this is a "by hand" t statistic - you can add the column of salary estimates here and check with the result of t.test
 # check with staff if you're not sure
-t_val <- (mean(*MISSING_data_set_name*$uk_salary) - 30000) / (sd(*MISSING_data_set_name*$uk_salary)/sqrt(nrow(*MISSING_data_set_name*$uk_salary))) # denominator
+t_val <- (mean(*MISSING_data_set_name*$uk_salary) - 30000) / (sd(*MISSING_data_set_name*$uk_salary)/sqrt(length(*MISSING_data_set_name*$uk_salary))) # denominator
 
 # TASK 3
 

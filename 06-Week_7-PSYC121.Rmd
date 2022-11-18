@@ -103,7 +103,7 @@ Complete the following filters. We've put in **()** the number of rows you shoul
 
 16. Those people who failed the attention check (that is, did not say strongly agree) (14 rows)
 
-17 Those people who are from the South East or (`|`) the South West (38 rows)
+17. Those people who are from the South East or (`|`) the South West (38 rows)
 
 ## Sample size, size of effect, and the one sample t-test
 
