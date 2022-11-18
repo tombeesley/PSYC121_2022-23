@@ -61,7 +61,7 @@ binomial-test-of-the-accuracy-of-phone-use-estimates
 more-things-to-try-with-your-scatter-plot
 week-6-quiz
 week-7-filtering-data-and-testing-means-one-sample-t-test
-pre-lab-work-online-tutorial
+pre-lab-work-4
 rstudio-tasks-1
 plotting-and-filtering
 one-sample-t-test

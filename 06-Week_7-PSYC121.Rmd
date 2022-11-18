@@ -39,9 +39,10 @@ d <-
 
 Today we will look in a bit more detail at people's estimates of the average UK salary. We will first plot this data using `geom_histogram()` and also `geom_boxplot()`. When we do this, we'll see that there are some unusual values, and we'll need to do a bit of **data wrangling** to remove them, using the `filter()` command. We'll then turn to the conceptual ideas of the lecture - how can we tell if the mean of our sample is unusual, or whether we would actually expect this mean value under the null hypothesis? Finally, we'll continue to develop our skills in **data visualisation** by exploring `geom_density()` plots.
 
-## Pre-lab work: online tutorial
+## Pre-lab work
 
-- Please make every attempt to complete this before the lab! (N.B. Not available yet - please try later on Friday).
+- There is an [online tutorial](https://ma-rconnect.lancs.ac.uk/PSYC121_Week_7_labprep/){target="_blank"}. Please make every attempt to complete this before the lab! 
+
 
 - Create a folder for Week 7
 
