@@ -19,7 +19,7 @@ Today we will take a look at summarising means and standard errors (SEs) from ou
 
 **Getting ready for the lab class** 
 
-1. Create a folder for Week 8 and download the [Week_8.zip](files/Week_8/Week_8.zip) file and upload it into this new folder in RStudio Server. 
+1. Create a folder for Week 8 and download the [Week_8.zip](files/Week_8/Week_8_v2.zip) file and upload it into this new folder in RStudio Server. 
 
 ## Calculating means and SEs 
 
