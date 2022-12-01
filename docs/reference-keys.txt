@@ -73,3 +73,11 @@ calculating-means-and-ses
 running-related-samples-t-tests
 plotting-the-means-and-ses
 saving-your-work
+week-9-unrelated-samples-t-test-and-power-draft---will-be-updated-by-friday-midday
+pre-lab-work-online-tutorial-1
+rstudio-tasks-2
+exploring-the-data
+visualising-relationships-in-the-data
+using-z-scores-to-remove-outliers
+unrelated-samples-t-test
+power-and-effect-size-d-calculations
