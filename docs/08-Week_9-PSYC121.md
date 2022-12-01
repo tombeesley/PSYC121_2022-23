@@ -13,11 +13,11 @@ output:
 
 ## Pre-lab work: online tutorial
 
-**Online tutorial**: You must make every attempt to complete this before the lab! [link will follow shortly]
+**Online tutorial**: You must make every attempt to complete this before the lab! To access the [**pre-lab tutorial click here**](https://ma-rconnect.lancs.ac.uk/Week_9_LabPrep){target="_blank"} (on campus, or VPN required)
 
 **Getting ready for the lab class** 
 
-Create a folder for Week 9. and download the *Week_9.zip* (not available yet) file and upload it into this new folder in RStudio Server. 
+Create a folder for Week 9. and download the [week_9.zip](files/Week_9/week_9.zip) file and upload it into this new folder in RStudio Server. 
 
 ## RStudio tasks
 
@@ -35,7 +35,7 @@ We also asked a related question about immigration:
 
 >What percentage of the UK population do you think are immigrants to this country? (i.e. not born in UK)
 
-1. Read in the data using `read_csv()`
+1. Read in the data "data_wk9.csv" using `read_csv()`.
 
 2. Take a look at the summary statistics for all of the columns in our data using `summary()`
 
@@ -60,7 +60,7 @@ To what extent are people's estimations of these population parameters related? 
 
 2. Let's create a "z-transform column" called *z_imm* for the estimates of the percentage of immigrants. Complete the code you have been given by adding the relevant variable (column) name to the code. You may want to create a new data object at this point. 
 
-3. View the new data object to check this column has been created correctly. Like in the online tutorial, it would be a good idea to calculate some descriptive statistics for these new columns to check it conforms to what we know about z-scores (e.g., `mean()` should be 0, `sd()` = 1). 
+3. View the new data object to check this column has been created correctly. Like in the online tutorial, it would be a good idea to calculate some descriptive statistics for these new columns to check it conforms to what we know about z-scores (e.g., `mean()` should be very close to 0, `sd()` = 1). Note, if you want to change the output in r from scientific notation to non-scientific notation, you can run the command `options(scipen=999)`. 
 
 4. We know from our lectures on the z distribution that values of greater than 2 (or less than -2) reflect around 5% of the distribution, and values greater than 3 (or less than -3) represent less than 1% of the distribution:
 
@@ -89,17 +89,15 @@ We have also included a categorical variable in our data this week, which is one
 
 1. We saw in last week's lab tasks that there was a significant effect in our Stroop task data: participants were faster to say the colour names of the compatible list compared to the incompatible list (there were significant differences with the control list too). We will now use these data to calculate an **effect size** (*Cohen's d*) for the t-statistic that we observed in that test. 
 
-2. Import the stroop data. It's always a good idea to `view()` it (you can do this by clicking on it in the environment) to remind yourself what it looks like. 
+2. Import the stroop data. We have reduced the data down to just the *compatible* and *incompatible* conditions. 
 
-3. Run the code that will `filter()` the data to the two conditions we are interested in (compatible and incompatible).
+3. Run the `cohens_d()` code to calculate the effect size, which is reported as *effsize*. You can ignore any negative sign, taking note of the absolute value. 
 
-4. Run the `cohens_d()` code to calculate the effect size, which is reported as *effsize*. You can ignore any negative sign, taking note of the absolute value. 
+4. We already know that this large effect size was significant with our large sample of participants. What might we have expected with a much smaller sample size? Use the `pwr.t.test()` function to add in the effect size that you calculated (Cohen's d) and set the *N* to 20. What **power** would we have achieved with this sample size, to detect this large effect? Discuss with your table, or staff, what this power means.
 
-5. So we know that this large effect size was significant with our fairly large sample of participants. What might we have expected with a much smaller sample size. Use the `pwr.t.test()` function to add in the effect size (d) and an *N* of 20. What **power** would we have achieved with this sample size, to detect this large effect?
+5. Let's say we wanted our next experiment to have an 80% chance of finding an effect at least as large as the one we found. Complete the `pwr.t.test()` function to work out the minimum sample size we would need to achieve power of .8, with this effect size.
 
-6. Let's say we wanted our next experiment to have an 80% chance of finding an effect at least as large as the one we found. Complete the `pwr.t.test()` function to work out the minimum sample size we would need to achieve power of .8, with this effect size.
-
-7. Let's say we are looking to run a new experiment in which we give people a stressful task to complete simultaneously. We will ask them to put their hands in a bucket of ice cold water while doing the Stroop task. We are unsure of what consequence this will have for our effect size, but we want to estimate the effect size that could be achieved. We decide to run 40 participants, and want to achieve a power of .90 (90% chance to find an effect at least this large). What is the minimum effect size we could hope to detect under these conditions?
+6. Let's say we are looking to run a new experiment in which we give people a stressful task to complete simultaneously. We will ask them to put their hands in a bucket of ice cold water while doing the Stroop task (this is a real "stressor task" people use!). We are unsure of what consequence this will have for our effect size, but we want to estimate the effect size that could be detected in our experiment. We decide to run 40 participants, and want to achieve a power of .90 (90% chance to find an effect at least this large). What is the minimum effect size we could hope to detect under these conditions?
 
 
 

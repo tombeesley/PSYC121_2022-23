@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 Week 9: Unrelated-samples t-test and Power [draft - will be updated by Friday midday] | Statistics for Psychologists</title>
   <meta name="description" content="Course content for PSYC121 at Lancaster University" />
-  <meta name="generator" content="bookdown 0.28 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 Week 9: Unrelated-samples t-test and Power [draft - will be updated by Friday midday] | Statistics for Psychologists" />
   <meta property="og:type" content="book" />
@@ -275,9 +275,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </blockquote>
 <div id="pre-lab-work-online-tutorial-1" class="section level2 hasAnchor" number="9.1">
 <h2><span class="header-section-number">9.1</span> Pre-lab work: online tutorial<a href="week-9-unrelated-samples-t-test-and-power-draft---will-be-updated-by-friday-midday.html#pre-lab-work-online-tutorial-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><strong>Online tutorial</strong>: You must make every attempt to complete this before the lab! [link will follow shortly]</p>
+<p><strong>Online tutorial</strong>: You must make every attempt to complete this before the lab! To access the <a href="https://ma-rconnect.lancs.ac.uk/Week_9_LabPrep" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
 <p><strong>Getting ready for the lab class</strong></p>
-<p>Create a folder for Week 9. and download the <em>Week_9.zip</em> (not available yet) file and upload it into this new folder in RStudio Server.</p>
+<p>Create a folder for Week 9. and download the <a href="files/Week_9/week_9.zip">week_9.zip</a> file and upload it into this new folder in RStudio Server.</p>
 </div>
 <div id="rstudio-tasks-2" class="section level2 hasAnchor" number="9.2">
 <h2><span class="header-section-number">9.2</span> RStudio tasks<a href="week-9-unrelated-samples-t-test-and-power-draft---will-be-updated-by-friday-midday.html#rstudio-tasks-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
@@ -299,7 +299,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>What percentage of the UK population do you think are immigrants to this country? (i.e. not born in UK)</p>
 </blockquote>
 <ol style="list-style-type: decimal">
-<li><p>Read in the data using <code>read_csv()</code></p></li>
+<li><p>Read in the data “data_wk9.csv” using <code>read_csv()</code>.</p></li>
 <li><p>Take a look at the summary statistics for all of the columns in our data using <code>summary()</code></p></li>
 <li><p>At this stage you could try using <code>ggplot()</code> with <code>geom_histogram()</code> (hint: not sure? look at last week) or <code>geom_density()</code> to explore the different columns.</p></li>
 <li><p>You may be tempted at this stage to apply the <code>filter()</code> commands to remove any outliers. If so, yes, that’s entirely sensible. But note that we are going to remove outliers a little further into our tasks after we’ve first done some visualisation.</p></li>
@@ -319,7 +319,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ol style="list-style-type: decimal">
 <li><p>You may have noticed that there are some fairly extreme values in some of these numeric estimations of the population. As we’ve discussed in previous weeks, these outlier values can be problematic when we run our statistical tests, so (like last week) we probably want to control their influence by removing them. As you saw in your online tutorial, we can convert the data to z scores, and then remove z values above and below certain values.</p></li>
 <li><p>Let’s create a “z-transform column” called <em>z_imm</em> for the estimates of the percentage of immigrants. Complete the code you have been given by adding the relevant variable (column) name to the code. You may want to create a new data object at this point.</p></li>
-<li><p>View the new data object to check this column has been created correctly. Like in the online tutorial, it would be a good idea to calculate some descriptive statistics for these new columns to check it conforms to what we know about z-scores (e.g., <code>mean()</code> should be 0, <code>sd()</code> = 1).</p></li>
+<li><p>View the new data object to check this column has been created correctly. Like in the online tutorial, it would be a good idea to calculate some descriptive statistics for these new columns to check it conforms to what we know about z-scores (e.g., <code>mean()</code> should be very close to 0, <code>sd()</code> = 1). Note, if you want to change the output in r from scientific notation to non-scientific notation, you can run the command <code>options(scipen=999)</code>.</p></li>
 <li><p>We know from our lectures on the z distribution that values of greater than 2 (or less than -2) reflect around 5% of the distribution, and values greater than 3 (or less than -3) represent less than 1% of the distribution:</p></li>
 </ol>
 <p><img src="files/Week_9/z_score_figure.png" /></p>
@@ -344,12 +344,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <h2><span class="header-section-number">9.4</span> Power and effect size (d) calculations<a href="week-9-unrelated-samples-t-test-and-power-draft---will-be-updated-by-friday-midday.html#power-and-effect-size-d-calculations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <ol style="list-style-type: decimal">
 <li><p>We saw in last week’s lab tasks that there was a significant effect in our Stroop task data: participants were faster to say the colour names of the compatible list compared to the incompatible list (there were significant differences with the control list too). We will now use these data to calculate an <strong>effect size</strong> (<em>Cohen’s d</em>) for the t-statistic that we observed in that test.</p></li>
-<li><p>Import the stroop data. It’s always a good idea to <code>view()</code> it (you can do this by clicking on it in the environment) to remind yourself what it looks like.</p></li>
-<li><p>Run the code that will <code>filter()</code> the data to the two conditions we are interested in (compatible and incompatible).</p></li>
+<li><p>Import the stroop data. We have reduced the data down to just the <em>compatible</em> and <em>incompatible</em> conditions.</p></li>
 <li><p>Run the <code>cohens_d()</code> code to calculate the effect size, which is reported as <em>effsize</em>. You can ignore any negative sign, taking note of the absolute value.</p></li>
-<li><p>So we know that this large effect size was significant with our fairly large sample of participants. What might we have expected with a much smaller sample size. Use the <code>pwr.t.test()</code> function to add in the effect size (d) and an <em>N</em> of 20. What <strong>power</strong> would we have achieved with this sample size, to detect this large effect?</p></li>
+<li><p>We already know that this large effect size was significant with our large sample of participants. What might we have expected with a much smaller sample size? Use the <code>pwr.t.test()</code> function to add in the effect size that you calculated (Cohen’s d) and set the <em>N</em> to 20. What <strong>power</strong> would we have achieved with this sample size, to detect this large effect? Discuss with your table, or staff, what this power means.</p></li>
 <li><p>Let’s say we wanted our next experiment to have an 80% chance of finding an effect at least as large as the one we found. Complete the <code>pwr.t.test()</code> function to work out the minimum sample size we would need to achieve power of .8, with this effect size.</p></li>
-<li><p>Let’s say we are looking to run a new experiment in which we give people a stressful task to complete simultaneously. We will ask them to put their hands in a bucket of ice cold water while doing the Stroop task. We are unsure of what consequence this will have for our effect size, but we want to estimate the effect size that could be achieved. We decide to run 40 participants, and want to achieve a power of .90 (90% chance to find an effect at least this large). What is the minimum effect size we could hope to detect under these conditions?</p></li>
+<li><p>Let’s say we are looking to run a new experiment in which we give people a stressful task to complete simultaneously. We will ask them to put their hands in a bucket of ice cold water while doing the Stroop task (this is a real “stressor task” people use!). We are unsure of what consequence this will have for our effect size, but we want to estimate the effect size that could be detected in our experiment. We decide to run 40 participants, and want to achieve a power of .90 (90% chance to find an effect at least this large). What is the minimum effect size we could hope to detect under these conditions?</p></li>
 </ol>
 
 </div>
