@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>7 Week 7: Filtering data and testing means (one-sample t-test) | Statistics for Psychologists</title>
+  <title>9 Week 9: Unrelated-samples t-test and Power | Statistics for Psychologists</title>
   <meta name="description" content="Course content for PSYC121 at Lancaster University" />
   <meta name="generator" content="bookdown 0.27 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="7 Week 7: Filtering data and testing means (one-sample t-test) | Statistics for Psychologists" />
+  <meta property="og:title" content="9 Week 9: Unrelated-samples t-test and Power | Statistics for Psychologists" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Course content for PSYC121 at Lancaster University" />
   <meta name="github-repo" content="tombeesley/LU_PSYC121_122" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="7 Week 7: Filtering data and testing means (one-sample t-test) | Statistics for Psychologists" />
+  <meta name="twitter:title" content="9 Week 9: Unrelated-samples t-test and Power | Statistics for Psychologists" />
   
   <meta name="twitter:description" content="Course content for PSYC121 at Lancaster University" />
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="week-6-sampling-probability-and-binomial-tests.html"/>
-<link rel="next" href="week-8-related-samples-t-tests-plotting-means-and-se-bars.html"/>
+<link rel="prev" href="week-8-related-samples-t-tests-plotting-means-and-se-bars.html"/>
+
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -268,83 +268,88 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="week-7-filtering-data-and-testing-means-one-sample-t-test" class="section level1 hasAnchor" number="7">
-<h1><span class="header-section-number">7</span> Week 7: Filtering data and testing means (one-sample t-test)<a href="week-7-filtering-data-and-testing-means-one-sample-t-test.html#week-7-filtering-data-and-testing-means-one-sample-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="week-9-unrelated-samples-t-test-and-power" class="section level1 hasAnchor" number="9">
+<h1><span class="header-section-number">9</span> Week 9: Unrelated-samples t-test and Power<a href="week-9-unrelated-samples-t-test-and-power.html#week-9-unrelated-samples-t-test-and-power" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <blockquote>
 <p>Written by Tom Beesley &amp; John Towse</p>
 </blockquote>
-<p>Today we will look in a bit more detail at people’s estimates of the average UK salary. We will first plot this data using <code>geom_histogram()</code> and also <code>geom_boxplot()</code>. When we do this, we’ll see that there are some unusual values, and we’ll need to do a bit of <strong>data wrangling</strong> to remove them, using the <code>filter()</code> command. We’ll then turn to the conceptual ideas of the lecture - how can we tell if the mean of our sample is unusual, or whether we would actually expect this mean value under the null hypothesis? Finally, we’ll continue to develop our skills in <strong>data visualisation</strong> by exploring <code>geom_density()</code> plots.</p>
-<div id="pre-lab-work-4" class="section level2 hasAnchor" number="7.1">
-<h2><span class="header-section-number">7.1</span> Pre-lab work<a href="week-7-filtering-data-and-testing-means-one-sample-t-test.html#pre-lab-work-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<ul>
-<li><p>There is an <a href="https://ma-rconnect.lancs.ac.uk/PSYC121_Week_7_labprep/" target="_blank">online tutorial</a>. Please make every attempt to complete this before the lab!</p></li>
-<li><p>Create a folder for Week 7</p></li>
-<li><p>Download the <a href="files/Week_7/Week_7.zip">Week_7.zip</a> and upload it into this new folder in RStudio Server.</p></li>
-</ul>
+<div id="pre-lab-work-online-tutorial-1" class="section level2 hasAnchor" number="9.1">
+<h2><span class="header-section-number">9.1</span> Pre-lab work: online tutorial<a href="week-9-unrelated-samples-t-test-and-power.html#pre-lab-work-online-tutorial-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Online tutorial</strong>: You must make every attempt to complete this before the lab! To access the <a href="https://ma-rconnect.lancs.ac.uk/Week_9_LabPrep" target="_blank"><strong>pre-lab tutorial click here</strong></a> (on campus, or VPN required)</p>
+<p><strong>Getting ready for the lab class</strong></p>
+<p>Create a folder for Week 9. and download the <a href="files/Week_9/week_9.zip">week_9.zip</a> file and upload it into this new folder in RStudio Server.</p>
 </div>
-<div id="rstudio-tasks-1" class="section level2 hasAnchor" number="7.2">
-<h2><span class="header-section-number">7.2</span> RStudio tasks<a href="week-7-filtering-data-and-testing-means-one-sample-t-test.html#rstudio-tasks-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div id="plotting-and-filtering" class="section level3 hasAnchor" number="7.2.1">
-<h3><span class="header-section-number">7.2.1</span> Plotting and filtering<a href="week-7-filtering-data-and-testing-means-one-sample-t-test.html#plotting-and-filtering" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="rstudio-tasks-2" class="section level2 hasAnchor" number="9.2">
+<h2><span class="header-section-number">9.2</span> RStudio tasks<a href="week-9-unrelated-samples-t-test-and-power.html#rstudio-tasks-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="exploring-the-data" class="section level3 hasAnchor" number="9.2.1">
+<h3><span class="header-section-number">9.2.1</span> Exploring the data<a href="week-9-unrelated-samples-t-test-and-power.html#exploring-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In this class we will be exploring some data on people’s estimations on aspects of the UK population. We asked people 4 different questions:</p>
+<blockquote>
+<p>Out of every 100 people, about how many do you think are:</p>
+</blockquote>
+<blockquote>
 <ol style="list-style-type: decimal">
-<li><p>Open the Week_7_script and run the <code>library</code>, <code>options</code> commands. The <code>options</code> command is new. It is very cryptic and you don’t need to worry too much about this - it is making sure that the values in the graphs are displayed as regular numbers and not as scientific notation. Add a <code>read_csv()</code> command to get the data - you’ve done this every week, so this should be familiar.</p></li>
-<li><p>Complete the <code>geom_histogram()</code> code to plot the distribution of salary data. Try setting <code>bins=20</code> within your <code>geom_histogram()</code> code. Play around with the number of bins for the histogram.</p></li>
-<li><p>OK - we’ve got some pretty funky values here! Some people think the average salary is over £400,000!!! Well, maybe they just added too many zeros (let’s give them the benefit of the doubt). Quite often when we get our “raw” data, it contains weird values like this that we need to consider removing. Let’s run the <code>arrange()</code> code now to see what exactly those high values are.</p></li>
-<li><p>We’ll need to remove these high values to get a better sense of the distribution. Let’s use a <code>filter()</code> command to do this. We need to make a decision about what values to exclude. In later labs we’ll look at a more systematic process of removing <em>outliers</em>, but for now, let’s just remove any that are over £200,000. Edit the <code>filter()</code> command to keep only those estimates that are <em>below</em> £200,000 (&lt;). Remember that the filter command <em>keeps</em> the data that is <em>TRUE</em> according to the expression.</p></li>
-<li><p>STOP! OK, <strong>this next bit is very important</strong>. If you completed that last step correctly you’ll see an output in the console showing a “tibble” (a data frame) which has 194 rows and 5 columns. However, your object has not actually changed in the environment. This will still be showing as 197 observations (row). So the filter command will take out those large estimations, but we haven’t actually changed the data object. To do this we need to assign (<code>&lt;-</code>)the result of our filter command to the object. To do this, you need to put in some code at the start of this small chunk of code you’ve just run, so that the result of your commands will be assigned to the object (you can make this the same object name you’ve been using -overwrite it-, or call it a new name).</p></li>
-<li><p>When you run this command again you should see the (new) object has changed to 194 rows. We can now plot the data again as a histogram. To do this, copy the earlier code for the histogram and edit it as necessary (if you’re using a new object for the filtered data, you’ll need to edit the code to reflect that). .</p></li>
-<li><p>And as you know, we can also look at the distribution as a boxplot, a violin, or a density plot. Feel free to add in your own code for other visualisations you might like to try.</p></li>
+<li>Christian?</li>
+<li>Muslim?</li>
+<li>Over the age of 65?</li>
 </ol>
-</div>
-<div id="one-sample-t-test" class="section level3 hasAnchor" number="7.2.2">
-<h3><span class="header-section-number">7.2.2</span> One-sample t-test<a href="week-7-filtering-data-and-testing-means-one-sample-t-test.html#one-sample-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>We now want to know if the salary estimates are different to the actual average salary in the UK (which is approx. £30,000). Our hypothesis might be that people are inaccurate - they overestimate or underestimate the average UK salary. Let’s test that.</p>
-<ol start="8" style="list-style-type: decimal">
-<li><p>First, let’s calculate the mean and sd of the column.</p></li>
-<li><p>Now we can compute a t-statistic and check whether this mean is significantly different from the expected mean. We do this with <code>t.test()</code>. Edit the code on this line to conduct a one-sample t-test. You need to provide <strong>the sample of data on which you want to conduct the test</strong>, and the <strong>expected mean under the null hypothesis</strong>. Remember our hypothesis is that people are not accurate. Your calculation of the mean should tell you whether they numerically overestimated or underestimated. But would we expect such a result under the null hypothesis? Run the t-test and <strong>note the p value</strong>. How likely is it that we would see this sample of data (this mean value and the distribution of data - the SD) under the null hypothesis? The p value ranges from 0 to 1. If it is very low - typically we say p &lt; .05 - then we conclude our result is unlikely under the null hypothesis and it is therefore a <em>significant result</em>.</p></li>
-<li><p>What is the critical value of t in the t-distribution table, for this sample size? Degrees of freedom is N - 1.</p></li>
-</ol>
-<p><img src="files/Week_7/ttable.png" /></p>
-</div>
-<div id="practising-filtering" class="section level3 hasAnchor" number="7.2.3">
-<h3><span class="header-section-number">7.2.3</span> Practising filtering<a href="week-7-filtering-data-and-testing-means-one-sample-t-test.html#practising-filtering" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<ol start="11" style="list-style-type: decimal">
-<li>Filtering can also be useful for selecting certain sub-sets of our data. In the script we have given you an example of how we select a sub-set of data based on two conditions from two different columns:</li>
-</ol>
-<p><code>data_set_name %&gt;% filter(home_location_in_UK == "NW" &amp; sibling_order == "oldest")</code></p>
-<p>We have given you a few different columns to look at and to use in practicing your filter commands:</p>
-<p><code>sibling_order</code>: what position in age was the respondent within their siblings
-<code>home_location</code>: UK / Asia / Europe, etc
-<code>home_location_in_UK</code>: NW, NE, etc (NA is non-UK residents)
-<code>attention_check</code>: respondents were asked “click strongly agree to show you are paying attention” - some people failed this!!!</p>
-<p>Complete the following filters. We’ve put in <strong>()</strong> the number of rows you should see in the resulting object</p>
-<ol start="12" style="list-style-type: decimal">
-<li><p>Just those people who come from the North East (16 rows)</p></li>
-<li><p>Those people who come from Wales and are the middle child within their siblings (2 rows)</p></li>
-<li><p>Those people passed the attention check, are from the UK, and are an only child (21 rows)</p></li>
-<li><p>Those people who are NOT from the North West; you’ll need to use <code>!=</code> (84 rows)</p></li>
-<li><p>Those people who failed the attention check (that is, did not say strongly agree) (14 rows)</p></li>
-<li><p>Those people who are from the South East or (<code>|</code>) the South West (38 rows)</p></li>
-</ol>
-</div>
-</div>
-<div id="sample-size-size-of-effect-and-the-one-sample-t-test" class="section level2 hasAnchor" number="7.3">
-<h2><span class="header-section-number">7.3</span> Sample size, size of effect, and the one sample t-test<a href="week-7-filtering-data-and-testing-means-one-sample-t-test.html#sample-size-size-of-effect-and-the-one-sample-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>In the lecture this week, Tom used an application to show the process of sampling data. You can access this application at the link below. There are three “parameters” you can change in this:</p>
-<ul>
-<li><p><strong>The true mean of the effect:</strong> Think of this like the bias that was set up in your deck of cards last week. There is some true state out there in the world, and we are going to draw samples from a distribution of data that has a mean that equals this value. If you make this 100, then the true mean is equal to that under the null hypothesis (there is no effect).</p></li>
-<li><p><strong>The standard deviation of the data:</strong> This sets how variable the data are in this population. If the data are more variable, then our samples will produce estimations that are less accurate of the true mean value.</p></li>
-<li><p><strong>The sample size:</strong> How many observations are drawn in the sample. These are represented by the yellow circles in the plot.</p></li>
-</ul>
-<p>Each time you draw a sample the data points are plotted in yellow and the mean of the sample is marked with the red line. The application also runs a one-sample t-test against the expected mean under the null hypothesis, of 100. The null hypothesis is also represented by the static distribution presented in grey, centred on 100.</p>
-<p>Things to try:</p>
+</blockquote>
+<p>We also asked a related question about immigration:</p>
+<blockquote>
+<p>What percentage of the UK population do you think are immigrants to this country? (i.e. not born in UK)</p>
+</blockquote>
 <ol style="list-style-type: decimal">
-<li><p>Start with a sample size of 10, and a mean of the effect of 110 (SD = 15). How often do you get a significant result (p &lt; .05) when you draw a new sample?</p></li>
-<li><p>Now try changing the mean of the effect to 120. Does this increase or decrease the likelihood of getting significant results? What about changing to 130?</p></li>
-<li><p>Now keep the mean effect constant (say 110), but increase the sample size. Try 5, then 10, 15, and so on. Does this increase or decrease the likelihood of getting significant results?</p></li>
-<li><p>Set the mean of the effect to 100 and the sample size to 10. Keep drawing new samples, noting each time the p value. You will evenutally get a p value of &lt; .05. What type of error is this?</p></li>
+<li><p>Read in the data “data_wk9.csv” using <code>read_csv()</code>.</p></li>
+<li><p>Take a look at the summary statistics for all of the columns in our data using <code>summary()</code></p></li>
+<li><p>At this stage you could try using <code>ggplot()</code> with <code>geom_histogram()</code> (hint: not sure? look at last week) or <code>geom_density()</code> to explore the different columns.</p></li>
+<li><p>You may be tempted at this stage to apply the <code>filter()</code> commands to remove any outliers. If so, yes, that’s entirely sensible. But note that we are going to remove outliers a little further into our tasks after we’ve first done some visualisation.</p></li>
 </ol>
-<p><a href="https://ma-rconnect.lancs.ac.uk/one_sample_t" target="_blank"><strong>Click here for the one-sample t-test application</strong></a></p>
+</div>
+<div id="visualising-relationships-in-the-data" class="section level3 hasAnchor" number="9.2.2">
+<h3><span class="header-section-number">9.2.2</span> Visualising relationships in the data<a href="week-9-unrelated-samples-t-test-and-power.html#visualising-relationships-in-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>To what extent are people’s estimations of these population parameters related? Let’s look at this by plotting these data as <code>geom_point()</code>:</p>
+<ol style="list-style-type: decimal">
+<li><p>Complete the code to add one numeric column in the data to x and another numeric column to y. You can pick any of the columns you like, but it’s important that you understand what research question you are asking with your choice. For example, you might be asking “Do people who estimate there are more Christians in the population also think there are more people over the age of 65?”</p></li>
+<li><p>Note the general pattern in the data. Is there a <em>postive relationship</em>: do people who give high estimations for one variable tend to give high estimations for the other variable? Or is there a <em>negative relationship</em>: do people who give high estimations for one variable tend to give lower estimations for the other variable? Or is there no discernable relationship at all?</p></li>
+<li><p>Copy the code and edit it to explore relationships between the other numeric variables, each time noting the research question you are asking, and discussing on your table what kind of relationship you can see in the data.</p></li>
+</ol>
+</div>
+<div id="using-z-scores-to-remove-outliers" class="section level3 hasAnchor" number="9.2.3">
+<h3><span class="header-section-number">9.2.3</span> Using z-scores to remove outliers<a href="week-9-unrelated-samples-t-test-and-power.html#using-z-scores-to-remove-outliers" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p>You may have noticed that there are some fairly extreme values in some of these numeric estimations of the population. As we’ve discussed in previous weeks, these outlier values can be problematic when we run our statistical tests, so (like last week) we probably want to control their influence by removing them. As you saw in your online tutorial, we can convert the data to z scores, and then remove z values above and below certain values.</p></li>
+<li><p>Let’s create a “z-transform column” called <em>z_imm</em> for the estimates of the percentage of immigrants. Complete the code you have been given by adding the relevant variable (column) name to the code. You may want to create a new data object at this point.</p></li>
+<li><p>View the new data object to check this column has been created correctly. Like in the online tutorial, it would be a good idea to calculate some descriptive statistics for these new columns to check it conforms to what we know about z-scores (e.g., <code>mean()</code> should be very close to 0, <code>sd()</code> = 1). Note, if you want to change the output in r from scientific notation to non-scientific notation, you can run the command <code>options(scipen=999)</code>.</p></li>
+<li><p>We know from our lectures on the z distribution that values of greater than 2 (or less than -2) reflect around 5% of the distribution, and values greater than 3 (or less than -3) represent less than 1% of the distribution:</p></li>
+</ol>
+<p><img src="files/Week_9/z_score_figure.png" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Let’s consider an outlier any value that has a z of 2.5 (a conventional cutoff). Plot a histogram of the <em>z_imm</em> column in order to inspect whether there are data that are above 2.5 or below -2.5.</p></li>
+<li><p>Add a filter command to remove the values in the <em>z_imm</em> column are greater than 2.5 or less than -2.5.</p></li>
+</ol>
+</div>
+</div>
+<div id="unrelated-samples-t-test" class="section level2 hasAnchor" number="9.3">
+<h2><span class="header-section-number">9.3</span> Unrelated samples t-test<a href="week-9-unrelated-samples-t-test-and-power.html#unrelated-samples-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We have also included a categorical variable in our data this week, which is one you have seen before in our analysis classes: the home location in the UK of the respondent, <code>home_location_in_UK</code>. For this data object we have included only those responses from those people from the “North” (NW and NE) and those from the “South” (SW and SE). Other respondents from elsewhere have been removed from the data. We can therefore look at whether people’s home location determines their population estimations.</p>
+<ol style="list-style-type: decimal">
+<li><p>First we will look at the mean population estimations, split by home location. To do this, complete the <code>group_by()</code> and <code>summarise()</code> commands to give the mean estimates of the proportion of muslims in the population by home location. You don’t need to edit the <code>N = n()</code> line - this provides the number of participants at each level of the <em>home_location_in_UK</em> variable.</p></li>
+<li><p>What do the means suggest? Do people in the North and South give different estimations?</p></li>
+<li><p>Let’s test if these differences are real. First, it is worth noting that many more respondents originate from the North than from the South (see the <em>N</em> column in the summary). We have unequal sample sizes, and potentially unequal variances. Run the <code>var.test()</code> code to check if the variances of the two samples are similar (homogeneity of variance). If this test produces a p value less that .05, then the variances in the two samples are unequal. That will have consequences for how we run the <code>t-test()</code> in the next step.</p></li>
+<li><p>Now let’s run the t-test. This week we are comparing data from different samples of participants (those who are from the North and South). We need to tell the t-test that the data are NOT paired (<code>paired = FALSE</code>). The result of the <code>var.test()</code> in the last step will tell you whether the <code>var.equal</code> value should be <code>TRUE</code> or <code>FALSE</code>. Set <code>var.equal = FALSE</code> or <code>var.equal = TRUE</code> depending on whether the variances are equal. When you’re happy with the parameters, run the t-test. What result did you get and what does this mean? Discuss this with your table, or with the staff in the lab.</p></li>
+<li><p>In that t-test we looked at the <em>pop_est_muslim</em> variable, but we can do this test for all of our population estimates. Copy the code to run another <code>var.test()</code> and <code>t.test()</code>, for the <em>pop_est_christian</em> variable. Note the t and p values; What do these tell us about the relationship between music preference and social media use? You can also run two further tests on the other population estimations.</p></li>
+</ol>
+</div>
+<div id="power-and-effect-size-d-calculations" class="section level2 hasAnchor" number="9.4">
+<h2><span class="header-section-number">9.4</span> Power and effect size (d) calculations<a href="week-9-unrelated-samples-t-test-and-power.html#power-and-effect-size-d-calculations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ol style="list-style-type: decimal">
+<li><p>We saw in last week’s lab tasks that there was a significant effect in our Stroop task data: participants were faster to say the colour names of the compatible list compared to the incompatible list (there were significant differences with the control list too). We will now use these data to calculate an <strong>effect size</strong> (<em>Cohen’s d</em>) for the t-statistic that we observed in that test.</p></li>
+<li><p>Import the stroop data. We have reduced the data down to just the <em>compatible</em> and <em>incompatible</em> conditions.</p></li>
+<li><p>Run the <code>cohens_d()</code> code to calculate the effect size, which is reported as <em>effsize</em>. You can ignore any negative sign, taking note of the absolute value.</p></li>
+<li><p>We already know that this large effect size was significant with our large sample of participants. What might we have expected with a much smaller sample size? Use the <code>pwr.t.test()</code> function to add in the effect size that you calculated (Cohen’s d) and set the <em>N</em> to 20. What <strong>power</strong> would we have achieved with this sample size, to detect this large effect? Discuss with your table, or staff, what this power means.</p></li>
+<li><p>Let’s say we wanted our next experiment to have an 80% chance of finding an effect at least as large as the one we found. Complete the <code>pwr.t.test()</code> function to work out the minimum sample size we would need to achieve power of .8, with this effect size.</p></li>
+<li><p>Let’s say we are looking to run a new experiment in which we give people a stressful task to complete simultaneously. We will ask them to put their hands in a bucket of ice cold water while doing the Stroop task (this is a real “stressor task” people use!). We are unsure of what consequence this will have for our effect size, but we want to estimate the effect size that could be detected in our experiment. We decide to run 40 participants, and want to achieve a power of .90 (90% chance to find an effect at least this large). What is the minimum effect size we could hope to detect under these conditions?</p></li>
+</ol>
 
 </div>
 </div>
@@ -353,8 +358,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           </div>
         </div>
       </div>
-<a href="week-6-sampling-probability-and-binomial-tests.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="week-8-related-samples-t-tests-plotting-means-and-se-bars.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="week-8-related-samples-t-tests-plotting-means-and-se-bars.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
