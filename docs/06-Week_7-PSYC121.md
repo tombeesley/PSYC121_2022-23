@@ -107,6 +107,6 @@ Things to try:
 
 [**Click here for the one-sample t-test application**](https://ma-rconnect.lancs.ac.uk/one_sample_t){target="_blank"}
 
-## Week 6 Quiz
+## Week 7 Quiz
 
 You can access a set of quiz questions related to this week [here.](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_7_Quiz/){target="_blank"}
