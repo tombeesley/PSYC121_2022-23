@@ -84,3 +84,4 @@ visualising-relationships-in-the-data
 using-z-scores-to-remove-outliers
 unrelated-samples-t-test
 power-and-effect-size-d-calculations
+week-9-quiz
