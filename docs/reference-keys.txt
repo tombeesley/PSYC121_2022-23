@@ -70,6 +70,7 @@ sample-size-size-of-effect-and-the-one-sample-t-test
 week-7-quiz
 week-8-related-samples-t-tests-plotting-means-and-se-bars
 pre-lab-work-online-tutorial
+rstudio-tasks-2
 calculating-means-and-ses
 running-related-samples-t-tests
 plotting-the-means-and-ses
@@ -77,7 +78,7 @@ saving-your-work
 week-8-quiz
 week-9-unrelated-samples-t-test-and-power
 pre-lab-work-online-tutorial-1
-rstudio-tasks-2
+rstudio-tasks-3
 exploring-the-data
 visualising-relationships-in-the-data
 using-z-scores-to-remove-outliers

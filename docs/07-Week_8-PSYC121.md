@@ -21,7 +21,9 @@ Today we will take a look at summarising means and standard errors (SEs) from ou
 
 1. Create a folder for Week 8 and download the [Week_8.zip](files/Week_8/Week_8_v2.zip) file and upload it into this new folder in RStudio Server. 
 
-## Calculating means and SEs 
+## RStudio Tasks
+
+### Calculating means and SEs 
 
 The “Stroop Effect” is a classic demonstration of automaticity of behaviour. Participants have to say the colour a word is printed in, which is an easy task for a “compatible” stimulus like <span style="color:green">**GREEN**</span>, and a much more difficult task for an “incompatible” stimulus like <span style="color:red">**BLUE**</span>. We can’t help but read the text - it has seemingly become an automatic process.
 
@@ -44,7 +46,7 @@ In this task we will calculate the means and standard errors of the means and th
 
 8. Check the new distribution of average times after this filter has been applied to the data. 
 
-## Running related samples t-tests
+### Running related samples t-tests
 
 We have seen in our density plots that the reaction times (DV) look different in the three different Stroop conditions (our IV). But now we need to look at whether there are **statistically significant differences** between the means of the three conditions. 
 
@@ -65,7 +67,7 @@ result significant? Note the t-value and the p-value.
 
 6. With 3 levels to the IV *condition* there are 3 possible comparisons we can make (1 vs. 2; 1 vs. 3; 2 vs. 3). Complete all three tests, by copying and pasting the commands, editing each to make a different filter selection, and then to run the t-test. Write out a report statement (Q5) for each of your comparisons. 
 
-## Plotting the means and SEs
+### Plotting the means and SEs
 
 1. In Task 2 you calculated the means for each condition in the Stroop task. We've seen in lectures that "standard error" provides an estimate of how variable that mean will be across the samples we collect. A very typical way to plot a mean value is to plot it with the standard error of the mean (SEM):
 
@@ -91,7 +93,7 @@ EXTRA: These next steps can be completed to practice customising your plot
 
 10. Try changing your `geom_point()` to `geom_col`.
 
-## Saving your work
+### Saving your work
 
 **Scripts:** By now you are hopefully getting used to editing and working within the script. As you know, to save a script, you simply click the save icon, or press ctrl+S (cmd+s on a mac).
 
