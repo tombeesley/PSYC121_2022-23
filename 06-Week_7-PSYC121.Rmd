@@ -133,4 +133,4 @@ Things to try:
 
 ## Week 7 Quiz
 
-You can access a set of quiz questions related to this week [here.](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_7_Quiz/){target="_blank"}
+You can access a set of quiz questions related to this week [here.](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_7_quiz/){target="_blank"}
