@@ -101,3 +101,6 @@ EXTRA: These next steps can be completed to practice customising your plot
 
 **Exporting from RStudio:** The above save operations save files to a folder within RStudio Server. At some stage you will need to get these files out of RStudio Server, for example if you need a graph for your report, or you need to share the data or the scripts. Or maybe you want to make the csv file available to other researchers. To get files out of RStudio, simply select the files you want in the Files pane, click "More" and then "Export". Selecting multiple files will produce a ".zip" file, which will need to be "unzipped" on your computer to access the individual files ([instructions for Windows](https://support.microsoft.com/en-us/windows/zip-and-unzip-files-f6dde0a7-0fec-8294-e1d3-703ed85e7ebc){target="_blank"} and [instructions for Mac](https://support.apple.com/en-gb/guide/mac-help/mchlp2528/mac){target="_blank"})
 
+## Week 8 Quiz
+
+You can access a set of quiz questions related to this week [here.](https://ma-rconnect.lancs.ac.uk/PSYC121_2022_Week_8_Quiz/){target="_blank"}
